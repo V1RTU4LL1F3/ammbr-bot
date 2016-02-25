@@ -135,7 +135,7 @@ if(!isIBotRunning) {
                 var UN = cmd.substring(8);
                 if(UN != "") {
                     if(IBot.Tools.lookForUser(UN)) {
-                        API.sendChat("/me *da um cookie para @" + UN + ", com o cookie vem uma nota escrito 'Boa noite :), from @" + user + "'*"); 
+                        API.sendChat(" @" + user + " da um cookie para @" + UN + "!"); 
                     } else {
                         API.sendChat(":x: Usuario nao encontrado! :x:");
                     }
@@ -144,11 +144,11 @@ if(!isIBotRunning) {
                 }
             } else {
                 switch (cmd) {
-                case "desligar":
+                //case "desligar":
                   //API.sendChat(":no_entry_sign: @" + user +",  Desligando...") +exit();
-                    break;
+                    //break;
                 case "ajuda":
-                    API.sendChat(":large_blue_circle: @" + user +", "+IBot.iBot + " comandos de usuarios: !ajuda(!help), !musica, !dj, !regras, !temas, !twitter, !fb, !dubx");
+                    API.sendChat(":large_blue_circle: @" + user +", "+IBot.iBot + " comandos de usuários: !ajuda(!help), !musica, !dj, !regras, !temas, !twitter, !fb, !dubx");
                     break;
                 case "help":
                     API.sendChat(":red_circle: @" + user +", "+IBot.iBot + " user commands: !help, !dj, !song, !rules, !themes, !twitter, !fb, !dubx");
