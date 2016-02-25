@@ -218,13 +218,4 @@ if(!isIBotRunning) {
     }
     startUp();
 } else {
-    function load_js()
-   {
-      var head= document.getElementsByTagName('head')[0];
-      var script= document.createElement('script');
-      script.type= 'text/javascript';
-      script.src= 'https://rawgit.com/V1RTU4LL1F3/fatgasda/master/Bot_Testes.js';
-      head.appendChild(script);
-   }
-   load_js();
-}
+    break [label];
