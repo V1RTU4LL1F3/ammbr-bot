@@ -144,9 +144,9 @@ if(!isIBotRunning) {
                 }
             } else {
                 switch (cmd) {
-                case "desligar":
+                //case "desligar":
                   //API.sendChat(":no_entry_sign: @" + user +",  Desligando...") +exit();
-                    break;
+                    //break;
                 case "ajuda":
                     API.sendChat(":large_blue_circle: @" + user +", "+IBot.iBot + " comandos de usuarios: !ajuda(!help), !musica, !dj, !regras, !temas, !twitter, !fb, !dubx");
                     break;
@@ -215,5 +215,5 @@ if(!isIBotRunning) {
     }
     startUp();
 } else {
-    Dubtrack.helpers.displayError("Erro!", "mBot ja esta ativo!");
+    restart();
 }
