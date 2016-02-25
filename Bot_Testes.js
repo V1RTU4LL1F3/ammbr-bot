@@ -219,3 +219,4 @@ if(!isIBotRunning) {
     startUp();
 } else {
     break [label];
+}
