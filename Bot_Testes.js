@@ -150,6 +150,9 @@ if(!isIBotRunning) {
                 case "ajuda":
                     API.sendChat(":large_blue_circle: @" + user +", "+IBot.iBot + " comandos de usuarios: !ajuda(!help), !musica, !dj, !regras, !temas, !twitter, !fb, !dubx");
                     break;
+                case "teste":
+                    API.sendChat("@" + user +" testando");
+                    break;
                 case "help":
                     API.sendChat(":red_circle: @" + user +", "+IBot.iBot + " user commands: !help, !dj, !song, !rules, !themes, !twitter, !fb, !dubx");
                     break;
