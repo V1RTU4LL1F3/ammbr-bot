@@ -189,9 +189,6 @@ if(!isIBotRunning) {
                 default:
                     API.sendChat(":x:Comando: " + cmd + ", invalido(invalid command)!");
                     break;
-                case "abraço":
-                    API.sendChat(" @" + user + " da um abraço em @" + UN + "! ");
-                    break;
                 }
             }
         }
