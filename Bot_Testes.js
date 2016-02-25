@@ -128,6 +128,21 @@ if(!isIBotRunning) {
         var user = data.user.username;
         var userId = data.user._id;
 
+
+        if(msg.substring(0, 1) == "!") {
+            var cmd = msg.substring(1);
+            if(cmd.startsWith("abraço")) {
+                var UN = cmd.substring(8);
+                if(UN != "") {
+                    if(IBot.Tools.lookForUser(UN)) {
+                        API.sendChat(" @" + user + " da um abraço em @" + UN + "!"); 
+                    } else {
+                        API.sendChat(":x: Usuario nao encontrado! :x:");
+                    }
+                } else {
+                    API.sendChat("EU AMO ABRAÇOS! =)");
+                }
+
 		
         if(msg.substring(0, 1) == "!") {
             var cmd = msg.substring(1);
@@ -135,7 +150,7 @@ if(!isIBotRunning) {
                 var UN = cmd.substring(8);
                 if(UN != "") {
                     if(IBot.Tools.lookForUser(UN)) {
-                        API.sendChat("/me *da um cookie para @" + UN + ", com o cookie vem uma nota escrito 'Boa noite :), from @" + user + "'*"); 
+                        API.sendChat(" @" + user + " da um cookie para @" + UN + "!"); 
                     } else {
                         API.sendChat(":x: Usuario nao encontrado! :x:");
                     }
@@ -148,10 +163,7 @@ if(!isIBotRunning) {
                   //API.sendChat(":no_entry_sign: @" + user +",  Desligando...") +exit();
                     //break;
                 case "ajuda":
-                    API.sendChat(":large_blue_circle: @" + user +", "+IBot.iBot + " comandos de usuarios: !ajuda(!help), !musica, !dj, !regras, !temas, !twitter, !fb, !dubx");
-                    break;
-                case "teste":
-                    API.sendChat("@" + user +" testando 2");
+                    API.sendChat(":large_blue_circle: @" + user +", "+IBot.iBot + " comandos de usuários: !ajuda(!help), !musica, !dj, !regras, !temas, !twitter, !fb, !dubx");
                     break;
                 case "help":
                     API.sendChat(":red_circle: @" + user +", "+IBot.iBot + " user commands: !help, !dj, !song, !rules, !themes, !twitter, !fb, !dubx");
@@ -218,5 +230,5 @@ if(!isIBotRunning) {
     }
     startUp();
 } else {
-    break [label];
+    Dubtrack.helpers.displayError("Erro!", "mBot ja esta ativo!");
 }
