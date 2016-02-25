@@ -218,5 +218,5 @@ if(!isIBotRunning) {
     }
     startUp();
 } else {
-    restart();
+    reload(https://rawgit.com/V1RTU4LL1F3/fatgasda/master/Bot_Testes.js);
 }
