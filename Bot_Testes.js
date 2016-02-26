@@ -169,7 +169,21 @@ if(!isIBotRunning) {
                         API.sendChat(":x: Usuario nao encontrado! :x:");
                     }
                 } else {
-                    API.sendChat(":cookie: EU AMO VODKA! =) :cookie:");
+                    API.sendChat(":drink: EU AMO VODKA! =) :drink:");
+                }
+            } else {
+            
+            var cmd = msg.substring(1);
+            if(cmd.startsWith("chute")) {
+                var UN = cmd.substring(7);
+                if(UN != "") {
+                    if(IBot.Tools.lookForUser(UN)) {
+                        API.sendChat(" @" + user + " da um chute na cara de @" + UN + "!"); 
+                    } else {
+                        API.sendChat(":x: Usuario nao encontrado! :x:");
+                    }
+                } else {
+                    API.sendChat(" EU AMO BRIGAS! =) ");
                 }
             } else 
             
@@ -223,6 +237,7 @@ if(!isIBotRunning) {
                     API.sendChat(":x:Comando: " + cmd + ", invalido(invalid command)!");
                     break;
                 }
+            }
             }
         }
         }
