@@ -100,7 +100,7 @@ if(!isIBotRunning) {
     };
     // Custom stuff
     IBot = {
-        iBot: "mBot v034",
+        iBot: "mBot v036",
         Tools: {
             lookForUser: function(username) {
                 var found = false;
@@ -142,9 +142,8 @@ if(!isIBotRunning) {
                 } else {
                     API.sendChat("EU AMO ABRAÇOS! =)");
                 }
-
-		
-        if(msg.substring(0, 1) == "!") {
+            }
+            } else if(msg.substring(0, 1) == "!") {
             var cmd = msg.substring(1);
             if(cmd.startsWith("cookie")) {
                 var UN = cmd.substring(8);
@@ -159,9 +158,12 @@ if(!isIBotRunning) {
                 }
             } else {
                 switch (cmd) {
-                //case "desligar":
-                  //API.sendChat(":no_entry_sign: @" + user +",  Desligando...") +exit();
-                    //break;
+                case "desligar":
+        		API.off(API.CHAT, commandHandler);
+        		API.off(API.USER_JOIN, userJoinMsg);
+        		API.off(API.USER_LEAVE, userLeaveMsg);
+                 	API.sendChat(":no_entry_sign: @" + user +",  Desligando...") +exit();
+                    break;
                 case "ajuda":
                     API.sendChat(":large_blue_circle: @" + user +", "+IBot.iBot + " comandos de usuários: !ajuda(!help), !musica, !dj, !regras, !temas, !twitter, !fb, !dubx");
                     break;
@@ -208,6 +210,7 @@ if(!isIBotRunning) {
             }
         }
     }
+    
     function nextSongMsg() {
         API.sendChat(":musical_note: Tocando agora: " + API.getMedia() + "! DJ: " + API.getDJ() + ":musical_note:");
     }
