@@ -157,7 +157,7 @@ if(!isIBotRunning) {
                 } else {
                     API.sendChat(":cookie: I LOVE COOKIES :cookie:");
                 }
-            } else {
+            } else 
             
             var cmd = msg.substring(1);
             if(cmd.startsWith("vodka")) {
@@ -224,11 +224,9 @@ if(!isIBotRunning) {
                     break;
                 }
             }
-            }
-            }
-        
         }
     }
+}
     
 
     
