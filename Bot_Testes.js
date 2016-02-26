@@ -171,7 +171,7 @@ if(!isIBotRunning) {
                 } else {
                     API.sendChat(":cookie: EU AMO VODKA! =) :cookie:");
                 }
-            } else
+            } else {
             
                 switch (cmd) {
                 case "desligar":
@@ -226,7 +226,8 @@ if(!isIBotRunning) {
             }
         }
     }
-    
+}
+}
     function nextSongMsg() {
         API.sendChat(":musical_note: Tocando agora: " + API.getMedia() + "! DJ: " + API.getDJ() + ":musical_note:");
     }
