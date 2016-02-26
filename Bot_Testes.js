@@ -143,7 +143,8 @@ if(!isIBotRunning) {
                     API.sendChat("EU AMO ABRAÇOS! =)");
                 }
             }
-            } else if(msg.substring(0, 1) == "!") {
+            } else { 
+        if(msg.substring(0, 1) == "!") {
             var cmd = msg.substring(1);
             if(cmd.startsWith("cookie")) {
                 var UN = cmd.substring(8);
