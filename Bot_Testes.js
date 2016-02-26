@@ -226,7 +226,6 @@ if(!isIBotRunning) {
             }
         }
     }
-}
     
     function nextSongMsg() {
         API.sendChat(":musical_note: Tocando agora: " + API.getMedia() + "! DJ: " + API.getDJ() + ":musical_note:");
