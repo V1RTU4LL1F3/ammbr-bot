@@ -100,7 +100,7 @@ if(!isIBotRunning) {
     };
     // Custom stuff
     IBot = {
-        iBot: "mBot v034",
+        iBot: "mBot v036",
         Tools: {
             lookForUser: function(username) {
                 var found = false;
@@ -118,7 +118,7 @@ if(!isIBotRunning) {
         }
     };
     function userJoinMsg(data) {
-        API.sendChat(":arrow_right: Bem-vindo(a) a sala AMMBR AMV/Rock/Eletro @" + data.user.username + "! :smile: Se precisar de informações, digite !ajuda :arrow_left:");
+        API.sendChat("Bem-vindo(a) a sala AMMBR AMV/Rock/Eletro @" + data.user.username + "! :smile: Se precisar de informações, digite !ajuda");
     }
     function userLeaveMsg(data) {
         API.sendChat(":wave: Até mais @" + data.user.username + "! :wave:");
@@ -128,7 +128,22 @@ if(!isIBotRunning) {
         var user = data.user.username;
         var userId = data.user._id;
 
-		
+
+        if(msg.substring(0, 1) == "!") {
+            var cmd = msg.substring(1);
+            if(cmd.startsWith("abraço")) {
+                var UN = cmd.substring(8);
+                if(UN != "") {
+                    if(IBot.Tools.lookForUser(UN)) {
+                        API.sendChat(" @" + user + " da um abraço em @" + UN + "!"); 
+                    } else {
+                        API.sendChat(":x: Usuario nao encontrado! :x:");
+                    }
+                } else {
+                    API.sendChat("EU AMO ABRAÇOS! =)");
+                }
+            } else {
+                
         if(msg.substring(0, 1) == "!") {
             var cmd = msg.substring(1);
             if(cmd.startsWith("cookie")) {
@@ -143,10 +158,42 @@ if(!isIBotRunning) {
                     API.sendChat(":cookie: I LOVE COOKIES :cookie:");
                 }
             } else {
+            
+            var cmd = msg.substring(1);
+            if(cmd.startsWith("vodka")) {
+                var UN = cmd.substring(7);
+                if(UN != "") {
+                    if(IBot.Tools.lookForUser(UN)) {
+                        API.sendChat(" @" + user + " da uma garrafa de vodka para @" + UN + "!"); 
+                    } else {
+                        API.sendChat(":x: Usuario nao encontrado! :x:");
+                    }
+                } else {
+                    API.sendChat(":drink: EU AMO VODKA! =) :drink:");
+                }
+            } else {
+            
+            var cmd = msg.substring(1);
+            if(cmd.startsWith("chute")) {
+                var UN = cmd.substring(7);
+                if(UN != "") {
+                    if(IBot.Tools.lookForUser(UN)) {
+                        API.sendChat(" @" + user + " da um chute na cara de @" + UN + "!"); 
+                    } else {
+                        API.sendChat(":x: Usuario nao encontrado! :x:");
+                    }
+                } else {
+                    API.sendChat(" EU AMO BRIGAS! =) ");
+                }
+            } else 
+            
                 switch (cmd) {
-                //case "desligar":
-                  //API.sendChat(":no_entry_sign: @" + user +",  Desligando...") +exit();
-                    //break;
+                case "desligar":
+        		API.off(API.CHAT, commandHandler);
+        		API.off(API.USER_JOIN, userJoinMsg);
+        		API.off(API.USER_LEAVE, userLeaveMsg);
+                 	API.sendChat(":no_entry_sign: @" + user +",  Desligando...") +exit();
+                    break;
                 case "ajuda":
                     API.sendChat(":large_blue_circle: @" + user +", "+IBot.iBot + " comandos de usuários: !ajuda(!help), !musica, !dj, !regras, !temas, !twitter, !fb, !dubx");
                     break;
@@ -191,8 +238,14 @@ if(!isIBotRunning) {
                     break;
                 }
             }
+            }
+        }
         }
     }
+}
+    
+
+    
     function nextSongMsg() {
         API.sendChat(":musical_note: Tocando agora: " + API.getMedia() + "! DJ: " + API.getDJ() + ":musical_note:");
     }
