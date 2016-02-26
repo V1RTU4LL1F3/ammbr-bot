@@ -157,11 +157,11 @@ if(!isIBotRunning) {
                 } else {
                     API.sendChat(":cookie: EU AMO COOKIES! =) :cookie:");
                 }
-            } else 
+            } else {
             
             var cmd = msg.substring(1);
             if(cmd.startsWith("vodka")) {
-                var UN = cmd.substring(8);
+                var UN = cmd.substring(7);
                 if(UN != "") {
                     if(IBot.Tools.lookForUser(UN)) {
                         API.sendChat(" @" + user + " da uma garrafa de vodka para @" + UN + "!"); 
@@ -226,6 +226,7 @@ if(!isIBotRunning) {
             }
         }
     }
+}
     
     function nextSongMsg() {
         API.sendChat(":musical_note: Tocando agora: " + API.getMedia() + "! DJ: " + API.getDJ() + ":musical_note:");
