@@ -143,7 +143,7 @@ if(!isIBotRunning) {
                 } else {
                     API.sendChat("EU AMO ABRAÇOS! =)");
                 }
-            } else
+            } else {
             
             var cmd = msg.substring(1);
             if(cmd.startsWith("cookie")) {
@@ -157,7 +157,7 @@ if(!isIBotRunning) {
                 } else {
                     API.sendChat(":cookie: I LOVE COOKIES :cookie:");
                 }
-            } else {
+            } else 
                 switch (cmd) {
                 case "desligar":
         		API.off(API.CHAT, commandHandler);
