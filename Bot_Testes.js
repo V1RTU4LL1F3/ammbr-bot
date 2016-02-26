@@ -171,7 +171,7 @@ if(!isIBotRunning) {
                 } else {
                     API.sendChat(":cookie: EU AMO VODKA! =) :cookie:");
                 }
-            } else {
+            } else 
             
                 switch (cmd) {
                 case "desligar":
