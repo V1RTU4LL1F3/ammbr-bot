@@ -1,0 +1,87 @@
+//Bot Dialogo
+mattbot = {
+     falaoi: ["oi bot","ola bot","eae bot","olá bot"],
+     respondeoi: [":D Oi",":D Olá"],
+     boton: ["bot on?","bot tae?","bot esta ativado?","bot ta ativado?","bot ta on?","bot ligado?"],
+     toon: ["Estou aqui"],
+     olapessoas: ["oi gente","yo minna","ola pessoas","ola gente","eae galera","oi galera","eae gente","ola galera","yo galera","yo gente","oi pessoas","oi pessoal","oi minna"],
+     welcomebot: ["Olá, seja bem-vindo a nossa sala. Divirta-se "],
+     bomdia: ["bom dia gente","bom dia galera","bom dia pessoal"], bomdiabot: [":D Bom  Dia"],
+     boatarde: ["boa tarde gente","boa tarde galera","boa tarde pessoal"], boatardebot: [":D Boa  Tarde"],
+     boanoite: ["boa noite gente","boa noite galera","boa noite pessoal"], boanoitebot: [":D Boa  Noite"],
+     comandoslink: ["!cmds"], clink: ["qual sao os comandos bot","link dos comandos bot","comandos da sala bot","qual são os comandos bot"],
+     regraslink: ["!regras"], rlink: ["qual sao as regras bot","link das regras bot","regras da sala bot","qual são as regras bot"],
+     autowootlink: ["!autowoot"],
+     awlink: ["link do autowoot bot","como usar autowoot","o que é autowoot","como usa autowoot"],
+}
+ 
+function DialogBot(data){
+     msg = data.message.toLowerCase();
+ 
+     //Autowoot Link
+     for(var i = 0; i < mattbot.awlink.length; i++){
+          if(msg.indexOf(mattbot.awlink[i].toLowerCase()) > -1){
+               var autowootlinkRandom = Math.floor(Math.random() * mattbot.autowootlink.length);
+               API.sendChat(mattbot.autowootlink[autowootlinkRandom] +" @"+ data.from +" ");
+          }
+     }
+     //Comandos Link
+     for(var i = 0; i < mattbot.clink.length; i++){
+          if(msg.indexOf(mattbot.clink[i].toLowerCase()) > -1){
+               var comandoslinkRandom = Math.floor(Math.random() * mattbot.comandoslink.length);
+               API.sendChat(mattbot.comandoslink[comandoslinkRandom] +" @"+ data.from +" ");
+          }
+     }
+     //Regras Link
+     for(var i = 0; i < mattbot.rlink.length; i++){
+          if(msg.indexOf(mattbot.rlink[i].toLowerCase()) > -1){
+               var regraslinkRandom = Math.floor(Math.random() * mattbot.regraslink.length);
+               API.sendChat(mattbot.regraslink[regraslinkRandom] +" @"+ data.from +" ");
+          }
+     }
+     //Oi
+     for(var i = 0; i < mattbot.falaoi.length; i++){
+          if(msg.indexOf(mattbot.falaoi[i].toLowerCase()) > -1){
+               var respondeoiRandom = Math.floor(Math.random() * mattbot.respondeoi.length);
+               API.sendChat(mattbot.respondeoi[respondeoiRandom] +" @"+ data.from +" ");
+          }
+     }
+     //On?
+     for(var i = 0; i < mattbot.boton.length; i++){
+          if(msg.indexOf(mattbot.boton[i].toLowerCase()) > -1){
+               var toonRandom = Math.floor(Math.random() * mattbot.toon.length);
+               API.sendChat(mattbot.toon[toonRandom] +" @"+ data.from +" ");
+          }
+     }
+     //ola pessoas
+     for(var i = 0; i < mattbot.olapessoas.length;
+     i++){
+          if(msg.indexOf(mattbot.olapessoas[i].toLowerCase()) > -1){
+               var welcomebotRandom = Math.floor(Math.random() * mattbot.welcomebot.length);
+               API.sendChat(mattbot.welcomebot[welcomebotRandom] +" @"+ data.from +" !");
+          }
+     }
+     //bomdia
+     for(var i = 0; i < mattbot.bomdia.length; i++){
+          if(msg.indexOf(mattbot.bomdia[i].toLowerCase()) > -1){
+               var bomdiabotRandom = Math.floor(Math.random() * mattbot.bomdiabot.length);
+               API.sendChat(mattbot.bomdiabot[bomdiabotRandom] +" @"+ data.from +" ");
+          }
+     }
+     //boatarde
+     for(var i = 0; i < mattbot.boatarde.length;
+     i++){
+          if(msg.indexOf(mattbot.boatarde[i].toLowerCase()) > -1){
+               var boatardebotRandom = Math.floor(Math.random() * mattbot.boatardebot.length);
+               API.sendChat(mattbot.boatardebot[boatardebotRandom] +" @"+ data.from +" ");
+          }
+     }
+     //boanoite
+     for(var i = 0; i < mattbot.boanoite.length;
+     i++){
+          if(msg.indexOf(mattbot.boanoite[i].toLowerCase()) > -1){
+               var boanoitebotRandom = Math.floor(Math.random() * mattbot.boanoitebot.length);
+               API.sendChat(mattbot.boanoitebot[boanoitebotRandom] +" @"+ data.from +" ");
+          }
+     }
+}
