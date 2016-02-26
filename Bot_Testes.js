@@ -224,12 +224,12 @@ if(!isIBotRunning) {
                     break;
                 }
             }
-        }
-        }
+            }
+            }
+        
         }
     }
-    }
-    }
+    
 
     
     function nextSongMsg() {
