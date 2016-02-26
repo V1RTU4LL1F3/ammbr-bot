@@ -150,8 +150,8 @@ if(!isIBotRunning) {
      bomdia: ["bom dia gente","bom dia galera","bom dia pessoal"], bomdiabot: [":D Bom  Dia"],
      boatarde: ["boa tarde gente","boa tarde galera","boa tarde pessoal"], boatardebot: [":D Boa  Tarde"],
      boanoite: ["boa noite gente","boa noite galera","boa noite pessoal"], boanoitebot: [":D Boa  Noite"],
-     comandoslink: ["!ajuda"], clink: ["qual sao os comandos bot","link dos comandos bot","comandos da sala bot","qual são os comandos bot"],
-     regraslink: ["!regras"], rlink: ["qual sao as regras bot","link das regras bot","regras da sala bot","qual são as regras bot"],
+     comandoslink: ["!ajuda"], clink: ["quais sao os comandos bot","link dos comandos bot","comandos da sala bot","quais são os comandos bot"],
+     regraslink: ["!regras"], rlink: ["quais sao as regras bot","link das regras bot","regras da sala bot","quais são as regras bot"],
      autowootlink: ["!dubx"],
      awlink: ["link do dubx bot","como usar dubx","o que é dubx","como usa dubx"],
     }
@@ -257,7 +257,7 @@ if(!isIBotRunning) {
                         API.sendChat(":x: Usuario nao encontrado! :x:");
                     }
                 } else {
-                    API.sendChat("EU AMO ABRAÇOS! =)");
+                    API.sendChat(":heart: EU AMO ABRAÇOS! =) :heart:");
                 }
             } else {
                 
@@ -272,7 +272,7 @@ if(!isIBotRunning) {
                         API.sendChat(":x: Usuario nao encontrado! :x:");
                     }
                 } else {
-                    API.sendChat(":cookie: I LOVE COOKIES :cookie:");
+                    API.sendChat(":cookie: EU AMO COOKIES! =) :cookie:");
                 }
             } else {
             
@@ -286,7 +286,7 @@ if(!isIBotRunning) {
                         API.sendChat(":x: Usuario nao encontrado! :x:");
                     }
                 } else {
-                    API.sendChat(":drink: EU AMO VODKA! =) :drink:");
+                    API.sendChat(":cocktail: EU AMO VODKA! =) :cocktail:");
                 }
             } else {
             
@@ -300,7 +300,7 @@ if(!isIBotRunning) {
                         API.sendChat(":x: Usuario nao encontrado! :x:");
                     }
                 } else {
-                    API.sendChat(" EU AMO BRIGAS! =) ");
+                    API.sendChat(":punch: EU AMO BRIGAS! =) :punch:");
                 }
             } else 
             
