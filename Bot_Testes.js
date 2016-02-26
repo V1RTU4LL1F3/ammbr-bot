@@ -131,21 +131,6 @@ if(!isIBotRunning) {
 
         if(msg.substring(0, 1) == "!") {
             var cmd = msg.substring(1);
-            if(cmd.startsWith("abraço")) {
-                var UN = cmd.substring(8);
-                if(UN != "") {
-                    if(IBot.Tools.lookForUser(UN)) {
-                        API.sendChat(" @" + user + " da um abraço em @" + UN + "!"); 
-                    } else {
-                        API.sendChat(":x: Usuario nao encontrado! :x:");
-                    }
-                } else {
-                    API.sendChat("EU AMO ABRAÇOS! =)");
-                }
-            }
-            } else {
-        if(msg.substring(0, 1) == "!") {
-            var cmd = msg.substring(1);
             if(cmd.startsWith("cookie")) {
                 var UN = cmd.substring(8);
                 if(UN != "") {
@@ -210,7 +195,6 @@ if(!isIBotRunning) {
                 }
             }
         }
-    }
     }
     
     function nextSongMsg() {
