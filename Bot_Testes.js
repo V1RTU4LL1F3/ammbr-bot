@@ -121,7 +121,7 @@ if(!isIBotRunning) {
         API.sendChat("Bem-vindo(a) a sala AMMBR AMV/Rock/Eletro @" + data.user.username + "! :smile: Se precisar de informações, digite !ajuda");
     }
     function userLeaveMsg(data) {
-        //API.sendChat(":wave: Volte sempre @" + data.user.username + "! :wave:");
+        API.sendChat(":wave: Até mais @" + data.user.username + "! :wave:");
     }
     function commandHandler(data) {
         var msg = data.message;
