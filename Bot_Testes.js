@@ -126,8 +126,20 @@ if(!isIBotRunning) {
     }
 
     MattB.adm = ["-Psyko-Mattz", //Matt
-                "", //virtu
+                "V1RTU4L", //virtu
                 ""]; //outro
+                
+    MattB.relogar = function(data){
+        API.off(API.CHAT, commandHandler);
+        API.off(API.USER_JOIN, userJoinMsg);
+        API.off(API.USER_LEAVE, userLeaveMsg);
+        API.off(API.CHAT,DialogBot);
+        isIBotRunning = false;
+     setTimeout (function(){
+          $.getScript('https://cdn.rawgit.com/V1RTU4LL1F3/fatgasda/master/Bot.js');
+     }
+     , 1000);
+}
     mattbot = {
      falaoi: ["oi bot","ola bot","eae bot","olá bot"],
       respondeoi: [":D Oi",":D Olá"],
@@ -215,6 +227,19 @@ if(!isIBotRunning) {
      }
      
     }
+    function cmdLig(data) {
+    var msg = data.message;
+    var user = data.user.username;
+    if (msg.indexOf("!ligar") == 0) {
+            if(MattB.adm.indexOf(user) > -1) {
+            if(MattB.ligar == false) {
+            startUp();
+            } else { API.sendChat("O Bot já está ligado!");
+            }
+            } else { API.sendChat("Você não tem permissão!");
+            }
+        }
+    }
     function commandHandler(data) {
         var msg = data.message;
         var user = data.user.username;
@@ -286,7 +311,9 @@ if(!isIBotRunning) {
         		API.off(API.USER_JOIN, userJoinMsg);
         		API.off(API.USER_LEAVE, userLeaveMsg);
         		API.off(API.CHAT,DialogBot);
-                 	API.sendChat(":no_entry_sign: @" + user +",  Desligando...") +exit();
+        		MattB.ligar = false; 
+        		isIBotRunning = false;
+                 	API.sendChat(":no_entry_sign: @" + user +",  Desligado.");
                     } else { API.sendChat("Você não tem permissão!");
                     }
                     break;
@@ -326,8 +353,12 @@ if(!isIBotRunning) {
                 case "themes":
                     API.sendChat(":red_circle: @" + user +", Themes allowed: http://i.imgur.com/jqCjGXN.png ");
                     break;
-                case "inf":
-                    API.sendChat("@"+user+", ID:"+userId);
+                case "relogar":
+                    if(MattB.adm.indexOf(user) > -1) {
+                    API.sendChat(" @" + user +", Relogando.");
+                    MattB.relogar();
+                    } else { API.sendChat("Você não tem permissão!");
+                    }
                     break;
                 default:
                     API.sendChat(":x:Comando: " + cmd + ", invalido(invalid command)!");
@@ -345,6 +376,7 @@ if(!isIBotRunning) {
     function nextSongMsg() {
         API.sendChat(":musical_note: Tocando agora: " + API.getMedia() + "! DJ: " + API.getDJ() + ":musical_note:");
     }
+    API.on(API.CHAT, cmdLig);
     function connectAPI() {
         API.on(API.CHAT, commandHandler);
         API.on(API.USER_JOIN, userJoinMsg);
@@ -360,6 +392,7 @@ if(!isIBotRunning) {
     function startUp() {
         connectAPI();
         isIBotRunning = true;
+        MattB.ligar = true; 
         $("#chat-txt-message").attr("maxlength", "99999999999999999999");
         API.sendChat(":white_check_mark: " + IBot.iBot + " Ativado! :white_check_mark:");
     }
