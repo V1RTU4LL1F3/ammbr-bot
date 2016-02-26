@@ -142,6 +142,7 @@ if(!isIBotRunning) {
                 } else {
                     API.sendChat("EU AMO ABRAÇOS! =)");
                 }
+        }
             } else
         if(msg.substring(0, 1) == "!") {
             var cmd = msg.substring(1);
