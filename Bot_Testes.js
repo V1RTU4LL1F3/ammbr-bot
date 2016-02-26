@@ -130,6 +130,20 @@ if(!isIBotRunning) {
 
 
         if(msg.substring(0, 1) == "!") {
+            
+                        var cmd = msg.substring(1);
+            if(cmd.startsWith("vodka")) {
+                var UN = cmd.substring(8);
+                if(UN != "") {
+                    if(IBot.Tools.lookForUser(UN)) {
+                        API.sendChat(" @" + user + " da uma garrafa de vodka para @" + UN + "!"); 
+                    } else {
+                        API.sendChat(":x: Usuario nao encontrado! :x:");
+                    }
+                } else {
+                    API.sendChat(":cookie: EU AMO VODKA! =) :cookie:");
+                }
+            } else {
         
             var cmd = msg.substring(1);
             if(cmd.startsWith("abraço")) {
@@ -143,7 +157,7 @@ if(!isIBotRunning) {
                 } else {
                     API.sendChat("EU AMO ABRAÇOS! =)");
                 }
-            } else {
+            } else 
             
             var cmd = msg.substring(1);
             if(cmd.startsWith("cookie")) {
@@ -156,20 +170,6 @@ if(!isIBotRunning) {
                     }
                 } else {
                     API.sendChat(":cookie: EU AMO COOKIES! =) :cookie:");
-                }
-            } else 
-            
-            var cmd = msg.substring(1);
-            if(cmd.startsWith("vodka")) {
-                var UN = cmd.substring(8);
-                if(UN != "") {
-                    if(IBot.Tools.lookForUser(UN)) {
-                        API.sendChat(" @" + user + " da uma garrafa de vodka para @" + UN + "!"); 
-                    } else {
-                        API.sendChat(":x: Usuario nao encontrado! :x:");
-                    }
-                } else {
-                    API.sendChat(":cookie: EU AMO VODKA! =) :cookie:");
                 }
             } else 
             
