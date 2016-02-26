@@ -130,7 +130,6 @@ if(!isIBotRunning) {
 
 
         if(msg.substring(0, 1) == "!") {
-        
             var cmd = msg.substring(1);
             if(cmd.startsWith("abraço")) {
                 var UN = cmd.substring(8);
@@ -143,8 +142,9 @@ if(!isIBotRunning) {
                 } else {
                     API.sendChat("EU AMO ABRAÇOS! =)");
                 }
+        }
             } else {
-            
+        if(msg.substring(0, 1) == "!") {
             var cmd = msg.substring(1);
             if(cmd.startsWith("cookie")) {
                 var UN = cmd.substring(8);
@@ -155,24 +155,9 @@ if(!isIBotRunning) {
                         API.sendChat(":x: Usuario nao encontrado! :x:");
                     }
                 } else {
-                    API.sendChat(":cookie: EU AMO COOKIES! =) :cookie:");
-                }
-            } else {
-            
-            var cmd = msg.substring(1);
-            if(cmd.startsWith("vodka")) {
-                var UN = cmd.substring(7);
-                if(UN != "") {
-                    if(IBot.Tools.lookForUser(UN)) {
-                        API.sendChat(" @" + user + " da uma garrafa de vodka para @" + UN + "!"); 
-                    } else {
-                        API.sendChat(":x: Usuario nao encontrado! :x:");
-                    }
-                } else {
-                    API.sendChat(":cookie: EU AMO VODKA! =) :cookie:");
+                    API.sendChat(":cookie: I LOVE COOKIES :cookie:");
                 }
             } else 
-            
                 switch (cmd) {
                 case "desligar":
         		API.off(API.CHAT, commandHandler);
@@ -226,8 +211,7 @@ if(!isIBotRunning) {
             }
         }
     }
-}
-}
+    
     function nextSongMsg() {
         API.sendChat(":musical_note: Tocando agora: " + API.getMedia() + "! DJ: " + API.getDJ() + ":musical_note:");
     }
