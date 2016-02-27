@@ -1,5 +1,5 @@
 {
-  adm = [ //
+  admlist = [ //
   "-Psyko-Mattz",
   "V1RTU4L",
   "",
