@@ -246,7 +246,7 @@ if(!isIBotRunning) {
         if(msg.substring(0, 1) == "!") {
             var cmd = msg.substring(1);
             if(cmd.startsWith("bolacha")) {
-                var UN = cmd.substring(8);
+                var UN = cmd.substring(9);
                 if(UN != "") {
                     if(IBot.Tools.lookForUser(UN)) {
                         API.sendChat(" @" + user + " da uma bolacha para @" + UN + "!"); 
