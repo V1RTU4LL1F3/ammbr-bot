@@ -125,10 +125,7 @@ if(!isIBotRunning) {
         API.sendChat(":wave: Até mais @" + data.user.username + "! :wave:");
     }
 
-    MattB.adm = ["-Psyko-Mattz", //Matt
-                "V1RTU4L", //virtu
-                ""]; //outro
-                
+    MattB.adm = ["-Psyko-Mattz", "V1RTU4L",""];
     MattB.relogar = function(data){
         API.off(API.CHAT, commandHandler);
         API.off(API.USER_JOIN, userJoinMsg);
@@ -236,31 +233,17 @@ if(!isIBotRunning) {
             startUp();
             } else { API.sendChat("O Bot já está ligado!");
             }
-            } else { API.sendChat("Você não tem permissão!");
+            } else { API.sendChat("@" + user + " Você não tem permissão!");
             }
         }
     }
+    
     function commandHandler(data) {
         var msg = data.message;
         var user = data.user.username;
         var userId = data.user._id;
 
 
-        if(msg.substring(0, 1) == "!") {
-            var cmd = msg.substring(1);
-            if(cmd.startsWith("abraço")) {
-                var UN = cmd.substring(8);
-                if(UN != "") {
-                    if(IBot.Tools.lookForUser(UN)) {
-                        API.sendChat(" @" + user + " da um abraço em @" + UN + "!"); 
-                    } else {
-                        API.sendChat(":x: Usuario nao encontrado! :x:");
-                    }
-                } else {
-                    API.sendChat(":heart: EU AMO ABRAÇOS! =) :heart:");
-                }
-            } else {
-                
         if(msg.substring(0, 1) == "!") {
             var cmd = msg.substring(1);
             if(cmd.startsWith("cookie")) {
@@ -289,7 +272,87 @@ if(!isIBotRunning) {
                     API.sendChat(":cocktail: EU AMO VODKA! =) :cocktail:");
                 }
             } else {
-            
+ 
+             var cmd = msg.substring(1);
+            if(cmd.startsWith("kickar")) {
+                if(MattB.adm.indexOf(user) > -1) {
+                var UN = cmd.substring(8);
+                if(UN != "") {
+                    if(IBot.Tools.lookForUser(UN)) {
+                        API.sendChat(" @" + user + " kickando @" + UN + "!"); 
+                        API.sendChat("/kick @"+UN);
+                    } else {
+                        API.sendChat(":x: Usuario nao encontrado! :x:");
+                    }
+                } else {
+                    API.sendChat("kickar @user");
+                }
+                } else { API.sendChat("@" + user + " Você não tem permissão!");}
+            } else {
+             var cmd = msg.substring(1);
+            if(cmd.startsWith("banir")) {
+                if(MattB.adm.indexOf(user) > -1) {
+                var UN = cmd.substring(7);
+                if(UN != "") {
+                    if(IBot.Tools.lookForUser(UN)) {
+                        API.sendChat(" @" + user + " banindo @" + UN + "!"); 
+                        API.sendChat("/ban @"+UN);
+                    } else {
+                        API.sendChat(":x: Usuario nao encontrado! :x:");
+                    }
+                } else {
+                    API.sendChat("banir @user");
+                }
+                } else { API.sendChat("@" + user + " Você não tem permissão!");}
+            } else {                
+             /* var cmd = msg.substring(1);
+            if(cmd.startsWith("desbanir")) {
+                if(MattB.adm.indexOf(user) > -1) {
+                var UN = cmd.substring(10);
+                if(UN != "") {
+                    if(IBot.Tools.lookForUser(UN)) {
+                        API.sendChat(" @" + user + " desbanindo @" + UN + "!"); 
+                        API.sendChat("/unban @"+UN);
+                    } else {
+                        API.sendChat(":x: Usuario nao encontrado! :x:");
+                    }
+                } else {
+                    API.sendChat("desbanir @user");
+                }
+                } else { API.sendChat("@" + user + " Você não tem permissão!");}
+            } else {*/
+             var cmd = msg.substring(1);
+            if(cmd.startsWith("mutar")) {
+                if(MattB.adm.indexOf(user) > -1) {
+                var UN = cmd.substring(7);
+                if(UN != "") {
+                    if(IBot.Tools.lookForUser(UN)) {
+                        API.sendChat(" @" + user + " mutando @" + UN + "!"); 
+                        API.sendChat("/mute @"+UN);
+                    } else {
+                        API.sendChat(":x: Usuario nao encontrado! :x:");
+                    }
+                } else {
+                    API.sendChat("mutar @user");
+                }
+                } else { API.sendChat("@" + user + " Você não tem permissão!");}
+            } else {   
+             var cmd = msg.substring(1);
+            if(cmd.startsWith("desmutar")) {
+                if(MattB.adm.indexOf(user) > -1) {
+                var UN = cmd.substring(10);
+                if(UN != "") {
+                    if(IBot.Tools.lookForUser(UN)) {
+                        API.sendChat(" @" + user + " desmutando @" + UN + "!"); 
+                        API.sendChat("/unmute @"+UN);
+                    } else {
+                        API.sendChat(":x: Usuario nao encontrado! :x:");
+                    }
+                } else {
+                    API.sendChat("desmutar @user");
+                }
+                } else { API.sendChat("@" + user + " Você não tem permissão!");}
+            } else {
             var cmd = msg.substring(1);
             if(cmd.startsWith("chute")) {
                 var UN = cmd.substring(7);
@@ -314,11 +377,14 @@ if(!isIBotRunning) {
         		MattB.ligar = false; 
         		isIBotRunning = false;
                  	API.sendChat(":no_entry_sign: @" + user +",  Desligado.");
-                    } else { API.sendChat("Você não tem permissão!");
+                    } else { API.sendChat("@" + user + " Você não tem permissão!");
                     }
                     break;
                 case "ajuda":
                     API.sendChat(":large_blue_circle: @" + user +", "+IBot.iBot + " comandos de usuários: !ajuda(!help), !musica, !dj, !regras, !temas, !twitter, !fb, !dubx");
+                    break;
+                case "admcmds":
+                    API.sendChat(":large_blue_circle: @" + user +", comandos de admins !kickar @user, !banir @user, !mutar @user, !desmutar @user, !desligar, !ligar, !relogar, !pular, !pausarfila, !continuarfila");
                     break;
                 case "help":
                     API.sendChat(":red_circle: @" + user +", "+IBot.iBot + " user commands: !help, !dj, !song, !rules, !themes, !twitter, !fb, !dubx");
@@ -353,25 +419,48 @@ if(!isIBotRunning) {
                 case "themes":
                     API.sendChat(":red_circle: @" + user +", Themes allowed: http://i.imgur.com/jqCjGXN.png ");
                     break;
+                case "pausarfila":
+                    if(MattB.adm.indexOf(user) > -1) {
+                    pauseQueue();
+                    } else { API.sendChat("@" + user + " Você não tem permissão!");}
+                    break;
+                case "continuarfila":
+                    if(MattB.adm.indexOf(user) > -1) {
+                    resumeQueue();
+                    } else { API.sendChat("@" + user + " Você não tem permissão!");}
+                    break;
+                case "pular":
+                    if(MattB.adm.indexOf(user) > -1) {
+                    $(".skip-el").trigger("click");
+                    } else { API.sendChat("@" + user + " Você não tem permissão!");}
+                    break;                    
                 case "relogar":
                     if(MattB.adm.indexOf(user) > -1) {
                     API.sendChat(" @" + user +", Relogando.");
                     MattB.relogar();
-                    } else { API.sendChat("Você não tem permissão!");
-                    }
+                    } else { API.sendChat("@" + user + " Você não tem permissão!");}
+                    break;
+                case "test2":
+                    if(adminlist.indexOf(user)> -1) {
+                    API.sendChat("Y");
+                    } else { API.sendChat("N"); }
                     break;
                 default:
-                    API.sendChat(":x:Comando: " + cmd + ", invalido(invalid command)!");
-                    break;
-                }
+                        API.sendChat(":x: Comando: "+cmd+" inválido!");
+                        break;
             }
             }
-        }
+            }
+            }
+            }
+            }
+           // }
+            }
         }
     }
-}
-    
 
+    function pauseQueue(){ $(".display-browser").trigger("click"); setTimeout(function(){$(".pause-queue").trigger("click");},5000); setTimeout(function(){$(".close-browser").trigger("click");},1000) }
+    function resumeQueue(){ $(".display-browser").trigger("click"); setTimeout(function(){$(".pause-queue").trigger("click");},5000); setTimeout(function(){$(".close-browser").trigger("click");},1000) }   
     
     function nextSongMsg() {
         API.sendChat(":musical_note: Tocando agora: " + API.getMedia() + "! DJ: " + API.getDJ() + ":musical_note:");
@@ -393,6 +482,7 @@ if(!isIBotRunning) {
         connectAPI();
         isIBotRunning = true;
         MattB.ligar = true; 
+        var admins = $.getScript("https://cdn.rawgit.com/V1RTU4LL1F3/fatgasda/master/adminlist.js");
         $("#chat-txt-message").attr("maxlength", "99999999999999999999");
         API.sendChat(":white_check_mark: " + IBot.iBot + " Ativado! :white_check_mark:");
     }
