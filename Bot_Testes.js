@@ -245,16 +245,16 @@ if(!isIBotRunning) {
 
         if(msg.substring(0, 1) == "!") {
             var cmd = msg.substring(1);
-            if(cmd.startsWith("cookie")) {
+            if(cmd.startsWith("bolacha")) {
                 var UN = cmd.substring(8);
                 if(UN != "") {
                     if(IBot.Tools.lookForUser(UN)) {
-                        API.sendChat(" @" + user + " da um cookie para @" + UN + "!"); 
+                        API.sendChat(" @" + user + " da uma bolacha para @" + UN + "!"); 
                     } else {
                         API.sendChat(":x: Usuario nao encontrado! :x:");
                     }
                 } else {
-                    API.sendChat(":cookie: EU AMO COOKIES! =) :cookie:");
+                    API.sendChat(":cookie: EU AMO BOLACHA! =) :cookie:");
                 }
             } else {
             
