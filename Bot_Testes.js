@@ -441,7 +441,7 @@ if(!isIBotRunning) {
                     } else { API.sendChat("@" + user + " Você não tem permissão!");}
                     break;
                 case "test2":
-                    if(adminlist.indexOf(user)> -1) {
+                    if(admlist.indexOf(user)> -1) {
                     API.sendChat("Y");
                     } else { API.sendChat("N"); }
                     break;
