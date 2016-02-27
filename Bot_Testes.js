@@ -132,7 +132,7 @@ if(!isIBotRunning) {
         API.off(API.CHAT,DialogBot);
         isIBotRunning = false;
      setTimeout (function(){
-          $.getScript('https://cdn.rawgit.com/V1RTU4LL1F3/fatgasda/master/Bot.js');
+          $.getScript('https://rawgit.com/V1RTU4LL1F3/fatgasda/master/Bot.js');
      }
      , 1000);
 }
@@ -383,7 +383,9 @@ if(!isIBotRunning) {
                     API.sendChat(":large_blue_circle: @" + user +", "+IBot.iBot + " comandos de usuários: !ajuda(!help), !musica, !dj, !regras, !temas, !twitter, !fb, !dubx");
                     break;
                 case "admcmds":
+                    if(admlist.indexOf(user) > -1) {
                     API.sendChat(":large_blue_circle: @" + user +", comandos de admins !kickar @user, !banir @user, !mutar @user, !desmutar @user, !desligar, !ligar, !relogar, !pular, !pausarfila, !continuarfila");
+                    } else { API.sendChat("@" + user + " Você não tem permissão!");}
                     break;
                 case "help":
                     API.sendChat(":red_circle: @" + user +", "+IBot.iBot + " user commands: !help, !dj, !song, !rules, !themes, !twitter, !fb, !dubx");
@@ -439,11 +441,6 @@ if(!isIBotRunning) {
                     MattB.relogar();
                     } else { API.sendChat("@" + user + " Você não tem permissão!");}
                     break;
-                case "test2":
-                    if(admlist.indexOf(user)> -1) {
-                    API.sendChat("Y");
-                    } else { API.sendChat("N"); }
-                    break;
                 default:
                         API.sendChat(":x: Comando: "+cmd+" inválido!");
                         break;
@@ -481,7 +478,7 @@ if(!isIBotRunning) {
         connectAPI();
         isIBotRunning = true;
         MattB.ligar = true; 
-        var admins = $.getScript("https://cdn.rawgit.com/V1RTU4LL1F3/fatgasda/master/adminlist.js");
+        var admins = $.getScript("https://rawgit.com/V1RTU4LL1F3/fatgasda/master/adminlist.js");
         $("#chat-txt-message").attr("maxlength", "99999999999999999999");
         API.sendChat(":white_check_mark: " + IBot.iBot + " Ativado! :white_check_mark:");
     }
