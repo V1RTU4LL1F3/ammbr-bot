@@ -101,7 +101,7 @@ if(!isIBotRunning) {
     };
     // Custom stuff
     IBot = {
-        iBot: "mBot v036 (versão de testes)",
+        iBot: "mBot v041 (versão de testes)",
         Tools: {
             lookForUser: function(username) {
                 var found = false;
