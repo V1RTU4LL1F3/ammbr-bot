@@ -6,7 +6,7 @@
 	"Brook-Dos-Yohoho",
 	"Dalleste",
 	"Moycanow",
-	"-Edu-
+	"-Edu-",
 	"King0_0Smoke",
 	"Viidel",
 	"Gana",
