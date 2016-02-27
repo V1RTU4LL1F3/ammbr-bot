@@ -125,7 +125,6 @@ if(!isIBotRunning) {
         API.sendChat(":wave: Até mais @" + data.user.username + "! :wave:");
     }
 
-    MattB.adm = ["-Psyko-Mattz", "V1RTU4L",""];
     MattB.relogar = function(data){
         API.off(API.CHAT, commandHandler);
         API.off(API.USER_JOIN, userJoinMsg);
@@ -228,7 +227,7 @@ if(!isIBotRunning) {
     var msg = data.message;
     var user = data.user.username;
     if (msg.indexOf("!ligar") == 0) {
-            if(MattB.adm.indexOf(user) > -1) {
+            if(admlist.indexOf(user) > -1) {
             if(MattB.ligar == false) {
             startUp();
             } else { API.sendChat("O Bot já está ligado!");
@@ -275,7 +274,7 @@ if(!isIBotRunning) {
  
              var cmd = msg.substring(1);
             if(cmd.startsWith("kickar")) {
-                if(MattB.adm.indexOf(user) > -1) {
+                if(admlist.indexOf(user) > -1) {
                 var UN = cmd.substring(8);
                 if(UN != "") {
                     if(IBot.Tools.lookForUser(UN)) {
@@ -291,7 +290,7 @@ if(!isIBotRunning) {
             } else {
              var cmd = msg.substring(1);
             if(cmd.startsWith("banir")) {
-                if(MattB.adm.indexOf(user) > -1) {
+                if(admlist.indexOf(user) > -1) {
                 var UN = cmd.substring(7);
                 if(UN != "") {
                     if(IBot.Tools.lookForUser(UN)) {
@@ -307,7 +306,7 @@ if(!isIBotRunning) {
             } else {                
              /* var cmd = msg.substring(1);
             if(cmd.startsWith("desbanir")) {
-                if(MattB.adm.indexOf(user) > -1) {
+                if(admlist.indexOf(user) > -1) {
                 var UN = cmd.substring(10);
                 if(UN != "") {
                     if(IBot.Tools.lookForUser(UN)) {
@@ -323,7 +322,7 @@ if(!isIBotRunning) {
             } else {*/
              var cmd = msg.substring(1);
             if(cmd.startsWith("mutar")) {
-                if(MattB.adm.indexOf(user) > -1) {
+                if(admlist.indexOf(user) > -1) {
                 var UN = cmd.substring(7);
                 if(UN != "") {
                     if(IBot.Tools.lookForUser(UN)) {
@@ -339,7 +338,7 @@ if(!isIBotRunning) {
             } else {   
              var cmd = msg.substring(1);
             if(cmd.startsWith("desmutar")) {
-                if(MattB.adm.indexOf(user) > -1) {
+                if(admlist.indexOf(user) > -1) {
                 var UN = cmd.substring(10);
                 if(UN != "") {
                     if(IBot.Tools.lookForUser(UN)) {
@@ -369,7 +368,7 @@ if(!isIBotRunning) {
             
                 switch (cmd) {
                 case "desligar":
-                    if(MattB.adm.indexOf(user) > -1) {
+                    if(admlist.indexOf(user) > -1) {
         		API.off(API.CHAT, commandHandler);
         		API.off(API.USER_JOIN, userJoinMsg);
         		API.off(API.USER_LEAVE, userLeaveMsg);
@@ -420,22 +419,22 @@ if(!isIBotRunning) {
                     API.sendChat(":red_circle: @" + user +", Themes allowed: http://i.imgur.com/jqCjGXN.png ");
                     break;
                 case "pausarfila":
-                    if(MattB.adm.indexOf(user) > -1) {
+                    if(admlist.indexOf(user) > -1) {
                     pauseQueue();
                     } else { API.sendChat("@" + user + " Você não tem permissão!");}
                     break;
                 case "continuarfila":
-                    if(MattB.adm.indexOf(user) > -1) {
+                    if(admlist.indexOf(user) > -1) {
                     resumeQueue();
                     } else { API.sendChat("@" + user + " Você não tem permissão!");}
                     break;
                 case "pular":
-                    if(MattB.adm.indexOf(user) > -1) {
+                    if(admlist.indexOf(user) > -1) {
                     $(".skip-el").trigger("click");
                     } else { API.sendChat("@" + user + " Você não tem permissão!");}
                     break;                    
                 case "relogar":
-                    if(MattB.adm.indexOf(user) > -1) {
+                    if(admlist.indexOf(user) > -1) {
                     API.sendChat(" @" + user +", Relogando.");
                     MattB.relogar();
                     } else { API.sendChat("@" + user + " Você não tem permissão!");}
