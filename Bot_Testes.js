@@ -137,6 +137,8 @@ if(!isIBotRunning) {
      , 1000);
 }
     mattbot = {
+    versaob: ["qual a versao do bot","bot beta?","versao do bot"],
+      versaobot: ["!versaodobot"],
      falaoi: ["oi bot","ola bot","eae bot","olá bot"],
       respondeoi: [":D Oi",":D Olá"],
       boton: ["bot on?","bot tae?","bot esta ativado?","bot ta ativado?","bot ta on?","bot ligado?"],
@@ -154,7 +156,14 @@ if(!isIBotRunning) {
     function DialogBot(data){
      msg = data.message.toLowerCase();
      var user = data.user.username;
- 
+     
+     //Versão do bot
+     for(var i = 0; i < mattbot.versaob.length; i++){
+          if(msg.indexOf(mattbot.versaob[i].toLowerCase()) > -1){
+               var verbRandom = Math.floor(Math.random() * mattbot.versaobot.length);
+               API.sendChat(mattbot.versaobot[verbRandom]);
+          }
+     } 
      //Autowoot Link
      for(var i = 0; i < mattbot.awlink.length; i++){
           if(msg.indexOf(mattbot.awlink[i].toLowerCase()) > -1){
@@ -389,6 +398,9 @@ if(!isIBotRunning) {
                     break;
                 case "help":
                     API.sendChat(":red_circle: @" + user +", "+IBot.iBot + " user commands: !help, !dj, !song, !rules, !themes, !twitter, !fb, !dubx");
+                    break;
+                 case "versaodobot": 
+                    API.sendChat("Versão do bot: "+IBot.iBot);
                     break;
                 case "dj":
                     API.sendChat(":red_circle:DJ: @" + API.getDJ() + "!"); //Se não tiver DJ tocando, não use o comando...
