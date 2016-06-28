@@ -1,7 +1,7 @@
 (function () {
 
     // Change this to your GitHub username so you don't have to modify so many things.
-    var fork = "V1RTU4L";
+    var fork = "V1RTU4LL1F3";
 
     // Define our function responsible for extending the bot.
     function extend() {
@@ -73,7 +73,7 @@
       historySkip: true,
       timeGuard: true,
       maximumSongLength: 10,
-      autodisable: true,
+      autodisable: false,
       commandCooldown: 5,
       usercommandsEnabled: true,
       skipPosition: 1,
