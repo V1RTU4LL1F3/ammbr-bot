@@ -99,6 +99,8 @@
       intervalMessages: [],
       messageInterval: 5,
       songstats: false,
+      thorCommand: true,
+      thorCooldown: 10,
       commandLiteral: "!",
       blacklists: {
         NSFW: "https://rawgit.com/basicBot/custom/master/blacklists/NSFWlist.json",
