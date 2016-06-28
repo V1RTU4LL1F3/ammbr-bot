@@ -46,7 +46,7 @@
     //Change the bots default settings and make sure they are loaded on launch
 
     localStorage.setItem("basicBotsettings", JSON.stringify({
-      botName: "AMMBR BOT 2",
+      botName: "AMMBR BOT",
       language: "portuguese",
       chatLink: "https://rawgit.com/basicBot/source/master/lang/pt-BR.json",
       scriptLink: "https://rawgit.com/basicBot/source/master/basicBot.js",
@@ -78,25 +78,21 @@
       usercommandsEnabled: true,
       skipPosition: 1,
       skipReasons: [
-      ["tema", "Essa música não se encaixa nos temas da sala "],
-      ["op", "This song is on the OP list. "],
-      ["historico", "Essa música está no histórico. "],
-      ["mix", "You played a mix, which is against the rules. "],
-      ["sound", "The song you played had bad sound quality or no sound. "],
-      ["nsfw", "The song you contained was NSFW (image or sound). "],
-      ["unavailable", "The song you played was not available for some users. "]
+      ["tema", "Esse vídeo não se encaixa nos temas da sala, digite !theme para ver os temas permitidos "],
+      ["historico", "Esse vídeo já está no histórico da sala. "],
+      ["indisponivel", "O vídeo que você tocou está indisponivel. "]
       ],
       afkpositionCheck: 15,
       afkRankCheck: "ambassador",
       motdEnabled: true,
       motdInterval: 10,
-      motd: "Não esqueça de dar uma olhada nas regras da sala antes de entrar na fila de DJs!",
-      filterChat: false,
+      motd: "Não esqueça de dar uma olhada nas regras da sala antes de entrar na fila de DJs! (digite !rules para receber o link com as regras)",
+      filterChat: true,
       etaRestriction: false,
       welcome: true,
       opLink: null,
-      rulesLink: "Regras da sala ➲ http://goo.gl/i7JUIX" ,
-      themeLink: "Confira os temas da sala ➲ http://goo.gl/AxhuyV" ,
+      rulesLink: "http://goo.gl/i7JUIX" ,
+      themeLink: "http://i.imgur.com/jqCjGXN.png" ,
       fbLink: "http://goo.gl/fmAu02" ,
       youtubeLink: null,
       website: null,
