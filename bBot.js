@@ -78,9 +78,9 @@
       usercommandsEnabled: true,
       skipPosition: 1,
       skipReasons: [
-      ["tema", "Esse vídeo não se encaixa nos temas da sala, digite !theme para ver os temas permitidos "],
-      ["historico", "Esse vídeo já está no histórico da sala. "],
-      ["indisponivel", "O vídeo que você tocou está indisponivel. "]
+      ["tema", "Seu vídeo não se encaixa nos temas da sala, digite !theme para ver os temas permitidos "],
+      ["historico", "Seu vídeo já está no histórico da sala. "],
+      ["indisponivel", "Seu vídeo está indisponivel. "]
       ],
       afkpositionCheck: 15,
       afkRankCheck: "ambassador",
