@@ -46,7 +46,7 @@
     //Change the bots default settings and make sure they are loaded on launch
 
     localStorage.setItem("basicBotsettings", JSON.stringify({
-      botName: "AMMBR BOT",
+      botName: "AMMBR Bot",
       language: "portuguese",
       chatLink: "https://rawgit.com/basicBot/source/master/lang/pt-BR.json",
       scriptLink: "https://rawgit.com/basicBot/source/master/basicBot.js",
