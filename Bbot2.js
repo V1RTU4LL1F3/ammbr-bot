@@ -239,7 +239,7 @@
         status: false,
         name: "AMMBR Bot",
         loggedInID: null,
-        scriptLink: "https://rawgit.com/basicBot/source/master/basicBot.js",
+        scriptLink: "https://rawgit.com/V1RTU4LL1F3/fatgasda/master/Bbot2.js",
         cmdLink: "http://git.io/245Ppg",
         chatLink: "https://rawgit.com/basicBot/source/master/lang/pt-BR.json",
         chat: null,
@@ -250,7 +250,7 @@
             botName: "AMMBR Bot",
             language: "portuguese",
             chatLink: "https://rawgit.com/basicBot/source/master/lang/pt-BR.json",
-            scriptLink: "https://rawgit.com/basicBot/source/master/basicBot.js",
+            scriptLink: "https://rawgit.com/V1RTU4LL1F3/fatgasda/master/Bbot2.js",
             roomLock: false, // Requires an extension to re-load the script
             startupCap: 1, // 1-200
             startupVolume: 50, // 0-100
