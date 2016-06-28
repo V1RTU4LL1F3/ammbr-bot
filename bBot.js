@@ -97,7 +97,7 @@
       opLink: null,
       rulesLink: "Regras da sala ➲ http://goo.gl/i7JUIX" ,
       themeLink: "Confira os temas da sala ➲ http://goo.gl/AxhuyV" ,
-      fbLink: "Visite o nosso grupo ➲ http://goo.gl/fmAu02" ,
+      fbLink: "http://goo.gl/fmAu02" ,
       youtubeLink: null,
       website: null,
       intervalMessages: [],
