@@ -36,8 +36,8 @@
                               indexArrUsedThor,
                               thorCd = false,
                               timeInMinutes = 0,
-                              worthyAlg = Math.floor(Math.random() ),
-                              worthy = worthyAlg =< 25 ? true : false;
+                              worthyAlg = Math.floor(Math.random() * 1 ),
+                              worthy = worthyAlg == < 25 ? true : false;
 
                           for (var i = 0; i < djlist.length; i++) {
                               if (djlist[i].id == id)
