@@ -48,7 +48,7 @@
     localStorage.setItem("basicBotsettings", JSON.stringify({
       botName: "AMMBR Bot",
       language: "portuguese",
-      chatLink: "https://rawgit.com/basicBot/source/master/lang/pt-BR.json",
+      chatLink: "https://github.com/V1RTU4LL1F3/fatgasda/blob/master/bBot%20Lang",
       scriptLink: "https://rawgit.com/basicBot/source/master/basicBot.js",
       roomLock: false, // Requires an extension to re-load the script
       startupCap: 1, // 1-200
