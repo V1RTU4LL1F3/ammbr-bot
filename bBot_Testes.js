@@ -17,7 +17,7 @@
         bot.retrieveSettings();
 
         //Extend the bot here, either by calling another function or here directly.
-         bot.commands.thorCommand: {
+         bot.commands.thorCommand = {
               command: 'thor',
               rank: 'user',
               type: 'exact',
