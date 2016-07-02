@@ -101,6 +101,8 @@
       songstats: false,
       thorCommand: true,
       thorCooldown: 10,
+      logoutCommand: false,
+      refreshCommand: false,
       commandLiteral: "!",
       blacklists: {
         NSFW: "https://rawgit.com/basicBot/custom/master/blacklists/NSFWlist.json",
