@@ -76,6 +76,7 @@
       autodisable: false,
       commandCooldown: 5,
       usercommandsEnabled: true,
+      thorCommand: false,
       skipPosition: 1,
       skipReasons: [
       ["tema", "seu vídeo não se encaixa nos temas da sala, digite !theme para ver os temas permitidos "],
