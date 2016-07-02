@@ -55,7 +55,7 @@
       startupVolume: 20, // 0-100
       startupEmoji: true, // true or false
       autowoot: false,
-      autoskip: false,
+      autoskip: true,
       smartSkip: true,
       cmdDeletion: true,
       maximumAfk: 120,
@@ -78,16 +78,16 @@
       usercommandsEnabled: true,
       skipPosition: 1,
       skipReasons: [
-      ["tema", "Seu vídeo não se encaixa nos temas da sala, digite !theme para ver os temas permitidos "],
-      ["historico", "Seu vídeo já está no histórico da sala. "],
-      ["indisponivel", "Seu vídeo está indisponivel. "]
+      ["tema", "seu vídeo não se encaixa nos temas da sala, digite !theme para ver os temas permitidos "],
+      ["historico", "seu vídeo já está no histórico da sala. "],
+      ["indisponivel", "seu vídeo está indisponivel. "]
       ],
       afkpositionCheck: 15,
       afkRankCheck: "ambassador",
       motdEnabled: false,
       motdInterval: 10,
       motd: "Nenhuma mensagem foi adicionada",
-      filterChat: false,
+      filterChat: true,
       etaRestriction: false,
       welcome: true,
       opLink: null,
