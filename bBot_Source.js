@@ -247,7 +247,7 @@
         retrieveSettings: retrieveSettings,
         retrieveFromStorage: retrieveFromStorage,
         settings: {
-            botName: "basicBot",
+            botName: "AMMBR Bot",
             language: "english",
             chatLink: "https://rawgit.com/basicBot/source/master/lang/en.json",
             scriptLink: "https://rawgit.com/basicBot/source/master/basicBot.js",
@@ -277,9 +277,9 @@
             autodisable: true,
             commandCooldown: 30,
             usercommandsEnabled: true,
-            thorCommand: false,
+            thorCommand: true,
             thorCooldown: 10,
-            skipPosition: 3,
+            skipPosition: 1,
             skipReasons: [
                 ["theme", "This song does not fit the room theme. "],
                 ["op", "This song is on the OP list. "],
@@ -1536,7 +1536,7 @@
             },
 
             addCommand: {
-                command: 'add',
+                command: ['add', 'adicionar'],
                 rank: 'mod',
                 type: 'startsWith',
                 functionality: function (chat, cmd) {
@@ -1720,7 +1720,7 @@
             },
 
             ballCommand: {
-                command: ['8ball', 'ask'],
+                command: ['8ball', 'ask', 'pergunta', 'perguntar'],
                 rank: 'user',
                 type: 'startsWith',
                 functionality: function (chat, cmd) {
@@ -1739,7 +1739,7 @@
             },
 
             banCommand: {
-                command: 'ban',
+                command: ['ban', 'banir'],
                 rank: 'bouncer',
                 type: 'startsWith',
                 functionality: function (chat, cmd) {
@@ -1846,7 +1846,7 @@
                 }
             },
 
-            botnameCommand: {
+            /*botnameCommand: {
                 command: 'botname',
                 rank: 'manager',
                 type: 'startsWith',
@@ -1864,9 +1864,9 @@
                     }
                 }
             },
-
+*/
             clearchatCommand: {
-                command: 'clearchat',
+                command: ['clearchat', 'clear', 'limparchat', 'limpar'],
                 rank: 'manager',
                 type: 'exact',
                 functionality: function (chat, cmd) {
@@ -1916,7 +1916,7 @@
             },
 
             cookieCommand: {
-                command: 'cookie',
+                command: ['cookie', 'bolacha', 'biscoito'],
                 rank: 'user',
                 type: 'startsWith',
                 getCookie: function (chat) {
@@ -1952,7 +1952,7 @@
             },
 
             cycleCommand: {
-                command: 'cycle',
+                command: ['cycle', 'ciclo'],
                 rank: 'manager',
                 type: 'exact',
                 functionality: function (chat, cmd) {
@@ -2074,7 +2074,7 @@
             */
 
             deletechatCommand: {
-                command: 'deletechat',
+                command: ['deletechat', 'deletarchat'],
                 rank: 'mod',
                 type: 'startsWith',
                 functionality: function (chat, cmd) {
@@ -2146,7 +2146,7 @@
             },
 
             etaCommand: {
-                command: 'eta',
+                command: ['eta', 'tempo'],
                 rank: 'user',
                 type: 'startsWith',
                 functionality: function (chat, cmd) {
@@ -2177,7 +2177,7 @@
             },
 
             fbCommand: {
-                command: 'fb',
+                command: ['fb', 'facebook'],
                 rank: 'user',
                 type: 'exact',
                 functionality: function (chat, cmd) {
@@ -2191,7 +2191,7 @@
             },
 
             filterCommand: {
-                command: 'filter',
+                command: ['filter', 'filtro'],
                 rank: 'bouncer',
                 type: 'exact',
                 functionality: function (chat, cmd) {
@@ -2230,7 +2230,7 @@
             },
 
             ghostbusterCommand: {
-                command: 'ghostbuster',
+                command: ['ghostbuster', 'caçafantasmas'],
                 rank: 'user',
                 type: 'startsWith',
                 functionality: function (chat, cmd) {
@@ -2321,8 +2321,8 @@
                 }
             },
 
-            helpCommand: {
-                command: 'help',
+            /*helpCommand: {
+                command: ['help', 'ajuda'],
                 rank: 'user',
                 type: 'exact',
                 functionality: function (chat, cmd) {
@@ -2334,9 +2334,9 @@
                     }
                 }
             },
-
+*/
             historyskipCommand: {
-                command: 'historyskip',
+                command: ['historyskip', 'pularhistorico'],
                 rank: 'bouncer',
                 type: 'exact',
                 functionality: function (chat, cmd) {
@@ -2356,7 +2356,7 @@
             },
 
             joinCommand: {
-                command: 'join',
+                command: ['join', 'entrar'],
                 rank: 'user',
                 type: 'exact',
                 functionality: function (chat, cmd) {
@@ -2457,7 +2457,7 @@
             },
 
             languageCommand: {
-                command: 'language',
+                command: ['language', 'linguagem'],
                 rank: 'manager',
                 type: 'startsWith',
                 functionality: function (chat, cmd) {
@@ -2485,7 +2485,7 @@
             },
 
             leaveCommand: {
-                command: 'leave',
+                command: ['leave', 'sair'],
                 rank: 'user',
                 type: 'exact',
                 functionality: function (chat, cmd) {
@@ -2532,7 +2532,7 @@
             },
 
             lockCommand: {
-                command: 'lock',
+                command: ['lock', 'travar'],
                 rank: 'mod',
                 type: 'exact',
                 functionality: function (chat, cmd) {
@@ -2671,7 +2671,7 @@
             },
 
             logoutCommand: {
-                command: 'logout',
+                command: ['logout', 'deslogar'],
                 rank: 'manager',
                 type: 'exact',
                 functionality: function (chat, cmd) {
@@ -2687,7 +2687,7 @@
             },
 
             maxlengthCommand: {
-                command: 'maxlength',
+                command: ['maxlength', 'tempomaximo'],
                 rank: 'manager',
                 type: 'startsWith',
                 functionality: function (chat, cmd) {
@@ -2706,7 +2706,7 @@
             },
 
             motdCommand: {
-                command: 'mdd',
+                command: ['mdd', 'motd'],
                 rank: 'bouncer',
                 type: 'startsWith',
                 functionality: function (chat, cmd) {
@@ -2714,7 +2714,7 @@
                     if (!basicBot.commands.executable(this.rank, chat)) return void (0);
                     else {
                         var msg = chat.message;
-                        if (msg.length <= cmd.length + 1) return API.sendChat('/me MotD: ' + basicBot.settings.motd);
+                        if (msg.length <= cmd.length + 1) return API.sendChat('/me Mensagem do Dia: ' + basicBot.settings.motd);
                         var argument = msg.substring(cmd.length + 1);
                         if (!basicBot.settings.motdEnabled) basicBot.settings.motdEnabled = !basicBot.settings.motdEnabled;
                         if (isNaN(argument)) {
@@ -2730,7 +2730,7 @@
             },
 
             moveCommand: {
-                command: 'move',
+                command: ['move', 'mover'],
                 rank: 'mod',
                 type: 'startsWith',
                 functionality: function (chat, cmd) {
@@ -2763,7 +2763,7 @@
             },
 
             muteCommand: {
-                command: 'mute',
+                command: ['mute', 'mutar', 'mudo'],
                 rank: 'bouncer',
                 type: 'startsWith',
                 functionality: function (chat, cmd) {
@@ -2844,7 +2844,7 @@
                 }
             },
 
-            refreshCommand: {
+            /*refreshCommand: {
                 command: 'refresh',
                 rank: 'manager',
                 type: 'exact',
@@ -2862,9 +2862,9 @@
                     }
                 }
             },
-
+*/
             reloadCommand: {
-                command: 'reload',
+                command: ['reload', 'reativar', 'reabrir', 'religar', 'recarregar'],
                 rank: 'bouncer',
                 type: 'exact',
                 functionality: function (chat, cmd) {
@@ -2884,7 +2884,7 @@
             },
 
             removeCommand: {
-                command: 'remove',
+                command: ['remove', 'remover'],
                 rank: 'mod',
                 type: 'startsWith',
                 functionality: function (chat, cmd) {
@@ -2935,7 +2935,7 @@
             },
 
             rouletteCommand: {
-                command: 'roleta',
+                command: ['roulette', 'roleta'],
                 rank: 'mod',
                 type: 'exact',
                 functionality: function (chat, cmd) {
@@ -2950,7 +2950,7 @@
             },
 
             rulesCommand: {
-                command: 'regras',
+                command: ['rules', 'regras'],
                 rank: 'user',
                 type: 'exact',
                 functionality: function (chat, cmd) {
@@ -2981,7 +2981,7 @@
             },
 
             skipCommand: {
-                command: ['skip', 'smartskip'],
+                command: ['skip', 'smartskip', 'pular'],
                 rank: 'bouncer',
                 type: 'startsWith',
                 functionality: function (chat, cmd) {
@@ -3071,7 +3071,7 @@
                 }
             },
 
-            sourceCommand: {
+            /*sourceCommand: {
                 command: 'source',
                 rank: 'user',
                 type: 'exact',
@@ -3083,7 +3083,7 @@
                     }
                 }
             },
-
+*/
             statusCommand: {
                 command: 'status',
                 rank: 'bouncer',
@@ -3244,7 +3244,7 @@
             },
 
             themeCommand: {
-                command: 'temas',
+                command: ['theme', 'temas'],
                 rank: 'user',
                 type: 'exact',
                 functionality: function (chat, cmd) {
@@ -3366,7 +3366,7 @@
             },
 
             togglemotdCommand: {
-                command: 'togglemotd',
+                command: ['togglemotd','togglemdd', 'alternarmotd', 'alternarmdd'],
                 rank: 'bouncer',
                 type: 'exact',
                 functionality: function (chat, cmd) {
@@ -3386,7 +3386,7 @@
             },
 
             togglevoteskipCommand: {
-                command: 'togglevoteskip',
+                command: ['togglevoteskip', 'alternarvoteskip'],
                 rank: 'bouncer',
                 type: 'exact',
                 functionality: function (chat, cmd) {
@@ -3406,7 +3406,7 @@
             },
 
             unbanCommand: {
-                command: 'unban',
+                command: ['unban', 'desbanir'],
                 rank: 'bouncer',
                 type: 'startsWith',
                 functionality: function (chat, cmd) {
@@ -3436,7 +3436,7 @@
             },
 
             unlockCommand: {
-                command: 'unlock',
+                command: ['unlock', 'destravar'],
                 rank: 'mod',
                 type: 'exact',
                 functionality: function (chat, cmd) {
@@ -3449,7 +3449,7 @@
             },
 
             unmuteCommand: {
-                command: 'unmute',
+                command: ['unmute', 'desmutar'],
                 rank: 'bouncer',
                 type: 'startsWith',
                 functionality: function (chat, cmd) {
@@ -3509,7 +3509,7 @@
             },
 
             usercommandsCommand: {
-                command: 'usercommands',
+                command: ['toggleusercommands', 'toggleusercmds', 'alternarcomandosdeusuario'],
                 rank: 'manager',
                 type: 'exact',
                 functionality: function (chat, cmd) {
@@ -3529,7 +3529,7 @@
             },
 
             voteratioCommand: {
-                command: 'voteratio',
+                command: ['voteratio', 'relaçãodevotos'],
                 rank: 'bouncer',
                 type: 'startsWith',
                 functionality: function (chat, cmd) {
@@ -3572,7 +3572,7 @@
             },
 
             welcomeCommand: {
-                command: 'welcome',
+                command: ['welcome', 'bemvindo'],
                 rank: 'mod',
                 type: 'exact',
                 functionality: function (chat, cmd) {
@@ -3683,7 +3683,7 @@
             },
 
             youtubeCommand: {
-                command: 'youtube',
+                command: ['youtube', 'yt'],
                 rank: 'user',
                 type: 'exact',
                 functionality: function (chat, cmd) {
