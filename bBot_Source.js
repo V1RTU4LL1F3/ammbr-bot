@@ -362,7 +362,7 @@
             },
             newBlacklisted: [],
             newBlacklistedSongFunction: null,
-            roulette: {
+            roleta: {
                 rouletteStatus: false,
                 participants: [],
                 countdown: null,
