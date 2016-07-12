@@ -2706,7 +2706,7 @@
             },
 
             motdCommand: {
-                command: 'motd',
+                command: 'mdd',
                 rank: 'bouncer',
                 type: 'startsWith',
                 functionality: function (chat, cmd) {
@@ -2950,7 +2950,7 @@
             },
 
             rulesCommand: {
-                command: 'rules',
+                command: 'regras',
                 rank: 'user',
                 type: 'exact',
                 functionality: function (chat, cmd) {
@@ -3244,7 +3244,7 @@
             },
 
             themeCommand: {
-                command: 'theme',
+                command: 'temas',
                 rank: 'user',
                 type: 'exact',
                 functionality: function (chat, cmd) {
