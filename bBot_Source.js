@@ -1882,7 +1882,7 @@
                 }
             },
 
-            commandsCommand: {
+            /*commandsCommand: {
                 command: 'commands',
                 rank: 'user',
                 type: 'exact',
@@ -1894,7 +1894,7 @@
                     }
                 }
             },
-
+*/
             cmddeletionCommand: {
                 command: ['commanddeletion', 'cmddeletion', 'cmddel'],
                 rank: 'mod',
@@ -2438,7 +2438,7 @@
             },
 
             killCommand: {
-                command: 'desligar',
+                command: ['desligar', 'kill'],
                 rank: 'manager',
                 type: 'exact',
                 functionality: function (chat, cmd) {
