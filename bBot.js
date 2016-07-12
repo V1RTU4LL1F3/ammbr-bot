@@ -49,7 +49,7 @@
       botName: "AMMBR Bot",
       language: "portuguese",
       chatLink: "https://rawgit.com/V1RTU4LL1F3/fatgasda/master/bBotLang",
-      scriptLink: "https://rawgit.com/basicBot/source/master/basicBot.js",
+      scriptLink: "https://rawgit.com/V1RTU4LL1F3/fatgasda/master/bBot_Source.js",
       roomLock: false, // Requires an extension to re-load the script
       startupCap: 1, // 1-200
       startupVolume: 20, // 0-100
@@ -110,6 +110,6 @@
     }));
 
     // Start the bot and extend it when it has loaded.
-    $.getScript("https://rawgit.com/basicBot/source/master/basicBot.js", extend);
+    $.getScript("https://rawgit.com/V1RTU4LL1F3/fatgasda/master/bBot_Source.js", extend);
 
 }).call(this);
