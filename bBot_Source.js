@@ -362,7 +362,7 @@
             },
             newBlacklisted: [],
             newBlacklistedSongFunction: null,
-            roleta: {
+            roulette: {
                 rouletteStatus: false,
                 participants: [],
                 countdown: null,
@@ -2935,7 +2935,7 @@
             },
 
             rouletteCommand: {
-                command: 'roulette',
+                command: 'roleta',
                 rank: 'mod',
                 type: 'exact',
                 functionality: function (chat, cmd) {
