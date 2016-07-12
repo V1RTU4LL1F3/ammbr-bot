@@ -52,16 +52,16 @@
       scriptLink: "https://rawgit.com/V1RTU4LL1F3/fatgasda/master/bBot_Source.js",
       roomLock: false, // Requires an extension to re-load the script
       startupCap: 1, // 1-200
-      startupVolume: 20, // 0-100
+      startupVolume: 0, // 0-100
       startupEmoji: true, // true or false
-      autowoot: false,
+      autowoot: true,
       autoskip: true,
       smartSkip: true,
       cmdDeletion: true,
       maximumAfk: 120,
       afkRemoval: false,
       maximumDc: 60,
-      bouncerPlus: false,
+      bouncerPlus: true,
       blacklistEnabled: true,
       lockdownEnabled: false,
       lockGuard: false,
