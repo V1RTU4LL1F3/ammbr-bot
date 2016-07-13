@@ -240,7 +240,7 @@
         name: "basicBot",
         loggedInID: null,
         scriptLink: "https://rawgit.com/basicBot/source/master/basicBot.js",
-        cmdLink: "https://goo.gl/0lxxH2",
+        cmdLink: "https://goo.gl/WQ6iwo",
         chatLink: "https://rawgit.com/basicBot/source/master/lang/en.json",
         chat: null,
         loadChat: loadChat,
