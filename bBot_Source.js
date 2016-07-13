@@ -1439,6 +1439,8 @@
                 }
                 API.chatLog('Emojis desativados.');
             }
+            API.chatLog('Ola %u , seja bem vindo à minha nova interface traduzida! Agradeça ao V1RTU4L e ao MacacoPregoRoxo por isso.',
+            'Aliás, ja deu uma olhada na minha lista de comandos? Se não, clique aqui:');
             API.chatLog('Limite de avatares alterado para ' + basicBot.settings.startupCap);
             API.chatLog('Volume alterado para ' + basicBot.settings.startupVolume);
             //socket();
