@@ -241,7 +241,7 @@
         loggedInID: null,
         scriptLink: "https://rawgit.com/V1RTU4LL1F3/fatgasda/master/bBot_Source.js",
         cmdLink: "https://goo.gl/WQ6iwo",
-        chatLink: "https://rawgit.com/V1RTU4LL1F3/fatgasda/master/bBotLang.json",
+        chatLink: "https://rawgit.com/V1RTU4LL1F3/fatgasda/master/bBotLang",
         chat: null,
         loadChat: loadChat,
         retrieveSettings: retrieveSettings,
@@ -249,7 +249,7 @@
         settings: {
             botName: "AMMBR Bot",
             language: "portuguese",
-            chatLink: "https://rawgit.com/V1RTU4LL1F3/fatgasda/master/bBotLang.json",
+            chatLink: "https://rawgit.com/V1RTU4LL1F3/fatgasda/master/bBotLang",
             scriptLink: "https://rawgit.com/V1RTU4LL1F3/fatgasda/master/bBot_Source.js",
             roomLock: false, // Requires an extension to re-load the script
             startupCap: 1, // 1-200
