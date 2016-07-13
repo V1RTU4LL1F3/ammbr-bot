@@ -1439,10 +1439,10 @@
                 }
                 API.chatLog('Emojis desativados.');
             }
-            API.chatLog('Ola %u , seja bem vindo à minha nova interface traduzida! Agradeça ao V1RTU4L e ao MacacoPregoRoxo por isso.',
-            'Aliás, ja deu uma olhada na minha lista de comandos? Se não, clique aqui:');
             API.chatLog('Limite de avatares alterado para ' + basicBot.settings.startupCap);
             API.chatLog('Volume alterado para ' + basicBot.settings.startupVolume);
+            API.chatLog('Olá ' API.getUser ', seja bem vindo à minha nova interface traduzida! Agradeça ao V1RTU4L e ao MacacoPregoRoxo por isso.'),
+            API.chatLog('Aliás, ja deu uma olhada na minha lista de comandos? Se não, clique aqui: https://goo.gl/WQ6iwo ');
             //socket();
             loadChat(API.sendChat(subChat(basicBot.chat.online, {botname: basicBot.settings.botName, version: basicBot.version})));
         },
