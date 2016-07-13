@@ -1437,7 +1437,7 @@
                 if (emojibuttonon.length > 0) {
                     emojibuttonon[0].click();
                 }
-                API.chatLog('Emojis disabled.');
+                API.chatLog('Emojis desativados.');
             }
             API.chatLog('Limite de avatares alterado para ' + basicBot.settings.startupCap);
             API.chatLog('Volume alterado para ' + basicBot.settings.startupVolume);
