@@ -46,22 +46,22 @@
     //Change the bots default settings and make sure they are loaded on launch
 
     localStorage.setItem("basicBotsettings", JSON.stringify({
-      botName: "AMMBR Bot",
+      botName: "AMMBR Bot (Versão de Testes)",
       language: "portuguese",
       chatLink: "https://rawgit.com/V1RTU4LL1F3/fatgasda/master/bBotLang",
-      scriptLink: "https://rawgit.com/V1RTU4LL1F3/fatgasda/master/bBot_Source.js",
+      scriptLink: "https://rawgit.com/V1RTU4LL1F3/fatgasda/master/bBot_Source_Testes.js",
       roomLock: false, // Requires an extension to re-load the script
       startupCap: 1, // 1-200
-      startupVolume: 20, // 0-100
-      startupEmoji: true, // true or false
-      autowoot: false,
+      startupVolume: 0, // 0-100
+      startupEmoji: false, // true or false
+      autowoot: true,
       autoskip: true,
       smartSkip: true,
       cmdDeletion: true,
       maximumAfk: 120,
       afkRemoval: false,
       maximumDc: 60,
-      bouncerPlus: false,
+      bouncerPlus: true,
       blacklistEnabled: true,
       lockdownEnabled: false,
       lockGuard: false,
@@ -98,7 +98,10 @@
       fbLink: "http://goo.gl/fmAu02" ,
       youtubeLink: null,
       website: null,
-      intervalMessages: ["Não esqueça de dar uma olhada nas regras da sala antes de entrar na fila de DJs! ➲ http://goo.gl/i7JUIX", "Venha fazer parte do nosso grupo no facebook! ➲ http://goo.gl/fmAu02", "A cada 10 minutos você pode tentar levantar o martelo do Thor. Se você for digno será movido para o primeiro lugar da fila, digite !thor para provar o seu valor!"],
+      intervalMessages: ["Não esqueça de dar uma olhada nas regras da sala antes de entrar na fila de DJs! ➲ http://goo.gl/i7JUIX",
+      "Venha fazer parte do nosso grupo no facebook! ➲ http://goo.gl/fmAu02",
+      "A cada 10 minutos você pode tentar levantar o martelo do Thor. Se você for digno será movido para o primeiro lugar da fila, digite !thor para provar o seu valor!",
+      "Digite !comandos para receber um link com a lista de comandos do bot completa!"],
       messageInterval: 5,
       songstats: false,
       commandLiteral: "!",
@@ -110,6 +113,6 @@
     }));
 
     // Start the bot and extend it when it has loaded.
-    $.getScript("https://rawgit.com/V1RTU4LL1F3/fatgasda/master/bBot_Source.js", extend);
+    $.getScript("https://rawgit.com/V1RTU4LL1F3/fatgasda/master/bBot_Source_Testes.js", extend);
 
 }).call(this);
