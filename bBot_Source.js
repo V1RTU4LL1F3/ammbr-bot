@@ -239,18 +239,18 @@
         status: false,
         name: "basicBot",
         loggedInID: null,
-        scriptLink: "https://rawgit.com/basicBot/source/master/basicBot.js",
+        scriptLink: "https://rawgit.com/V1RTU4LL1F3/fatgasda/master/bBot_Source.js",
         cmdLink: "https://goo.gl/WQ6iwo",
-        chatLink: "https://rawgit.com/basicBot/source/master/lang/en.json",
+        chatLink: "https://rawgit.com/V1RTU4LL1F3/fatgasda/master/bBotLang",
         chat: null,
         loadChat: loadChat,
         retrieveSettings: retrieveSettings,
         retrieveFromStorage: retrieveFromStorage,
         settings: {
             botName: "AMMBR Bot",
-            language: "english",
-            chatLink: "https://rawgit.com/basicBot/source/master/lang/en.json",
-            scriptLink: "https://rawgit.com/basicBot/source/master/basicBot.js",
+            language: "portuguese",
+            chatLink: "https://rawgit.com/V1RTU4LL1F3/fatgasda/master/bBotLang",
+            scriptLink: "https://rawgit.com/V1RTU4LL1F3/fatgasda/master/bBot_Source.js",
             roomLock: false, // Requires an extension to re-load the script
             startupCap: 1, // 1-200
             startupVolume: 0, // 0-100
@@ -1439,8 +1439,8 @@
                 }
                 API.chatLog('Emojis disabled.');
             }
-            API.chatLog('Avatars capped at ' + basicBot.settings.startupCap);
-            API.chatLog('Volume set to ' + basicBot.settings.startupVolume);
+            API.chatLog('Limite de avatares alterado para ' + basicBot.settings.startupCap);
+            API.chatLog('Volume alterado para ' + basicBot.settings.startupVolume);
             //socket();
             loadChat(API.sendChat(subChat(basicBot.chat.online, {botname: basicBot.settings.botName, version: basicBot.version})));
         },
