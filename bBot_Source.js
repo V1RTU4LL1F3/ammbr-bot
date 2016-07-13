@@ -1430,7 +1430,7 @@
                 if (emojibuttonoff.length > 0) {
                     emojibuttonoff[0].click();
                 }
-                API.chatLog(':smile: Emojis enabled.');
+                API.chatLog(':smile: Emojis ativados.');
             }
             else {
                 var emojibuttonon = $(".icon-emoji-on");
