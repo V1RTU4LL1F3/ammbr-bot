@@ -240,7 +240,7 @@
         name: "basicBot",
         loggedInID: null,
         scriptLink: "https://rawgit.com/basicBot/source/master/basicBot.js",
-        cmdLink: "http://git.io/245Ppg",
+        cmdLink: "https://goo.gl/0lxxH2",
         chatLink: "https://rawgit.com/basicBot/source/master/lang/en.json",
         chat: null,
         loadChat: loadChat,
@@ -1882,8 +1882,8 @@
                 }
             },
 
-            /*commandsCommand: {
-                command: 'commands',
+            commandsCommand: {
+                command: ['commands', 'comandos'],
                 rank: 'user',
                 type: 'exact',
                 functionality: function (chat, cmd) {
@@ -1894,7 +1894,7 @@
                     }
                 }
             },
-*/
+
             cmddeletionCommand: {
                 command: ['commanddeletion', 'cmddeletion', 'cmddel'],
                 rank: 'mod',
