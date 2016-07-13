@@ -3509,7 +3509,7 @@
             },
 
             usercommandsCommand: {
-                command: ['toggleusercommands', 'toggleusercmds', 'alternarcomandosdeusuario'],
+                command: ['toggleusercommands', 'toggleusercmds', 'alternarusercmds'],
                 rank: 'manager',
                 type: 'exact',
                 functionality: function (chat, cmd) {
