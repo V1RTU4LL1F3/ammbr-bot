@@ -3572,7 +3572,7 @@
             },
 
             welcomeCommand: {
-                command: ['welcome', 'bemvindo'],
+                command: ['welcome', 'boasvindas'],
                 rank: 'mod',
                 type: 'exact',
                 functionality: function (chat, cmd) {
