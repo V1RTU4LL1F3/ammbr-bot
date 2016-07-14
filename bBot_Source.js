@@ -98,7 +98,7 @@
     var loadChat = function (cb) {
         if (!cb) cb = function () {
         };
-        $.get("https://rawgit.com/basicBot/source/master/lang/langIndex.json", function (json) {
+        $.get("https://rawgit.com/V1RTU4LL1F3/fatgasda/master/langIndex.json", function (json) {
             var link = basicBot.chatLink;
             if (json !== null && typeof json !== "undefined") {
                 langIndex = json;
@@ -1441,7 +1441,7 @@
             }
             API.chatLog('Limite de avatares alterado para ' + basicBot.settings.startupCap);
             API.chatLog('Volume alterado para ' + basicBot.settings.startupVolume);
-            API.chatLog('Olá, seja bem vindo à minha nova interface traduzida! Agradeça ao V1RTU4L e ao MacacoPregoRoxo por isso. ' );
+            API.chatLog('Olá '+ API.getUser().username +', seja bem vindo à minha nova interface traduzida! Agradeça ao V1RTU4L e ao MacacoPregoRoxo por isso. ' );
             API.chatLog('Aliás, ja deu uma olhada na minha lista de comandos? Se não, clique aqui: https://goo.gl/WQ6iwo ');
             //socket();
             loadChat(API.sendChat(subChat(basicBot.chat.online, {botname: basicBot.settings.botName, version: basicBot.version})));
@@ -2470,7 +2470,7 @@
                         if (msg.length <= cmd.length + 1) return API.sendChat(subChat(basicBot.chat.currentlang, {language: basicBot.settings.language}));
                         var argument = msg.substring(cmd.length + 1);
 
-                        $.get("https://rawgit.com/basicBot/source/master/lang/langIndex.json", function (json) {
+                        $.get("https://rawgit.com/V1RTU4LL1F3/fatgasda/master/langIndex.json", function (json) {
                             var langIndex = json;
                             var link = langIndex[argument.toLowerCase()];
                             if (typeof link === "undefined") {
