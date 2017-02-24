@@ -882,8 +882,9 @@
                 welcomeback ?
                     setTimeout(function (user) {
                         API.sendChat(subChat(basicBot.chat.welcomeback, {name: user.username}));
-                        delay(1000)
-                        API.sendChat(subChat(basicBot.chat.welcomebackdc, {name: user.username}));
+                        setTimeout(function(){
+                            API.sendChat(subChat(basicBot.chat.welcomebackdc, {name: user.username}));
+                        }, 2000);
                     }, 1 * 1000, user)
                     :
                     setTimeout(function (user) {
