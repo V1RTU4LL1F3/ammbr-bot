@@ -88,7 +88,7 @@
       afkRankCheck: "ambassador",
       motdEnabled: false,
       motdInterval: 14,
-      motd: "Nenhuma mensagem foi adicionada",
+      motd: "Nenhuma mensagem foi adicionada até o momento",
       filterChat: true,
       etaRestriction: false,
       welcome: true,
