@@ -102,7 +102,7 @@
       "Venha fazer parte do nosso grupo no facebook! ➲ http://goo.gl/fmAu02",
       "A cada 10 minutos você pode tentar levantar o martelo do Thor. Se você for digno será movido para o primeiro lugar da fila, digite !thor para provar o seu valor!",
       "Digite !comandos para receber um link com a lista de comandos completa!",
-      "Quando um vídeo recebe mais de 3 votos 'Chato' ele é pulado automaticamente"],
+      "Quando um vídeo recebe mais de 3 votos *Chato* ele é pulado automaticamente"],
       messageInterval: 5,
       songstats: false,
       commandLiteral: "!",
