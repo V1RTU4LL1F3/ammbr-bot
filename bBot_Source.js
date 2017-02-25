@@ -881,7 +881,7 @@
             if (basicBot.settings.welcome && greet) {
                 welcomeback ?
                     setTimeout(function (user) {
-                        API.sendChat(subChat('/me ' + basicBot.chat.welcomeback, {name: user.username}));
+                        API.sendChat(subChat(basicBot.chat.welcomeback, {name: user.username}));
                         setTimeout(function(){
                             API.sendChat(subChat(basicBot.chat.welcomebackdc, {name: user.username}));
                         }, 2000);
