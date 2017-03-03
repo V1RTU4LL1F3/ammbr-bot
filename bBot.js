@@ -69,7 +69,7 @@
       cycleGuard: false,
       maximumCycletime: 10,
       voteSkip: true,
-      voteSkipLimit: 3,
+      voteSkipLimit: 2,
       historySkip: true,
       timeGuard: true,
       maximumSongLength: 10,
@@ -78,7 +78,7 @@
       usercommandsEnabled: true,
       thorCommand: true,
       thorCooldown: 10,
-      skipPosition: 1,
+      skipPosition: 2,
       skipReasons: [
       ["tema", "seu vídeo não se encaixa nos temas da sala, digite !theme para ver os temas permitidos "],
       ["historico", "seu vídeo já está no histórico da sala. "],
