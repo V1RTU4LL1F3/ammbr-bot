@@ -235,13 +235,13 @@
     var botCreatorIDs = ["3851534", "4105209"];
 
     var basicBot = {
-        version: "2.8.17",
+        version: "2.9 beta (03/03/17)",
         status: false,
         name: "basicBot",
         loggedInID: null,
         scriptLink: "https://rawgit.com/V1RTU4LL1F3/fatgasda/master/bBot_Source.js",
         cmdLink: "https://goo.gl/WQ6iwo",
-        chatLink: "https://rawgit.com/V1RTU4LL1F3/fatgasda/master/bBotLang",
+        chatLink: "https://rawgit.com/V1RTU4LL1F3/fatgasda/master/bBotLang.json",
         chat: null,
         loadChat: loadChat,
         retrieveSettings: retrieveSettings,
@@ -249,7 +249,7 @@
         settings: {
             botName: "AMMBR Bot",
             language: "portuguese",
-            chatLink: "https://rawgit.com/V1RTU4LL1F3/fatgasda/master/bBotLang",
+            chatLink: "https://rawgit.com/V1RTU4LL1F3/fatgasda/master/bBotLang.json",
             scriptLink: "https://rawgit.com/V1RTU4LL1F3/fatgasda/master/bBot_Source.js",
             roomLock: false, // Requires an extension to re-load the script
             startupCap: 1, // 1-200
@@ -882,6 +882,9 @@
                 welcomeback ?
                     setTimeout(function (user) {
                         API.sendChat(subChat(basicBot.chat.welcomeback, {name: user.username}));
+                        setTimeout(function(){
+                            API.sendChat(subChat(basicBot.chat.welcomebackdc, {name: user.username}));
+                        }, 2000);
                     }, 1 * 1000, user)
                     :
                     setTimeout(function (user) {
@@ -3321,6 +3324,8 @@
                           } else {
                             if (API.getWaitListPosition(id) != djlist.length - 1)
                             basicBot.userUtilities.moveUser(id, djlist.length, false);
+                              if (id = AMMBR Bot)
+                                  API.sendChat(subChat(Bots não são dignos, {name: from}));
                             API.sendChat(subChat(basicBot.chat.thorNotWorthy, {name: from}));
                           }
                         }
