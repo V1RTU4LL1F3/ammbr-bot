@@ -231,15 +231,15 @@
     };
 
     var botCreator = "Yemasthui";
-    var botMaintainer = "Benzi"
-    var botCreatorIDs = ["3851534", "4105209"];
+    var botMaintainer = "Benzi", "V1RTU4L";
+    var botCreatorIDs = ["3851534", "4105209", "3473197"];
 
     var basicBot = {
-        version: "2.9 beta (03/03/17)",
+        version: "Versão de testes (17/04/17)",
         status: false,
         name: "basicBot",
         loggedInID: null,
-        scriptLink: "https://rawgit.com/V1RTU4LL1F3/fatgasda/master/bBot_Source.js",
+        scriptLink: "https://rawgit.com/V1RTU4LL1F3/fatgasda/master/bBot_Source_Testes.js",
         cmdLink: "https://goo.gl/WQ6iwo",
         chatLink: "https://rawgit.com/V1RTU4LL1F3/fatgasda/master/bBotLang.json",
         chat: null,
@@ -250,7 +250,7 @@
             botName: "AMMBR Bot",
             language: "portuguese",
             chatLink: "https://rawgit.com/V1RTU4LL1F3/fatgasda/master/bBotLang.json",
-            scriptLink: "https://rawgit.com/V1RTU4LL1F3/fatgasda/master/bBot_Source.js",
+            scriptLink: "https://rawgit.com/V1RTU4LL1F3/fatgasda/master/bBot_Source_Testes.js",
             roomLock: false, // Requires an extension to re-load the script
             startupCap: 1, // 1-200
             startupVolume: 0, // 0-100
@@ -883,7 +883,14 @@
                     setTimeout(function (user) {
                         API.sendChat(subChat(basicBot.chat.welcomeback, {name: user.username}));
                         setTimeout(function(){
-                            API.sendChat(subChat(basicBot.chat.welcomebackdc, {name: user.username}));
+                            name = user.username;
+                            var perm = basicBot.userUtilities.getPermission(chat.uid);
+                            if (perm < 2) return API.sendChat(subChat(basicBot.chat.dclookuprank, {name: chat.un}));
+                        }
+                        var user = basicBot.userUtilities.lookupUserName(name);
+                        if (typeof user === 'boolean') return API.sendChat(subChat(basicBot.chat.invaliduserspecified, {name: chat.un}));
+                        var toChat = basicBot.userUtilities.dclookup(user.id);
+                        API.sendChat(toChat);
                         }, 2000);
                     }, 1 * 1000, user)
                     :
@@ -1287,10 +1294,12 @@
                 basicBot.room.roomstats.chatmessages++;
             },
             spam: [
-                'hueh', 'hu3', 'brbr', 'heu', 'brbr', 'kkkk', 'spoder', 'mafia', 'zuera', 'zueira',
-                'zueria', 'aehoo', 'aheu', 'alguem', 'algum', 'brazil', 'zoeira', 'fuckadmins', 'affff', 'vaisefoder', 'huenaarea',
-                'hitler', 'ashua', 'ahsu', 'ashau', 'lulz', 'huehue', 'hue', 'huehuehue', 'merda', 'pqp', 'puta', 'mulher', 'pula', 'retarda', 'caralho', 'filha', 'ppk',
-                'gringo', 'fuder', 'foder', 'hua', 'ahue', 'modafuka', 'modafoka', 'mudafuka', 'mudafoka', 'ooooooooooooooo', 'foda'
+                'hueh', 'hu3', 'brbr', 'heu', 'spoder', 'mafia', 'cdg', 'idm', 'macacada', 'rx',
+                'aehoo', 'fuckadmins', 'huenaarea', 'fuck admins', 'cartola', 'goec', 'rexpeita',
+                'lulz', 'huehue', 'hue', 'huehuehue', 'pula', 'ilha', 'é biscoito', 'otaco',
+                'hua', 'ahue', 'modafuka', 'modafoka', 'mudafuka', 'mudafoka', 'fag', 'fagg', 'faggot',
+                'fu', 'lixo', 'mordox', 'manas', 'manx', 'berro', 'grito', 'morta', 'monamour', 'ines',
+                
             ],
             curses: [
                 'nigger', 'faggot', 'nigga', 'niqqa', 'motherfucker', 'modafocka'
@@ -3324,8 +3333,6 @@
                           } else {
                             if (API.getWaitListPosition(id) != djlist.length - 1)
                             basicBot.userUtilities.moveUser(id, djlist.length, false);
-                              if (id = AMMBR Bot)
-                                  API.sendChat(subChat(Bots não são dignos, {name: from}));
                             API.sendChat(subChat(basicBot.chat.thorNotWorthy, {name: from}));
                           }
                         }
