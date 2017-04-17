@@ -46,9 +46,9 @@
     //Change the bots default settings and make sure they are loaded on launch
 
     localStorage.setItem("basicBotsettings", JSON.stringify({
-      botName: "AMMBR Bot (Versão de Testes)",
+      botName: "AMMBR Bot",
       language: "portuguese",
-      chatLink: "https://rawgit.com/V1RTU4LL1F3/fatgasda/master/bBotLang",
+      chatLink: "https://rawgit.com/V1RTU4LL1F3/fatgasda/master/bBotLang.json",
       scriptLink: "https://rawgit.com/V1RTU4LL1F3/fatgasda/master/bBot_Source_Testes.js",
       roomLock: false, // Requires an extension to re-load the script
       startupCap: 1, // 1-200
@@ -68,8 +68,8 @@
       maximumLocktime: 10,
       cycleGuard: false,
       maximumCycletime: 10,
-      voteSkip: false,
-      voteSkipLimit: 10,
+      voteSkip: true,
+      voteSkipLimit: 2,
       historySkip: true,
       timeGuard: true,
       maximumSongLength: 10,
@@ -78,7 +78,7 @@
       usercommandsEnabled: true,
       thorCommand: true,
       thorCooldown: 10,
-      skipPosition: 1,
+      skipPosition: 2,
       skipReasons: [
       ["tema", "seu vídeo não se encaixa nos temas da sala, digite !theme para ver os temas permitidos "],
       ["historico", "seu vídeo já está no histórico da sala. "],
@@ -87,7 +87,7 @@
       afkpositionCheck: 15,
       afkRankCheck: "ambassador",
       motdEnabled: false,
-      motdInterval: 10,
+      motdInterval: 14,
       motd: "Nenhuma mensagem foi adicionada",
       filterChat: true,
       etaRestriction: false,
@@ -101,7 +101,7 @@
       intervalMessages: ["Não esqueça de dar uma olhada nas regras da sala antes de entrar na fila de DJs! ➲ http://goo.gl/i7JUIX",
       "Venha fazer parte do nosso grupo no facebook! ➲ http://goo.gl/fmAu02",
       "A cada 10 minutos você pode tentar levantar o martelo do Thor. Se você for digno será movido para o primeiro lugar da fila, digite !thor para provar o seu valor!",
-      "Digite !comandos para receber um link com a lista de comandos do bot completa!"],
+      "Digite !comandos para receber um link com a lista de comandos completa!"],
       messageInterval: 5,
       songstats: false,
       commandLiteral: "!",
