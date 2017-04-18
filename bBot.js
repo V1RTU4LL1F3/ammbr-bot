@@ -46,7 +46,7 @@
     //Change the bots default settings and make sure they are loaded on launch
 
     localStorage.setItem("basicBotsettings", JSON.stringify({
-      botName: "AMMBR Bot",
+      botName: "Loli Bot",
       language: "portuguese",
       chatLink: "https://rawgit.com/V1RTU4LL1F3/fatgasda/master/bBotLang.json",
       scriptLink: "https://rawgit.com/V1RTU4LL1F3/fatgasda/master/bBot_Source.js",
@@ -86,9 +86,9 @@
       ],
       afkpositionCheck: 15,
       afkRankCheck: "ambassador",
-      motdEnabled: false,
-      motdInterval: 14,
-      motd: "Nenhuma mensagem foi adicionada",
+      motdEnabled: true,
+      motdInterval: 3,
+      motd: "!roleta",
       filterChat: true,
       etaRestriction: false,
       welcome: true,
