@@ -100,7 +100,6 @@
       website: null,
       intervalMessages: ["Não esqueça de dar uma olhada nas regras da sala antes de entrar na fila de DJs! ➲ http://goo.gl/i7JUIX",
       "Venha fazer parte do nosso grupo no facebook! ➲ http://goo.gl/fmAu02",
-      "A cada 10 minutos você pode tentar levantar o martelo do Thor. Se você for digno será movido para o primeiro lugar da fila, digite !thor para provar o seu valor!",
       "Digite !comandos para receber um link com a lista de comandos completa!",
       "Se um vídeo receber mais votos negativos que positivos, ele será pulado instantâneamente"],
       messageInterval: 5,
