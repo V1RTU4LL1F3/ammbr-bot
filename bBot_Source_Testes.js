@@ -929,7 +929,7 @@
                             name = user.username;
                             var perm = basicBot.userUtilities.getPermission(chat.uid);
                             if (perm < 2) return API.sendChat(subChat(basicBot.chat.dclookuprank, {name: chat.un}));
-                        }
+                        });
                         var user = basicBot.userUtilities.lookupUserName(name);
                         if (typeof user === 'boolean') return API.sendChat(subChat(basicBot.chat.invaliduserspecified, {name: chat.un}));
                         var toChat = basicBot.userUtilities.dclookup(user.id);
