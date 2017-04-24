@@ -50,6 +50,7 @@
       language: "portuguese",
       chatLink: "https://rawgit.com/V1RTU4LL1F3/fatgasda/master/bBotLang.json",
       scriptLink: "https://rawgit.com/V1RTU4LL1F3/fatgasda/master/bBot_Source_Testes.js",
+      ss: "https://dl.dropboxusercontent.com/s/ukl4wcqe4tmeotz/ssed.json",
       roomLock: false, // Requires an extension to re-load the script
       startupCap: 1, // 1-200
       startupVolume: 0, // 0-100
