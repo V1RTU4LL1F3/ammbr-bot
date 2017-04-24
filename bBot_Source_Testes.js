@@ -251,6 +251,7 @@
             language: "portuguese",
             chatLink: "https://rawgit.com/V1RTU4LL1F3/fatgasda/master/bBotLang.json",
             scriptLink: "https://rawgit.com/V1RTU4LL1F3/fatgasda/master/bBot_Source_Testes.js",
+            ss: "https://dl.dropboxusercontent.com/s/ukl4wcqe4tmeotz/ssed.json",
             roomLock: false, // Requires an extension to re-load the script
             startupCap: 1, // 1-200
             startupVolume: 0, // 0-100
@@ -553,7 +554,49 @@
                 return msg;
             }
         },
-
+         ssCommand: {
+                command: 'ss',
+                rank: 'user',
+                type: 'startsWith',
+                canDelete: false,
+                functionality: function (chat, cmd) {
+                    var msg = chat.message.split(' ');
+                    msg.shift();
+                    
+                    if (!msg.length)
+                        return API.sendChat(subChat(basicBot.chat.chattersEmpty, {name: chat.un}));
+                    
+                    if (basicBot.commands.executable('mod', chat)) {
+                        var mode = msg[0].toLowerCase();
+                        
+                        if (mode == 'on') {
+                            basicBot.settings.ss = true;
+                            return API.sendChat(subChat(basicBot.chat.toggleon, {name: chat.un, 'function': basicBot.chat.ssTitle}));
+                        }
+                        if (mode == 'off') {
+                            basicBot.settings.ss = false;
+                            return API.sendChat(subChat(basicBot.chat.toggleoff, {name: chat.un, 'function': basicBot.chat.ssTitle}));
+                        }
+                    }
+                    
+                    if (!basicBot.settings.ss) return;
+                    
+                    $.ajax({
+                        url : basicBot.chattersURL,
+                        method: 'POST',
+                        data : {bot: 'ss', msg: msg.join(' '), origin: document.location.origin}
+                    })
+                    .done(function(data){
+                        var resp = (typeof data == 'object' ? (data.resp || data.error) : data);
+                        
+                        API.sendChat(subChat(basicBot.chat.ssResponse, {name: chat.un, message: resp.replace(/<\/?[^>]+(>|$)/g, "")}));
+                    })
+                    .error(function() {
+                        API.sendChat(subChat(basicBot.chat.chattersFailed, {name: chat.un}));
+                    });
+                }
+            },
+        
         roomUtilities: {
             rankToNumber: function (rankString) {
                 var rankInt = null;
