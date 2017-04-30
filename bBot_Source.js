@@ -2120,7 +2120,7 @@
                                 return API.sendChat(subChat(basicBot.chat.selfcastiga, {name: name}));
                             }
                             else {
-                                return API.sendChat(subChat(basicBot.chat.castiga, {nameto: user.username, namefrom: chat.un, castiga: this.getCastigar()}));
+                                return API.sendChat(subChat(this.castigar, {nameto: user.username, namefrom: chat.un, castiga: this.getCastigar()}));
                             }
                         }
                     }
