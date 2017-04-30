@@ -2096,6 +2096,7 @@
                     "teste"
                 ],
                 getCastigar: function (chat) {
+                    var = this.getCastigar);
                     var c = Math.floor(Math.random() * this.castigar.length);
                     return basicBot.chat.castigar[c];
                 },
