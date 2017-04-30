@@ -255,6 +255,9 @@
             startupCap: 1, // 1-200
             startupVolume: 0, // 0-100
             startupEmoji: false, // true or false
+            slotTime: 10,
+            slotPos: 2,
+            slotStats: true,
             autowoot: true,
             autoskip: false,
             smartSkip: true,
@@ -307,9 +310,6 @@
             messageInterval: 5,
             songstats: true,
             commandLiteral: "!",
-            slotTime: 10,
-            slotPos: 2,
-            slotStats: true,
             slotFruits: [":apple:",":pear:",":lemon:",":watermelon:",":grapes:"],
             blacklists: {
                 NSFW: "https://rawgit.com/basicBot/custom/master/blacklists/NSFWlist.json",
