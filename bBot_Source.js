@@ -2097,7 +2097,7 @@
                 ],
                 getCastigar: function (chat) {
                     var c = Math.floor(Math.random() * this.castigar.length);
-                    return this.castigar[c];
+                    return basicBot.chat.cookies[c];
                 },
                 functionality: function (chat, cmd) {
                     if (this.type === 'exact' && chat.message.length !== cmd.length) return void (0);
