@@ -2092,9 +2092,12 @@
                 command: ['castigar'],
                 rank: 'user',
                 type: 'startsWith',
+                Castigar: [
+                    "teste"
+                ],
                 getCastigar: function (chat) {
-                    var c = Math.floor(Math.random() * basicBot.chat.castigar.length);
-                    return basicBot.chat.castigar[c];
+                    var c = Math.floor(Math.random() * this.castigar.length);
+                    return this.castigar[c];
                 },
                 functionality: function (chat, cmd) {
                     if (this.type === 'exact' && chat.message.length !== cmd.length) return void (0);
