@@ -235,7 +235,7 @@
     var botCreatorIDs = ["3851534", "4105209"];
 
     var basicBot = {
-        version: "2.8.3 (30/04/17)",
+        version: "2.8.4 (30/04/17)",
         status: false,
         name: "basicBot",
         loggedInID: null,
@@ -1739,11 +1739,11 @@
                     }
                 }
             }
-            else API.sendChat("@"+name+" você só pode usar este comando quando não for o DJ.");
-            }
-        }
-    }
-},
+                        else API.sendChat("@"+name+" você só pode usar este comando quando não for o DJ.");
+                        }
+                     }
+                 }
+            },
             
             autodisableCommand: {
                 command: 'autodisable',
