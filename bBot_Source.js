@@ -235,7 +235,7 @@
     var botCreatorIDs = ["3851534", "4105209"];
 
     var basicBot = {
-        version: "2.8.4 (30/04/17)",
+        version: "2.8.5 (30/04/17)",
         status: false,
         name: "basicBot",
         loggedInID: null,
@@ -414,9 +414,9 @@
                 songCount: 0
             };
             this.slots = {
-            count: 2,
-            limite: false,
-            time: 0
+                count: 2,
+                limite: false,
+                time: 0
             };
             this.lastKnownPosition = null;
         },
