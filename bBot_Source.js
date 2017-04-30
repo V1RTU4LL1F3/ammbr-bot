@@ -2107,7 +2107,7 @@
 
                         var space = msg.indexOf(' ');
                         if (space === -1) {
-                            API.sendChat(basicBot.chat.eatcastiga);
+                            API.sendChat(basicBot.chat.eatcookie);
                             return false;
                         }
                         else {
@@ -2120,7 +2120,7 @@
                                 return API.sendChat(subChat(basicBot.chat.selfcastiga, {name: name}));
                             }
                             else {
-                                return API.sendChat(subChat(this.castigar, {nameto: user.username, namefrom: chat.un, castiga: this.getCastigar()}));
+                                return API.sendChat(subChat(basicBot.chat.cookie, {nameto: user.username, namefrom: chat.un, castiga: this.getCastigar()}));
                             }
                         }
                     }
