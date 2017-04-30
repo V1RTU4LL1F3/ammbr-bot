@@ -2092,7 +2092,7 @@
                 command: ['punir'],
                 rank: 'user',
                 type: 'startsWith',
-                getCookie: function (chat) {
+                getPunir: function (chat) {
                     var c = Math.floor(Math.random() * basicBot.chat.punir.length);
                     return basicBot.chat.punir[c];
                 },
@@ -2117,7 +2117,7 @@
                                 return API.sendChat(subChat(basicBot.chat.selfpunir, {name: name}));
                             }
                             else {
-                                return API.sendChat(subChat(basicBot.chat.punir, {nameto: user.username, namefrom: chat.un, cookie: this.getCookie()}));
+                                return API.sendChat(subChat(basicBot.chat.punir, {nameto: user.username, namefrom: chat.un, cookie: this.getPunir()}));
                             }
                         }
                     }
