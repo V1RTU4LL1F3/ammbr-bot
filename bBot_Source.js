@@ -2088,13 +2088,13 @@
                 }
             },
             
-             punirCommand: {
-                command: ['punir'],
+            castigarCommand: {
+                command: ['castigar'],
                 rank: 'user',
                 type: 'startsWith',
-                getPunir: function (chat) {
-                    var c = Math.floor(Math.random() * basicBot.chat.punir.length);
-                    return basicBot.chat.punir[c];
+                getCookie: function (chat) {
+                    var c = Math.floor(Math.random() * basicBot.chat.castigar.length);
+                    return basicBot.chat.castigar[c];
                 },
                 functionality: function (chat, cmd) {
                     if (this.type === 'exact' && chat.message.length !== cmd.length) return void (0);
@@ -2104,26 +2104,26 @@
 
                         var space = msg.indexOf(' ');
                         if (space === -1) {
-                            API.sendChat(basicBot.chat.amapunir);
+                            API.sendChat(basicBot.chat.eatcastiga);
                             return false;
                         }
                         else {
                             var name = msg.substring(space + 2);
                             var user = basicBot.userUtilities.lookupUserName(name);
                             if (user === false || !user.inRoom) {
-                                return API.sendChat(subChat(basicBot.chat.nouserpunir, {name: name}));
+                                return API.sendChat(subChat(basicBot.chat.nousercastiga, {name: name}));
                             }
                             else if (user.username === chat.un) {
-                                return API.sendChat(subChat(basicBot.chat.selfpunir, {name: name}));
+                                return API.sendChat(subChat(basicBot.chat.selfcastiga, {name: name}));
                             }
                             else {
-                                return API.sendChat(subChat(basicBot.chat.punir, {nameto: user.username, namefrom: chat.un, cookie: this.getPunir()}));
+                                return API.sendChat(subChat(basicBot.chat.castiga, {nameto: user.username, namefrom: chat.un, cookie: this.getCookie()}));
                             }
                         }
                     }
                 }
             },
-
+            
             cycleCommand: {
                 command: ['cycle', 'ciclo'],
                 rank: 'manager',
