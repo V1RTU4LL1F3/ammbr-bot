@@ -256,7 +256,7 @@
             startupVolume: 0, // 0-100
             startupEmoji: false, // true or false
             slotTime: 10,
-            slotPos: 2,
+            slotPos: 1,
             slotStats: true,
             ss: true,
             autowoot: true,
