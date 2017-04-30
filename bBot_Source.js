@@ -1682,10 +1682,10 @@
                  else {
                       if(basicBot.settings.slotStats){
                       var fruit = basicBot.settings.slotFruits;
-                      var r = Math.floor(Math.random() * fruit.length);
+                      var r1 = Math.floor(Math.random() * fruit.length);
                       var r2 = Math.floor(Math.random() * fruit.length);
                       var r3 = Math.floor(Math.random() * fruit.length);
-                      var slot1 = fruit[r];
+                      var slot1 = fruit[r1];
                       var slot2 = fruit[r2];
                       var slot3 = fruit[r3];
                       var id = chat.uid;
