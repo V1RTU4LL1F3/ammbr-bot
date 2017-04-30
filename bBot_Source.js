@@ -2092,7 +2092,7 @@
                 command: ['castigar'],
                 rank: 'user',
                 type: 'startsWith',
-                Castigar: [
+                castigar: [
                     "teste"
                 ],
                 getCastigar: function (chat) {
