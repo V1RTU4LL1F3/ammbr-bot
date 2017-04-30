@@ -2087,6 +2087,42 @@
                     }
                 }
             },
+            
+             punirCommand: {
+                command: ['punir'],
+                rank: 'user',
+                type: 'startsWith',
+                getCookie: function (chat) {
+                    var c = Math.floor(Math.random() * basicBot.chat.punir.length);
+                    return basicBot.chat.punir[c];
+                },
+                functionality: function (chat, cmd) {
+                    if (this.type === 'exact' && chat.message.length !== cmd.length) return void (0);
+                    if (!basicBot.commands.executable(this.rank, chat)) return void (0);
+                    else {
+                        var msg = chat.message;
+
+                        var space = msg.indexOf(' ');
+                        if (space === -1) {
+                            API.sendChat(basicBot.chat.amapunir);
+                            return false;
+                        }
+                        else {
+                            var name = msg.substring(space + 2);
+                            var user = basicBot.userUtilities.lookupUserName(name);
+                            if (user === false || !user.inRoom) {
+                                return API.sendChat(subChat(basicBot.chat.nouserpunir, {name: name}));
+                            }
+                            else if (user.username === chat.un) {
+                                return API.sendChat(subChat(basicBot.chat.selfpunir, {name: name}));
+                            }
+                            else {
+                                return API.sendChat(subChat(basicBot.chat.punir, {nameto: user.username, namefrom: chat.un, cookie: this.getCookie()}));
+                            }
+                        }
+                    }
+                }
+            },
 
             cycleCommand: {
                 command: ['cycle', 'ciclo'],
@@ -2122,6 +2158,8 @@
                 }
             },
 
+            
+            
             cycletimerCommand: {
                 command: 'cycletimer',
                 rank: 'manager',
