@@ -311,7 +311,7 @@
             messageInterval: 5,
             songstats: true,
             commandLiteral: "!",
-            slotFruits: [":apple:",":pear:",":lemon:",":watermelon:",":grapes:"],
+            slotFruits: [":apple:",":pear:",":lemon:"],
             blacklists: {
                 NSFW: "https://rawgit.com/basicBot/custom/master/blacklists/NSFWlist.json",
                 OP: "https://rawgit.com/basicBot/custom/master/blacklists/OPlist.json",
