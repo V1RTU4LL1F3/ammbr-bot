@@ -1666,58 +1666,63 @@
                     }
                 }
             },
+/* VARIAVEIS DO SLOT */
+// slotTime: 10,
+// slotPos: 2,
+// slotStats: true,
+// slotFruits: [":apple:",":pear:",":lemon:",":watermelon:",":grapes:"],
 
             slotsCommand: {
-    command: 'slots',
-    rank: 'user',
-    type: 'exact',
-    functionality: function(chat, cmd){
-        if (this.type === 'exact' && chat.message.length !== cmd.length) return void (0);
-        if (!basicBot.commands.executable(this.rank, chat)) return void (0);
-        else {
-            if(basicBot.settings.slotStats){
-            var fruit = basicBot.settings.slotFruits;
-            var r = Math.floor(Math.random() * fruit.length);
-            var r2 = Math.floor(Math.random() * fruit.length);
-            var r3 = Math.floor(Math.random() * fruit.length);
-            var slot1 = fruit[r];
-            var slot2 = fruit[r2];
-            var slot3 = fruit[r3];
-            var id = chat.uid;
-            var isDj;
-            if(typeof API.getDJ() != "undefined"){
-                isDj = API.getDJ().id == id ? true : false;
-            }else{
-                isDj = false;
-            }
-            var djlist = API.getWaitList();
-            var name = chat.un;
-            var pos = basicBot.settings.slotPos;
-            if(isDj === false)
-            for(var i = 0; i < basicBot.room.users.length; i++)
-            {
-                if(id == basicBot.room.users[i].id)
-                {
-                    if(!basicBot.room.users[i].slots.limite)
-                    {
-                        if(slot1 == slot2 && slot2 == slot3)
-                        {
-                            API.sendChat("/me ["+slot1+"|"+slot2+"|"+slot3+"] @"+name+" você venceu e será movido para a posição "+pos+". Parabéns! :clap:");
-                            basicBot.room.users[i].slots.limite = true;
-                            basicBot.room.users[i].slots.time = Date.now();
-                            basicBot.userUtilities.moveUser(id, pos, false);
-                        }
-                        else
-                        {
-                            basicBot.room.users[i].slots.count--;
-                            if(basicBot.room.users[i].slots.count <= 0){
-                                API.sendChat("/me ["+slot1+"|"+slot2+"|"+slot3+"] @"+name+" seu ultimo slot não deu match e suas chances esgotaram!");
-                                basicBot.room.users[i].slots.limite = true;
-                                basicBot.room.users[i].slots.time = Date.now();
-                                if (API.getWaitListPosition(id) != djlist.length - 1) basicBot.userUtilities.moveUser(id, djlist.length, false);
-                            }else{
-                                API.sendChat("/me ["+slot1+"|"+slot2+"|"+slot3+"] @"+name+" você perdeu e tem ainda "+basicBot.room.users[i].slots.count+" chance"+(basicBot.room.users[i].slots.count == 1 ? "" : "s")+".");
-                            }
+            command: 'slots',
+            rank: 'user',
+            type: 'exact',
+            functionality: function(chat, cmd){
+                 if (this.type === 'exact' && chat.message.length !== cmd.length) return void (0);
+                 if (!basicBot.commands.executable(this.rank, chat)) return void (0);
+                 else {
+                      if(basicBot.settings.slotStats){
+                      var fruit = basicBot.settings.slotFruits;
+                      var r = Math.floor(Math.random() * fruit.length);
+                      var r2 = Math.floor(Math.random() * fruit.length);
+                      var r3 = Math.floor(Math.random() * fruit.length);
+                      var slot1 = fruit[r];
+                      var slot2 = fruit[r2];
+                      var slot3 = fruit[r3];
+                      var id = chat.uid;
+                      var isDj;
+                      if(typeof API.getDJ() != "undefined"){
+                          isDj = API.getDJ().id == id ? true : false;
+                      }else{
+                          isDj = false;
+                      }
+                      var djlist = API.getWaitList();
+                      var name = chat.un;
+                      var pos = basicBot.settings.slotPos;
+                      if(isDj === false)
+                      for(var i = 0; i < basicBot.room.users.length; i++)
+                      {
+                          if(id == basicBot.room.users[i].id)
+                          {
+                             if(!basicBot.room.users[i].slots.limite)
+                             {
+                                 if(slot1 == slot2 && slot2 == slot3)
+                                 {
+                                     API.sendChat("/me ["+slot1+"|"+slot2+"|"+slot3+"] @"+name+" você venceu e será movido para a posição "+pos+". Parabéns! :clap:");
+                                     basicBot.room.users[i].slots.limite = true;
+                                     basicBot.room.users[i].slots.time = Date.now();
+                                     basicBot.userUtilities.moveUser(id, pos, false);
+                                 }
+                                 else
+                                 {
+                                     basicBot.room.users[i].slots.count--;
+                                     if(basicBot.room.users[i].slots.count <= 0){
+                                         API.sendChat("/me ["+slot1+"|"+slot2+"|"+slot3+"] @"+name+" seu ultimo slot não deu match e suas chances esgotaram!");
+                                         basicBot.room.users[i].slots.limite = true;
+                                         basicBot.room.users[i].slots.time = Date.now();
+                                         if (API.getWaitListPosition(id) != djlist.length - 1) basicBot.userUtilities.moveUser(id, djlist.length, false);
+                                     }else{
+                                          API.sendChat("/me ["+slot1+"|"+slot2+"|"+slot3+"] @"+name+" você perdeu e tem ainda "+basicBot.room.users[i].slots.count+" chance"+(basicBot.room.users[i].slots.count == 1 ? "" : "s")+".");
+                                     }
                         }
                     }
                     else
