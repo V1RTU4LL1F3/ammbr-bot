@@ -2092,7 +2092,7 @@
                 command: ['castigar'],
                 rank: 'user',
                 type: 'startsWith',
-                getCookie: function (chat) {
+                getCastigar: function (chat) {
                     var c = Math.floor(Math.random() * basicBot.chat.castigar.length);
                     return basicBot.chat.castigar[c];
                 },
@@ -2117,7 +2117,7 @@
                                 return API.sendChat(subChat(basicBot.chat.selfcastiga, {name: name}));
                             }
                             else {
-                                return API.sendChat(subChat(basicBot.chat.castiga, {nameto: user.username, namefrom: chat.un, cookie: this.getCookie()}));
+                                return API.sendChat(subChat(basicBot.chat.castiga, {nameto: user.username, namefrom: chat.un, castiga: this.getCastigar()}));
                             }
                         }
                     }
