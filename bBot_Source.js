@@ -1810,7 +1810,6 @@
             },
             
             duel: {
-                command: 'duel',
     users: [],
     stats: false,
     time: null,
@@ -1904,7 +1903,57 @@
                     }
                 }
             },
-
+ 
+            // FUNÇÃO DE DUEL (POR ENQUANTO SOMENTE UM DUEL POR VEZ)
+            fightCommand: {
+                command: ['x1','duel', 'fight'],
+                rank: 'user',
+                type: 'startsWith',
+                functionality: function (chat, cmd) {
+                    if (this.type === 'exact' && chat.message.length !== cmd.length) return void (0);
+                    if (!basicBot.commands.executable(this.rank, chat)) return void (0);
+                    else {
+                        if(!basicBot.room.duel.stats){
+                            var msg = chat.message;
+                            var space = msg.indexOf(' ');
+                            if(space === -1){
+                                API.sendChat("/me @"+chat.un+" você não pode lutar contra sí mesmo");
+                                return false;
+                            }
+                            else {
+                                var name = msg.substring(space + 2);
+                                var user = basicBot.userUtilities.lookupUserName(name);
+                                var from = chat.uid;
+                                var to = user.id;
+                                var ismuted;
+                                if(user.mute.is){
+                                    ismuted = true;
+                                }
+                                if(!ismuted){
+                                    if (user === false || !user.inRoom) {
+                                        return API.sendChat("/me @"+chat.un+" seu inimigo não foi encontrado na sala, talvez ele tenha arregado. :confused:");
+                                    }
+                                    else if (user.username === chat.un) {
+                                        return API.sendChat("/me @"+chat.un+" não entendo o motivo de você querer lutar contra sí mesmo(a), você é uma pessoa tão lindo(a). :confused:");
+                                    } 
+                                    else{
+                                        API.sendChat("/me @"+user.username+", @"+chat.un+" te chamou pro fight, caso queira aceitar digite !aceito, do contrário digite !rejeito. O perdedor será mutado por "+basicBot.settings.duelTime+" minutos.");
+                                        basicBot.room.duel.stats = true;
+                                        basicBot.room.duel.users.push(from, to);
+                                        basicBot.room.duel.waiting = setTimeout(function(){
+                                        API.sendChat("/me @"+chat.un+", @"+user.username+" demorou para responder, provavelmente está com medo. Tente novamente depois.");
+                                            basicBot.room.duel.stats = false;
+                                            basicBot.room.duel.users = [];
+                                        }, 30*1000);
+                                    }
+                                }else{
+                                    API.sendChat("/me @"+chat.un+" parece que há perdedores recentes neste seu duelo, espere este ser desmutado para duelar novamente.");
+                                }
+                            }
+                        }else API.sendChat("/me @"+chat.un+" já está havendo um duelo, espere este acabar!");
+                    }
+                }
+            },
             autoskipCommand: {
                 command: 'autoskip',
                 rank: 'mod',
