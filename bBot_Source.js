@@ -225,11 +225,11 @@
     };
 
     var botCreator = "Yemasthui";
-    var botMaintainer = "Benzi"
-    var botCreatorIDs = ["3851534", "4105209"];
+    var botMaintainer = "-DATABASE-"
+    var botCreatorIDs = ["3851534", "4105209", "3926149"];
 
     var basicBot = {
-        version: "2.8.9 (08/05/17)",
+        version: "3.0.0 (09/05/17)",
         status: false,
         name: "basicBot",
         loggedInID: null,
@@ -392,7 +392,7 @@
             duel: {
             users: [],
             stats: false,
-            time: null,
+            time: 3,
             waiting: null,
             randomMensagem: function() {
                 var msgs = [
