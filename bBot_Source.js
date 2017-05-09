@@ -392,7 +392,7 @@
             duel: {
             users: [],
             stats: false,
-            time: 3,
+            time: null,
             waiting: null,
             randomMensagem: function() {
                 var msgs = [
@@ -462,7 +462,7 @@
                 time: 0
             };
             this.mute = {
-                time: 3,
+                time: null,
                 is: false
             };
             this.lastKnownPosition = null;
