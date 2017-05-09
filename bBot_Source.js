@@ -1810,6 +1810,7 @@
             },
             
             duel: {
+                command: 'duel',
     users: [],
     stats: false,
     time: null,
@@ -3954,6 +3955,7 @@
                     }
                 }
             },
+        
 
             youtubeCommand: {
                 command: ['youtube', 'yt'],
