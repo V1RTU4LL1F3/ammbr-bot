@@ -914,7 +914,12 @@
                     basicBot.userUtilities.setLastActivity(basicBot.room.users[i]);
                     if (basicBot.room.users[i].username !== chat.un) {
                         basicBot.room.users[i].username = chat.un;
-                        if(basicBot.room.users[a].mute.is){
+                    }
+                }
+            }
+            for(var a = 0; a < basicBot.room.users.length; a++){
+                if(basicBot.room.users[a].id == chat.uid){
+                    if(basicBot.room.users[a].mute.is){
                         API.moderateDeleteChat(chat.cid);
                     }
                 }
