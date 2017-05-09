@@ -434,6 +434,7 @@
                 basicBot.room.duel.stats = false;
                 basicBot.room.duel.users = [];
             }
+            }
         },
         User: function(id, name) {
             this.id = id;
