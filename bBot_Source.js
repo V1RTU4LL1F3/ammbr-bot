@@ -253,6 +253,7 @@
             slotPos: 1,
             slotStats: true,
             ss: true,
+            duelTime: 5,
             autowoot: true,
             autoskip: false,
             smartSkip: true,
