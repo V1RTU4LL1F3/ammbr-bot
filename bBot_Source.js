@@ -462,7 +462,7 @@
                 time: 0
             };
             this.mute = {
-                time: null,
+                time: 3,
                 is: false
             };
             this.lastKnownPosition = null;
