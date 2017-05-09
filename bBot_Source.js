@@ -388,9 +388,8 @@
                     }, 1 * 1000, winner, pos);
                 }
             },
-            usersUsedThor: []
-        },
-        duel: {
+            usersUsedThor: [],
+            duel: {
             users: [],
             stats: false,
             time: null,
@@ -460,6 +459,10 @@
                 count: 2,
                 limite: false,
                 time: 0
+            };
+            this.mute = {
+                time: null,
+                is: false
             };
             this.lastKnownPosition = null;
         },
