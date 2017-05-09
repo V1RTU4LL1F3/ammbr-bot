@@ -235,7 +235,7 @@
     var botCreatorIDs = ["3851534", "4105209"];
 
     var basicBot = {
-        version: "2.8.7 (30/04/17)",
+        version: "2.8.9 (08/05/17)",
         status: false,
         name: "basicBot",
         loggedInID: null,
@@ -1805,6 +1805,101 @@
                             return API.sendChat(subChat(basicBot.chat.toggleon, {name: chat.un, 'function': basicBot.chat.autodisable}));
                         }
 
+                    }
+                }
+            },
+            
+            duel: {
+    users: [],
+    stats: false,
+    time: null,
+    waiting: null,
+    randomMensagem: function(){
+        var msgs = [
+            'ganhou a luta! eu sou gay!'
+        ];
+        var count = 0;
+        var m = msgs[Math.floor(Math.random() * msgs.length)];
+        return m;
+    },
+    start: function(){
+        basicBot.room.duel.time = setTimeout(function(){
+            basicBot.room.duel.end();
+        }, 30 * 1000);
+    },
+    end: function(){
+        var random = Math.floor(Math.random() * basicBot.room.duel.users.length);
+        var win = basicBot.userUtilities.lookupUser(basicBot.room.duel.users[random]);
+        var loser;
+        var msg = basicBot.room.duel.randomMensagem();
+        for(var i in basicBot.room.duel.users){
+            if(win.id != basicBot.room.duel.users[i]){
+                    loser = basicBot.userUtilities.lookupUser(basicBot.room.duel.users[i]);
+            }
+        }
+        var ind;
+        API.sendChat("/me @"+loser.username+", @"+win.username+" "+msg);
+        for(var a = 0; a < basicBot.room.users.length; a++){
+            if(basicBot.room.users[a].id === loser.id){
+                ind = a;
+            }
+        }
+        basicBot.room.users[ind].mute.is = true;
+        basicBot.room.users[ind].mute.time = setTimeout(function(){
+            var name = basicBot.room.users[ind].username;
+            var id =  basicBot.room.users[ind].id;
+            basicBot.room.users[ind].mute.is = false;
+            API.sendChat("/me @"+name+" pode falar agora nenê.");
+        }, basicBot.settings.duelTime * 60 * 1000);
+        basicBot.room.duel.stats = false;
+        basicBot.room.duel.users = [];
+    }
+    }
+},
+ 
+            aceitoCommand: {
+                command: 'aceito',
+                rank: 'user',
+                type: 'startsWith',
+                functionality: function (chat, cmd){
+                    if (this.type === 'exact' && chat.message.length !== cmd.length) return void (0);
+                    if (!basicBot.commands.executable(this.rank, chat)) return void (0);
+                    else {
+                        if(basicBot.room.duel.users[0] != chat.uid){
+                            for(var i in basicBot.room.duel.users){
+                                if(chat.uid == basicBot.room.duel.users[i]){
+                                    clearTimeout(basicBot.room.duel.waiting);
+                                    var from = basicBot.room.duel.users[i-1];
+                                    var user = basicBot.userUtilities.lookupUser(from);
+                                    API.sendChat("/me @"+user.username+", @"+chat.un+" aceitou o duelo! O resultado do confronto sai em instantes.");
+                                    basicBot.room.duel.start();
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+ 
+            rejeitoCommand: {
+                command: 'rejeito',
+                rank: 'user',
+                type: 'startsWith',
+                functionality: function (chat, cmd) {
+                    if (this.type === 'exact' && chat.message.length !== cmd.length) return void (0);
+                    if (!basicBot.commands.executable(this.rank, chat)) return void (0);
+                    else {
+                        if(basicBot.room.duel.users[0] != chat.uid){
+                            for(var i in basicBot.room.duel.users){
+                                if(chat.uid == basicBot.room.duel.users[i]){
+                                    clearTimeout(basicBot.room.duel.waiting);
+                                    var from = basicBot.room.duel.users[i-1];
+                                    var user = basicBot.userUtilities.lookupUser(from);
+                                    API.sendChat("/me @"+user.username+", @"+chat.un+" arregou e não aceitou o duelo!");
+                                    basicBot.room.duel.users = [];
+                                    basicBot.room.duel.stats = false;
+                                }
+                            }
+                        }
                     }
                 }
             },
