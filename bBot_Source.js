@@ -319,53 +319,6 @@
             }
         },
         room: {
-            duel: {
-            users: [],
-            stats: false,
-    time: null,
-    waiting: null,
-    randomMensagem: function(){
-        var msgs = [
-            'ganhou a luta! eu sou gay!'
-        ];
-        var count = 0;
-        var m = msgs[Math.floor(Math.random() * msgs.length)];
-        return m;
-    },
-    start: function(){
-        basicBot.room.duel.time = setTimeout(function(){
-            basicBot.room.duel.end();
-        }, 30 * 1000);
-    },
-    end: function(){
-        var random = Math.floor(Math.random() * basicBot.room.duel.users.length);
-        var win = basicBot.userUtilities.lookupUser(basicBot.room.duel.users[random]);
-        var loser;
-        var msg = basicBot.room.duel.randomMensagem();
-        for(var i in basicBot.room.duel.users){
-            if(win.id != basicBot.room.duel.users[i]){
-                    loser = basicBot.userUtilities.lookupUser(basicBot.room.duel.users[i]);
-            }
-        }
-        var ind;
-        API.sendChat("/me @"+loser.username+", @"+win.username+" "+msg);
-        for(var a = 0; a < basicBot.room.users.length; a++){
-            if(basicBot.room.users[a].id === loser.id){
-                ind = a;
-            }
-        }
-        basicBot.room.users[ind].mute.is = true;
-        basicBot.room.users[ind].mute.time = setTimeout(function(){
-            var name = basicBot.room.users[ind].username;
-            var id =  basicBot.room.users[ind].id;
-            basicBot.room.users[ind].mute.is = false;
-            API.sendChat("/me @"+name+" pode falar agora nenê.");
-        }, basicBot.settings.duelTime * 60 * 1000);
-        basicBot.room.duel.stats = false;
-        basicBot.room.duel.users = [];
-    }
-    }
-},
             name: null,
             chatMessages: [],
             users: [],
@@ -441,6 +394,53 @@
             },
             usersUsedThor: []
         },
+        duel: {
+    users: [],
+    stats: false,
+    time: null,
+    waiting: null,
+    randomMensagem: function(){
+        var msgs = [
+            'ganhou a luta! eu sou gay!'
+        ];
+        var count = 0;
+        var m = msgs[Math.floor(Math.random() * msgs.length)];
+        return m;
+    },
+    start: function(){
+        basicBot.room.duel.time = setTimeout(function(){
+            basicBot.room.duel.end();
+        }, 30 * 1000);
+    },
+    end: function(){
+        var random = Math.floor(Math.random() * basicBot.room.duel.users.length);
+        var win = basicBot.userUtilities.lookupUser(basicBot.room.duel.users[random]);
+        var loser;
+        var msg = basicBot.room.duel.randomMensagem();
+        for(var i in basicBot.room.duel.users){
+            if(win.id != basicBot.room.duel.users[i]){
+                    loser = basicBot.userUtilities.lookupUser(basicBot.room.duel.users[i]);
+            }
+        }
+        var ind;
+        API.sendChat("/me @"+loser.username+", @"+win.username+" "+msg);
+        for(var a = 0; a < basicBot.room.users.length; a++){
+            if(basicBot.room.users[a].id === loser.id){
+                ind = a;
+            }
+        }
+        basicBot.room.users[ind].mute.is = true;
+        basicBot.room.users[ind].mute.time = setTimeout(function(){
+            var name = basicBot.room.users[ind].username;
+            var id =  basicBot.room.users[ind].id;
+            basicBot.room.users[ind].mute.is = false;
+            API.sendChat("/me @"+name+" pode falar agora nenê.");
+        }, basicBot.settings.duelTime * 60 * 1000);
+        basicBot.room.duel.stats = false;
+        basicBot.room.duel.users = [];
+    }
+    }
+},
         User: function (id, name) {
             this.id = id;
             this.username = name;
