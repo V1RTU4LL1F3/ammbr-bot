@@ -3313,6 +3313,29 @@
                     }
                 }
             },
+            
+            setduelCommand: {
+                command: ['setduel'],
+                rank: 'manager',
+                type: 'startsWith',
+                functionality: function(chat, cmd) {
+                    if (this.type === 'exact' && chat.message.length !== cmd.length) return void(0);
+                    if (!basicBot.commands.executable(this.rank, chat)) return void(0);
+                    else {
+                        var msg = chat.message;
+                        var maxTime = msg.substring(cmd.length + 1);
+                        if (!isNaN(maxTime)) {
+                            basicBot.settings.duelTime = maxTime;
+                            return API.sendChat(subChat(basicBot.chat.maxlengthtime, {
+                                name: chat.un,
+                                time: basicBot.settings.timeDuel
+                            }));
+                        } else return API.sendChat(subChat(basicBot.chat.invalidtime, {
+                            name: chat.un
+                        }));
+                    }
+                }
+            },
 
             motdCommand: {
                 command: ['mdd', 'motd'],
