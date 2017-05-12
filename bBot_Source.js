@@ -229,7 +229,7 @@
     var botCreatorIDs = ["3851534", "4105209", "3926149"];
 
     var basicBot = {
-        version: "3.0.3 (11/05/17)",
+        version: "3.0.4 (11/05/17)",
         status: false,
         name: "basicBot",
         loggedInID: null,
@@ -2412,7 +2412,7 @@
                                     name: name
                                 }));
                             } else {
-                                return API.sendChat(subChat(basicBot.chat.cookie, {
+                                return API.sendChat(subChat(basicBot.chat.castigar, {
                                     nameto: user.username,
                                     namefrom: chat.un,
                                     castiga: this.getCastigar()
