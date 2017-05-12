@@ -213,5 +213,5 @@
     "chattersFailed": "\/me @%%NAME%% não foi possível enviar sua mensagem para o bot. Tente novamente.",
     "ssResponse": "[SimSimi > @%%NAME%%] %%MESSAGE%%",
     "ssTitle": "SimSimi",
-    "dueltime": "\/me [@%%NAME%%] MUTE do Duel alterado para: %%TIME%% minutos."
+    "duelTime": "\/me [@%%NAME%%] MUTE do Duel alterado para: %%TIME%% minutos."
 }
