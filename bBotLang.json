@@ -212,6 +212,6 @@
     "chattersEmpty": "\/me @%%NAME%% se você não fala nada, muito menos o bot. Na próxima, digite algo na sua mensagem.",
     "chattersFailed": "\/me @%%NAME%% não foi possível enviar sua mensagem para o bot. Tente novamente.",
     "ssResponse": "[SimSimi > @%%NAME%%] %%MESSAGE%%",
-    "ssTitle": "SimSimi"
-    "setDuel": "\/me [@%%NAME%%] MUTE do Duel alterado para: %%TIME%% minutos.",
+    "ssTitle": "SimSimi",
+    "timeDuel": "\/me [@%%NAME%%] MUTE do Duel alterado para: %%TIME%% minutos."
 }
