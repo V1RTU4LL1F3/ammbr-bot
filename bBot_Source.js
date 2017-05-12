@@ -3326,7 +3326,7 @@
                         var maxTime = msg.substring(cmd.length + 1);
                         if (!isNaN(maxTime)) {
                             basicBot.settings.duelTime = maxTime;
-                            return API.sendChat(subChat(basicBot.chat.maxlengthtime, {
+                            return API.sendChat(subChat(basicBot.chat.setduel, {
                                 name: chat.un,
                                 time: basicBot.settings.timeDuel
                             }));
