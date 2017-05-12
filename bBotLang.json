@@ -214,5 +214,5 @@
     "ssResponse": "[SimSimi > @%%NAME%%] %%MESSAGE%%",
     "ssTitle": "SimSimi",
     "duelTime": "\/me [@%%NAME%%] MUTE do Duel alterado para: %%TIME%% minutos.",
-    "sendpunir": "\/me @%%NAMETO%%, %%NAMEFROM%% %%PUNIR%%",
+    "sendpunir": "\/me @%%NAMETO%%, %%NAMEFROM%% %%PUNIR%%"
 }
