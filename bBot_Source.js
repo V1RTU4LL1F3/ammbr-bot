@@ -2379,16 +2379,13 @@
                 }
             },
 
-            castigarCommand: {
-                command: ['castigar'],
+            punirCommand: {
+                command: ['punir'],
                 rank: 'user',
                 type: 'startsWith',
-                castigar: [
-                    "teste"
-                ],
-                getCastigar: function(chat) {
-                    var c = Math.floor(Math.random() * this.castigar.length);
-                    return basicBot.chat.castigar[c];
+                getCookie: function(chat) {
+                    var c = Math.floor(Math.random() * basicBot.chat.punir.length);
+                    return basicBot.chat.punir[c];
                 },
                 functionality: function(chat, cmd) {
                     if (this.type === 'exact' && chat.message.length !== cmd.length) return void(0);
@@ -2404,18 +2401,18 @@
                             var name = msg.substring(space + 2);
                             var user = basicBot.userUtilities.lookupUserName(name);
                             if (user === false || !user.inRoom) {
-                                return API.sendChat(subChat(basicBot.chat.nousercastiga, {
+                                return API.sendChat(subChat(basicBot.chat.nousercookie, {
                                     name: name
                                 }));
                             } else if (user.username === chat.un) {
-                                return API.sendChat(subChat(basicBot.chat.selfcastiga, {
+                                return API.sendChat(subChat(basicBot.chat.selfcookie, {
                                     name: name
                                 }));
                             } else {
-                                return API.sendChat(subChat(basicBot.chat.castigar, {
+                                return API.sendChat(subChat(basicBot.chat.sendpunir, {
                                     nameto: user.username,
                                     namefrom: chat.un,
-                                    castiga: this.getCastigar()
+                                    sendpunir: this.getPunir()
                                 }));
                             }
                         }
