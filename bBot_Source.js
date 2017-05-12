@@ -2412,7 +2412,7 @@
                                 return API.sendChat(subChat(basicBot.chat.sendpunir, {
                                     nameto: user.username,
                                     namefrom: chat.un,
-                                    sendpunir: this.getPunir()
+                                    punir: this.getPunir()
                                 }));
                             }
                         }
