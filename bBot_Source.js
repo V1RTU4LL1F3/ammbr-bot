@@ -3328,7 +3328,7 @@
                             basicBot.settings.duelTime = maxTime;
                             return API.sendChat(subChat(basicBot.chat.timeDuel, {
                                 name: chat.un,
-                                time: basicBot.settings.timeDuel
+                                time: basicBot.settings.duelTime
                             }));
                         } else return API.sendChat(subChat(basicBot.chat.invalidtime, {
                             name: chat.un
