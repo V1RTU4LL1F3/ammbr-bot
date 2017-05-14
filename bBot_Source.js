@@ -229,7 +229,7 @@
     var botCreatorIDs = ["3851534", "4105209", "3926149"];
 
     var basicBot = {
-        version: "3.0.6 (14/05/17)",
+        version: "3.0.7 (11/05/17)",
         status: false,
         name: "basicBot",
         loggedInID: null,
@@ -3404,7 +3404,7 @@
 
             setroletaCommand: {
                 command: ['setroleta'],
-                rank: 'cohost',
+                rank: 'manager',
                 type: 'startsWith',
                 functionality: function(chat, cmd) {
                     if (this.type === 'exact' && chat.message.length !== cmd.length) return void(0);
@@ -3712,9 +3712,10 @@
                     }
                 }
             },
+
             roletaCommand: {
                 command: ['roleta'],
-                rank: 'cohost',
+                rank: 'mod',
                 type: 'exact',
                 functionality: function(chat, cmd) {
                     if (this.type === 'exact' && chat.message.length !== cmd.length) return void(0);
@@ -3726,6 +3727,37 @@
                     }
                 }
             },
+            
+           /* stoptrollCommand: {
+                command: ['killtroll'],
+                rank: 'mod',
+                type: 'exact',
+                functionality: function(chat, cmd) {
+                    if (this.type === 'exact' && chat.message.length !== cmd.length) return void(0);
+                    if (!basicBot.commands.executable(this.rank, chat)) return void(0);
+                    else {
+                            basicBot.room.roulette.rouletteStatus = false
+                        	API.sendChat(subChat(basicBot.chat.nouserspecified, {
+                            name: chat.un
+                            }));
+                        }
+                    }
+            }, */
+
+            frouletteCommand: {
+                command: ['forceroleta'],
+                rank: 'mod',
+                type: 'exact',
+                functionality: function(chat, cmd) {
+                    if (this.type === 'exact' && chat.message.length !== cmd.length) return void(0);
+                    if (!basicBot.commands.executable(this.rank, chat)) return void(0);
+                    else {
+                            basicBot.room.roulette.endRoulette();
+
+                        }
+                    }
+                
+            }, 
 
             rulesCommand: {
                 command: ['rules', 'regras'],
