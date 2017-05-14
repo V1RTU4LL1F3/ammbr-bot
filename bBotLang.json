@@ -218,5 +218,6 @@
     "roletaleave": "\/me @%%NAME%% deixou a roleta!",
     "roletajoin": "\/me @%%NAME%% entrou na roleta! (Use !sair para sair da mesma)",
     "roleta": "A Roleta valendo a possição %%POS%% foi iniciada! Use !entrar para participar!",
-    "setRoleta": "Possição da Roleta alterada para: %%POS%%"
+    "setRoleta": "Possição da Roleta alterada para: %%POS%%",
+    "killtroll": "\/me [@%%NAME%%] Roleta Troll desativada."
 }
