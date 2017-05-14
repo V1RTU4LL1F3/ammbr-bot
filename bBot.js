@@ -93,7 +93,7 @@
       etaRestriction: false,
       welcome: true,
       opLink: null,
-      rulesLink: "http://goo.gl/i7JUIX" ,
+      rulesLink: "https://goo.gl/O5nQJ0" ,
       themeLink: "http://i.imgur.com/jqCjGXN.png" ,
       fbLink: "http://goo.gl/fmAu02" ,
       youtubeLink: null,
