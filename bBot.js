@@ -88,7 +88,7 @@
       afkRankCheck: "ambassador",
       motdEnabled: true,
       motdInterval: 3,
-      motd: "!roleta",
+      motd: "!roletatroll",
       filterChat: true,
       etaRestriction: false,
       welcome: true,
