@@ -388,6 +388,9 @@
                     setTimeout(function(winner, pos) {
                         basicBot.userUtilities.moveUser(winner, pos, false);
                     }, 1 * 1000, winner, pos);
+                },
+                stopRoulette: function() {
+                	basicBot.room.roulette.rouletteStatus = false;
                 }
             },
             roleta: {
@@ -3728,7 +3731,7 @@
                 }
             },
             
-           /* stoptrollCommand: {
+            stoptrollCommand: {
                 command: ['killtroll'],
                 rank: 'mod',
                 type: 'exact',
@@ -3736,13 +3739,13 @@
                     if (this.type === 'exact' && chat.message.length !== cmd.length) return void(0);
                     if (!basicBot.commands.executable(this.rank, chat)) return void(0);
                     else {
-                            basicBot.room.roulette.rouletteStatus = false
+                    	    basicBot.room.roulette.stopRoulette();
                         	API.sendChat(subChat(basicBot.chat.nouserspecified, {
                             name: chat.un
                             }));
                         }
                     }
-            }, */
+            },
 
             frouletteCommand: {
                 command: ['forceroleta'],
