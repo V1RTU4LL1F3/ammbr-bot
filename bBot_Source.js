@@ -229,7 +229,7 @@
     var botCreatorIDs = ["3851534", "4105209", "3926149"];
 
     var basicBot = {
-        version: "3.0.7 (11/05/17)",
+        version: "3.0.6 (11/05/17)",
         status: false,
         name: "basicBot",
         loggedInID: null,
@@ -254,6 +254,7 @@
             slotStats: true,
             ss: true,
             duelTime: 5,
+            roletapos: 1,
             autowoot: true,
             autoskip: false,
             smartSkip: true,
@@ -378,6 +379,34 @@
                     var winner = basicBot.room.roulette.participants[ind];
                     basicBot.room.roulette.participants = [];
                     var pos = Math.floor((Math.random() * API.getWaitList().length) + 1);
+                    var user = basicBot.userUtilities.lookupUser(winner);
+                    var name = user.username;
+                    API.sendChat(subChat(basicBot.chat.winnerpicked, {
+                        name: name,
+                        position: pos
+                    }));
+                    setTimeout(function(winner, pos) {
+                        basicBot.userUtilities.moveUser(winner, pos, false);
+                    }, 1 * 1000, winner, pos);
+                }
+            },
+            roleta: {
+                roletaStatus: false,
+                participants: [],
+                countdown: null,
+                startRoleta: function() {
+                    basicBot.room.roleta.roletaStatus = true;
+                    basicBot.room.roleta.countdown = setTimeout(function() {
+                        basicBot.room.roleta.endRoleta();
+                    }, 60 * 1000);
+                    API.sendChat(basicBot.chat.roleta);
+                },
+                endRoleta: function() {
+                    basicBot.room.roleta.roletaStatus = false;
+                    var ind = Math.floor(Math.random() * basicBot.room.roleta.participants.length);
+                    var winner = basicBot.room.roleta.participants[ind];
+                    basicBot.room.roleta.participants = [];
+                    var pos = basicBot.settings.roletapos;
                     var user = basicBot.userUtilities.lookupUser(winner);
                     var name = user.username;
                     API.sendChat(subChat(basicBot.chat.winnerpicked, {
@@ -2412,7 +2441,7 @@
                                 return API.sendChat(subChat(basicBot.chat.sendpunir, {
                                     nameto: user.username,
                                     namefrom: chat.un,
-                                    punir: this.getCookie()
+                                    punir: this.getPunir()
                                 }));
                             }
                         }
@@ -3076,6 +3105,43 @@
                 }
             },
 
+            entrarCommand: {
+                command: ['join', 'entrar'],
+                rank: 'user',
+                type: 'exact',
+                functionality: function(chat, cmd) {
+                    if (this.type === 'exact' && chat.message.length !== cmd.length) return void(0);
+                    if (!basicBot.commands.executable(this.rank, chat)) return void(0);
+                    else {
+                        if (basicBot.room.roleta.roletaStatus && basicBot.room.roleta.participants.indexOf(chat.uid) < 0) {
+                            basicBot.room.roleta.participants.push(chat.uid);
+                            API.sendChat(subChat(basicBot.chat.roletajoin, {
+                                name: chat.un
+                            }));
+                        }
+                    }
+                }
+            },
+
+            sairCommand: {
+                command: ['leave', 'sair'],
+                rank: 'user',
+                type: 'exact',
+                functionality: function(chat, cmd) {
+                    if (this.type === 'exact' && chat.message.length !== cmd.length) return void(0);
+                    if (!basicBot.commands.executable(this.rank, chat)) return void(0);
+                    else {
+                        var ind = basicBot.room.roleta.participants.indexOf(chat.uid);
+                        if (ind > -1) {
+                            basicBot.room.roleta.participants.splice(ind, 1);
+                            API.sendChat(subChat(basicBot.chat.roletaleave, {
+                                name: chat.un
+                            }));
+                        }
+                    }
+                }
+            },
+
             linkCommand: {
                 command: 'link',
                 rank: 'user',
@@ -3608,7 +3674,7 @@
             },
 
             rouletteCommand: {
-                command: ['roulette', 'roleta'],
+                command: ['roletatroll'],
                 rank: 'mod',
                 type: 'exact',
                 functionality: function(chat, cmd) {
@@ -3617,6 +3683,20 @@
                     else {
                         if (!basicBot.room.roulette.rouletteStatus) {
                             basicBot.room.roulette.startRoulette();
+                        }
+                    }
+                }
+            },
+            roletaCommand: {
+                command: ['roleta'],
+                rank: 'mod',
+                type: 'exact',
+                functionality: function(chat, cmd) {
+                    if (this.type === 'exact' && chat.message.length !== cmd.length) return void(0);
+                    if (!basicBot.commands.executable(this.rank, chat)) return void(0);
+                    else {
+                        if (!basicBot.room.roleta.roletaStatus) {
+                            basicBot.room.roleta.startRoleta();
                         }
                     }
                 }
