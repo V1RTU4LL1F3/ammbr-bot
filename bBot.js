@@ -98,7 +98,7 @@
       fbLink: "http://goo.gl/fmAu02" ,
       youtubeLink: null,
       website: null,
-      intervalMessages: ["Não esqueça de dar uma olhada nas regras da sala antes de entrar na fila de DJs! ➲ http://goo.gl/i7JUIX",
+      intervalMessages: ["Não esqueça de dar uma olhada nas regras da sala antes de entrar na fila de DJs! ➲ https://goo.gl/O5nQJ0",
       "Venha fazer parte do nosso grupo no facebook! ➲ http://goo.gl/fmAu02",
       "Digite !comandos para receber um link com a lista de comandos completa!",
       "Se um vídeo receber mais votos negativos que positivos, ele será pulado instantâneamente"],
