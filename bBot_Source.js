@@ -3740,7 +3740,7 @@
                     if (!basicBot.commands.executable(this.rank, chat)) return void(0);
                     else {
                     	    basicBot.room.roulette.stopRoulette();
-                        	API.sendChat(subChat(basicBot.chat.nouserspecified, {
+                        	API.sendChat(subChat(basicBot.chat.killtroll, {
                             name: chat.un
                             }));
                         }
