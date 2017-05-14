@@ -2940,7 +2940,7 @@
             },
 
             joinCommand: {
-                command: ['join', 'entrar'],
+                command: ['join', 'Join', 'JOIN', 'entrar', 'Entrar', 'ENTRAR', 'entra', 'Entra', 'ENTRA'],
                 rank: 'user',
                 type: 'exact',
                 functionality: function(chat, cmd) {
@@ -3111,7 +3111,7 @@
             },
 
             entrarCommand: {
-                command: ['join', 'entrar'],
+                command: ['join', 'Join', 'JOIN', 'entrar', 'Entrar', 'ENTRAR', 'entra', 'Entra', 'ENTRA'],
                 rank: 'user',
                 type: 'exact',
                 functionality: function(chat, cmd) {
