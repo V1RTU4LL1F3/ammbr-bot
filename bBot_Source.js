@@ -4207,7 +4207,7 @@
             },
 
             toggleblCommand: {
-                command: 'togglebl',
+                command: ['togglebl', 'alternarbl'],
                 rank: 'bouncer',
                 type: 'exact',
                 functionality: function(chat, cmd) {
