@@ -229,7 +229,7 @@
     var botCreatorIDs = ["3851534", "4105209", "3926149"];
 
     var basicBot = {
-        version: "3.0.6 (11/05/17)",
+        version: "3.0.5 (14/05/17)",
         status: false,
         name: "basicBot",
         loggedInID: null,
@@ -399,7 +399,9 @@
                     basicBot.room.roleta.countdown = setTimeout(function() {
                         basicBot.room.roleta.endRoleta();
                     }, 60 * 1000);
-                    API.sendChat(basicBot.chat.roleta);
+                    API.sendChat(subChat(basicBot.chat.roleta, {
+                        pos: basicBot.settings.roletapos
+                    }));
                 },
                 endRoleta: function() {
                     basicBot.room.roleta.roletaStatus = false;
@@ -3392,6 +3394,29 @@
                             return API.sendChat(subChat(basicBot.chat.duelTime, {
                                 name: chat.un,
                                 time: basicBot.settings.duelTime
+                            }));
+                        } else return API.sendChat(subChat(basicBot.chat.invalidtime, {
+                            name: chat.un
+                        }));
+                    }
+                }
+            },
+
+            setroletaCommand: {
+                command: ['setroleta'],
+                rank: 'manager',
+                type: 'startsWith',
+                functionality: function(chat, cmd) {
+                    if (this.type === 'exact' && chat.message.length !== cmd.length) return void(0);
+                    if (!basicBot.commands.executable(this.rank, chat)) return void(0);
+                    else {
+                        var msg = chat.message;
+                        var maxPos = msg.substring(cmd.length + 1);
+                        if (!isNaN(maxPos)) {
+                            basicBot.settings.roletapos = maxPos;
+                            return API.sendChat(subChat(basicBot.chat.setRoleta, {
+                                name: chat.un,
+                                pos: basicBot.settings.roletapos
                             }));
                         } else return API.sendChat(subChat(basicBot.chat.invalidtime, {
                             name: chat.un
