@@ -106,9 +106,9 @@
       songstats: false,
       commandLiteral: "!",
       blacklists: {
-        Tema: "https://rawgit.com/V1RTU4LL1F3/fatgasda/master/Blacklists/Tema.json",
-        Nudez: "https://rawgit.com/V1RTU4LL1F3/fatgasda/master/Blacklists/Nudez.json",
-        Cover: "https://rawgit.com/V1RTU4LL1F3/fatgasda/master/Blacklists/Cover.json"
+        gênero: "https://rawgit.com/V1RTU4LL1F3/fatgasda/master/Blacklists/Gênero.json",
+        nudez: "https://rawgit.com/V1RTU4LL1F3/fatgasda/master/Blacklists/Nudez.json",
+        cover: "https://rawgit.com/V1RTU4LL1F3/fatgasda/master/Blacklists/Cover.json"
       }
     }));
 
