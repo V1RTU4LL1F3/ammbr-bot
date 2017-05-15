@@ -3732,7 +3732,7 @@
             },
             
             stoptrollCommand: {
-                command: ['killtroll'],
+                command: ['killtroll', 'parartroll', 'stoptroll'],
                 rank: 'mod',
                 type: 'exact',
                 functionality: function(chat, cmd) {
@@ -3748,7 +3748,7 @@
             },
 
             frouletteCommand: {
-                command: ['forceroleta'],
+                command: ['forceroleta', 'forcetroll', 'forçarroleta', 'forçartroll'],
                 rank: 'cohost',
                 type: 'exact',
                 functionality: function(chat, cmd) {
