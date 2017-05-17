@@ -201,13 +201,22 @@ API.on('chat', function(obj) {
     if(obj.message.indexOf("vou sair") != -1){
             API.sendChat("Tchauzinho, volte sempre :3");
         }
-    if(obj.message.indexOf("vou dormir") != -1){
-            API.sendChat("Tchauzinho, volte sempre :3");
-        }
     if(obj.message.indexOf("xau galera") != -1){
             API.sendChat("Tchauzinho, volte sempre :3");
         }
     if(obj.message.indexOf("flw galera") != -1){
+            API.sendChat("Tchauzinho, volte sempre :3");
+        }
+    if(obj.message.indexOf("xau pessoal") != -1){
+            API.sendChat("Tchauzinho, volte sempre :3");
+        }
+    if(obj.message.indexOf("flw pessoal") != -1){
+            API.sendChat("Tchauzinho, volte sempre :3");
+        }
+    if(obj.message.indexOf("xau gente") != -1){
+            API.sendChat("Tchauzinho, volte sempre :3");
+        }
+    if(obj.message.indexOf("flw gente") != -1){
             API.sendChat("Tchauzinho, volte sempre :3");
         }
 });
