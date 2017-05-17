@@ -230,7 +230,7 @@
     var botCreatorIDs = ["3851534", "4105209", "3926149"];
 
     var basicBot = {
-        version: "3.1.1 (16/05/17)",
+        version: "3.1.2 (17/05/17)",
         status: false,
         name: "basicBot",
         loggedInID: null,
@@ -4380,7 +4380,7 @@
                     if (this.type === 'exact' && chat.message.length !== cmd.length) return void(0);
                     if (!basicBot.commands.executable(this.rank, chat)) return void(0);
                     else {
-                        var msg = chat.message;
+                        var msg = chat.message.toLowerCase();
                         var cd = msg.substring(cmd.length + 1);
                         if (!isNaN(cd)) {
                             basicBot.settings.commandCooldown = cd;
