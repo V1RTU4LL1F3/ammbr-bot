@@ -11,7 +11,7 @@ for(var i = 0; i < iabot.falaoi.length; i++){
                API.sendChat("Oi @" + obj.un + "");
           }
      }
-}); */
+}); *//
 
                   //Diferencia M de m
 /* iabot = {
