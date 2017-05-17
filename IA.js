@@ -43,7 +43,7 @@ iabot = {
       bnoite: ["boa noite loli","boa noite bot","boa noite galera","boa noite pessoal","boa noite a todos","boa noite gente","boa noite povo"],
       carente: ["alguem aí?","alguém on?","alguem on?","ninguém on?","ninguem on?"],
       carenterandom: ["@Loli Bot não"],
-      carenterandomresp: ["ata","então continua ai falando sozinho(a)","ok :("],
+      carenterandomresp: ["ata","então continua ai falando sozinho(a) :rage: ","ok :("],
 }
 
 API.on('chat', function(obj) {
