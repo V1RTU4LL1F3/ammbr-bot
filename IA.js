@@ -12,6 +12,10 @@ for(var i = 0; i < iabot.falaoi.length; i++){
      }
 }); */
 
+                           // Random
+// var autowootlinkRandom = Math.floor(Math.random() * iabot.autowootlink.length);
+// API.sendChat(iabot.autowootlink[autowootlinkRandom] +" @"+ obj.un +" ");
+
 
 API.on('chat', function(obj) {
 
