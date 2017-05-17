@@ -52,6 +52,10 @@ for(var i = 0; i < iabot.falaoi.length; i++){
                API.sendChat("Oi, @" + obj.un + " :3");
           }
      }
+});
+
+API.on('chat', function(obj) {
+     msg = obj.message.toLowerCase();
   
 for(var i = 0; i < iabot.falaxau.length; i++){
           if(msg.indexOf(iabot.falaxau[i].toLowerCase()) > -1){
