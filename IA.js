@@ -53,9 +53,6 @@ for(var i = 0; i < iabot.falaoi.length; i++){
           }
      }
   
-API.on('chat', function(obj) {
-     msg = obj.message.toLowerCase();
-  
 for(var i = 0; i < iabot.falaxau.length; i++){
           if(msg.indexOf(iabot.falaxau[i].toLowerCase()) > -1){
                API.sendChat("Tchauzinho, @" + obj.un + ", volte sempre :3");
