@@ -28,7 +28,6 @@ API.on('chat', function(obj) {
 //TEMAS
 
 API.on('chat', function(obj) {
-    var user = API.getUser().id
     if(obj.message.indexOf("quais são os temas loli") != -1){
             API.sendChat("Aqui estão os temas permitidos ^^ http://i.imgur.com/jqCjGXN.png");
         }
@@ -58,7 +57,6 @@ API.on('chat', function(obj) {
 //INTERAÇÃO
 
 API.on('chat', function(obj) {
-    var user = API.getUser().id
     
                 //Oi :3
     
