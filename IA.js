@@ -61,7 +61,7 @@ API.on('chat', function(obj) {
      msg = obj.message.toLowerCase();
 
 for(var i = 0; i < iabot.falaoi2.length; i++){
-          if(msg.indexOf(iabot.falaoi2[i].italics()) > -1){
+          if(msg.indexOf(iabot.falaoi2[i].toLowerCase()) > -1){
                API.sendChat("Oi, @" + obj.un + " :3");
           }
      }
