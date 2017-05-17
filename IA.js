@@ -1,3 +1,19 @@
+                  //Não diferencia M de m
+/* iabot = {
+     falaoi: ["Oi bot","ola bot","eae bot","olá bot"],
+}
+
+API.on('chat', function(obj) {
+     msg = obj.message.toLowerCase();
+
+for(var i = 0; i < iabot.falaoi.length; i++){
+          if(msg.indexOf(iabot.falaoi[i].toLowerCase()) > -1){
+               API.sendChat("Oi @" + obj.un + "");
+          }
+     }
+}); */
+
+                  //Diferencia M de m
 /* iabot = {
      falaoi: ["Oi bot","ola bot","eae bot","olá bot"],
 }
