@@ -1,3 +1,18 @@
+/* iabot = {
+     falaoi: ["Oi bot","ola bot","eae bot","olá bot"],
+}
+
+API.on('chat', function(obj) {
+     msg = obj.message.italics();
+
+for(var i = 0; i < iabot.falaoi.length; i++){
+          if(msg.indexOf(iabot.falaoi[i].italics()) > -1){
+               API.sendChat("Oi @" + obj.un + "");
+          }
+     }
+}); */
+
+
 API.on('chat', function(obj) {
 
                 //REGRAS
