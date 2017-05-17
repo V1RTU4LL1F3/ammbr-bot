@@ -52,70 +52,42 @@ for(var i = 0; i < iabot.falaoi.length; i++){
                API.sendChat("Oi, @" + obj.un + " :3");
           }
      }
-});
-
-API.on('chat', function(obj) {
-     msg = obj.message.toLowerCase();
-
+  
 for(var i = 0; i < iabot.falaxau.length; i++){
           if(msg.indexOf(iabot.falaxau[i].toLowerCase()) > -1){
                API.sendChat("Tchauzinho, @" + obj.un + ", volte sempre :3");
           }
      }
-}); 
-
-API.on('chat', function(obj) {
-     msg = obj.message.toLowerCase();
 
 for(var i = 0; i < iabot.regras.length; i++){
           if(msg.indexOf(iabot.regras[i].toLowerCase()) > -1){
                API.sendChat("Nossas regras? aqui estão elas, @" + obj.un + " :D https://goo.gl/O5nQJ0");
           }
      }
-});
-
-API.on('chat', function(obj) {
-     msg = obj.message.toLowerCase();
-
+  
 for(var i = 0; i < iabot.temas.length; i++){
           if(msg.indexOf(iabot.temas[i].toLowerCase()) > -1){
                API.sendChat("Aqui estão os temas permitidos, @" + obj.un + " ^^ http://i.imgur.com/jqCjGXN.png");
           }
      }
-});
-
-API.on('chat', function(obj) {
-     msg = obj.message.toLowerCase();
 
 for(var i = 0; i < iabot.bdia.length; i++){
           if(msg.indexOf(iabot.bdia[i].toLowerCase()) > -1){
                API.sendChat("Bom dia, @" + obj.un + " :3");
           }
      }
-});
-
-API.on('chat', function(obj) {
-     msg = obj.message.toLowerCase();
 
 for(var i = 0; i < iabot.btarde.length; i++){
           if(msg.indexOf(iabot.btarde[i].toLowerCase()) > -1){
                API.sendChat("Boa tarde, @" + obj.un + " :3");
           }
      }
-});
-
-API.on('chat', function(obj) {
-     msg = obj.message.toLowerCase();
 
 for(var i = 0; i < iabot.bnoite.length; i++){
           if(msg.indexOf(iabot.bnoite[i].toLowerCase()) > -1){
                API.sendChat("Boa noite, @" + obj.un + " :3");
           }
      }
-});
-
-API.on('chat', function(obj) {
-     msg = obj.message.toLowerCase();
 
 for(var i = 0; i < iabot.carente.length; i++){
           if(msg.indexOf(iabot.carente[i].toLowerCase()) > -1){
