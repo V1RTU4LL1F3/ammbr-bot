@@ -41,7 +41,7 @@ for(var i = 0; i < iabot.falaoi.length; i++){
       bdia: ["bom dia loli","bom dia bot","bom dia galera","bom dia pessoal","bom dia a todos","bom dia gente","bom dia povo"],
       btarde: ["boa tarde loli","boa tarde bot","boa tarde galera","boa tarde pessoal","boa tarde a todos","boa tarde gente","boa tarde povo"],
       bnoite: ["boa noite loli","boa noite bot","boa noite galera","boa noite pessoal","boa noite a todos","boa noite gente","boa noite povo"],
-      carente: ["alguem aí?","alguém on?","alguem on?","ninguém on?","ninguem on?"]
+      carente: ["alguém aí?","alguem aí?","alguém on?","alguem on?","ninguém on?","ninguem on?"]
 }
 
 API.on('chat', function(obj) {
