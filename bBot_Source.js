@@ -308,7 +308,7 @@
             messageInterval: 5,
             songstats: true,
             commandLiteral: "!",
-            slotFruits: [":apple:", ":pear:", ":lemon:"],
+            slotFruits: [":apple:", ":pear:", ":lemon:", ":cherries:"],
             blacklists: {
                 NSFW: "https://rawgit.com/basicBot/custom/master/blacklists/NSFWlist.json",
                 OP: "https://rawgit.com/basicBot/custom/master/blacklists/OPlist.json",
@@ -493,7 +493,7 @@
                 songCount: 0
             };
             this.slots = {
-                count: 2,
+                count: 1,
                 limite: false,
                 time: 0
             };
