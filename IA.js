@@ -1,7 +1,8 @@
-
-//REGRAS
-
 API.on('chat', function(obj) {
+
+                //REGRAS
+
+    
     if(obj.message.indexOf("quais são as regras loli") != -1){
             API.sendChat("Nossas regras? aqui estão elas :D https://goo.gl/O5nQJ0");
         }
@@ -23,11 +24,10 @@ API.on('chat', function(obj) {
     if(obj.message.indexOf("cade as regras") != -1){
             API.sendChat("Nossas regras? aqui estão elas :D https://goo.gl/O5nQJ0");
         }
-});
 
-//TEMAS
+                //TEMAS
 
-API.on('chat', function(obj) {
+
     if(obj.message.indexOf("quais são os temas loli") != -1){
             API.sendChat("Aqui estão os temas permitidos ^^ http://i.imgur.com/jqCjGXN.png");
         }
@@ -35,9 +35,6 @@ API.on('chat', function(obj) {
             API.sendChat("Aqui estão os temas permitidos ^^ http://i.imgur.com/jqCjGXN.png");
         }
     if(obj.message.indexOf("temas da sala?") != -1){
-            API.sendChat("Aqui estão os temas permitidos ^^ http://i.imgur.com/jqCjGXN.png");
-        }
-    if(obj.message.indexOf("quais sao os temas loli") != -1){
             API.sendChat("Aqui estão os temas permitidos ^^ http://i.imgur.com/jqCjGXN.png");
         }
     if(obj.message.indexOf("pode tocar pop?") != -1){
@@ -52,11 +49,10 @@ API.on('chat', function(obj) {
     if(obj.message.indexOf("pode tocar indie?") != -1){
             API.sendChat("Aqui estão os temas permitidos ^^ http://i.imgur.com/jqCjGXN.png");
         }
-});
 
-//INTERAÇÃO
 
-API.on('chat', function(obj) {
+     //  >>>>> INTERAÇÃO <<<<<
+    
     
                 //Oi :3
     
