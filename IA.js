@@ -60,6 +60,7 @@ API.on('chat', function(obj) {
     
                 //Oi :3
     
+    
     if(obj.message.indexOf("Oi Bot") != -1){
             API.sendChat("Oi :3");
         }
@@ -135,7 +136,7 @@ API.on('chat', function(obj) {
             API.sendChat("Boa tarde :3");
         }
     
-            //Boa noite :3
+                //Boa noite :3
     
     
     if(obj.message.indexOf("boa noite Loli") != -1){
@@ -164,5 +165,49 @@ API.on('chat', function(obj) {
         }
     if(obj.message.indexOf("boa noite povo") != -1){
             API.sendChat("Boa noite :3");
+        }
+    
+                //Carente Mode ON
+    
+    
+    if(obj.message.indexOf("alguem aí?") != -1){
+            API.sendChat("Tem eu, serve? :3");
+        }
+    if(obj.message.indexOf("alguem on?") != -1){
+            API.sendChat("Tem eu, serve? :3");
+        }
+    if(obj.message.indexOf("ninguem on?") != -1){
+            API.sendChat("Tem eu, serve? :3");
+        }
+    if(obj.message.indexOf("morreu todo mundo?") != -1){
+            API.sendChat("Eu to viva :3");
+        }
+    
+                //Despedida
+    
+    
+    if(obj.message.indexOf("xau bot") != -1){
+            API.sendChat("Tchauzinho, volte sempre :3");
+        }
+    if(obj.message.indexOf("xau Bot") != -1){
+            API.sendChat("Tchauzinho, volte sempre :3");
+        }
+    if(obj.message.indexOf("xau loli") != -1){
+            API.sendChat("Tchauzinho, volte sempre :3");
+        }
+    if(obj.message.indexOf("xau Loli") != -1){
+            API.sendChat("Tchauzinho, volte sempre :3");
+        }
+    if(obj.message.indexOf("vou sair") != -1){
+            API.sendChat("Tchauzinho, volte sempre :3");
+        }
+    if(obj.message.indexOf("vou dormir") != -1){
+            API.sendChat("Tchauzinho, volte sempre :3");
+        }
+    if(obj.message.indexOf("xau galera") != -1){
+            API.sendChat("Tchauzinho, volte sempre :3");
+        }
+    if(obj.message.indexOf("flw galera") != -1){
+            API.sendChat("Tchauzinho, volte sempre :3");
         }
 });
