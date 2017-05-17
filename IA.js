@@ -34,16 +34,17 @@ for(var i = 0; i < iabot.falaoi.length; i++){
 
 
 iabot = {
-      falaoi: ["Oi bot","ola bot","eae bot","olá bot","Oi loli","ola loli","eae loli","olá loli"],
+      falaoi: ["Oi bot","Oi loli","Oi Loli","Oi Bot"],
+      falaoi2: ["ola bot","eae bot","olá bot","ola loli","eae loli","olá loli","eae galera","oi gente","eae pessoal","oi pessoal"],
       falaxau: ["xau bot","xau loli","vou sair","xau galera","xau pessoal","xau gente","flw galera","flw pessoal","flw gente"],
       regras: ["quais são as regras","quais sao as regras","kd as regras","cadê as regras","cade as regras", "regras da sala"],
       temas: ["quais são os temas","quais sao os temas","temas da sala?","pode tocar pop?","pode tocar funk?","pode tocar rap?"],
       bdia: ["bom dia loli","bom dia bot","bom dia galera","bom dia pessoal","bom dia a todos","bom dia gente","bom dia povo"],
       btarde: ["boa tarde loli","boa tarde bot","boa tarde galera","boa tarde pessoal","boa tarde a todos","boa tarde gente","boa tarde povo"],
       bnoite: ["boa noite loli","boa noite bot","boa noite galera","boa noite pessoal","boa noite a todos","boa noite gente","boa noite povo"],
-      carente: ["alguem aí?","alguém on?","alguem on?","ninguém on?","ninguem on?"],
+      carente: ["alguém aí?""alguem aí?","alguém on?","alguem on?","ninguém on?","ninguem on?"],
       carenterandom: ["@Loli Bot não"],
-      carenterandomresp: ["ata","então continua ai falando sozinho(a) :rage: ","ok :("],
+      carenterandomresp: ["ata","então continua aí falando sozinho(a) :rage: ","ok :("],
 }
 
 API.on('chat', function(obj) {
@@ -58,6 +59,12 @@ for(var i = 0; i < iabot.falaoi.length; i++){
 
 API.on('chat', function(obj) {
      msg = obj.message.toLowerCase();
+
+for(var i = 0; i < iabot.falaoi2.length; i++){
+          if(msg.indexOf(iabot.falaoi2[i].italics()) > -1){
+               API.sendChat("Oi, @" + obj.un + " :3");
+          }
+     }
 
 for(var i = 0; i < iabot.falaxau.length; i++){
           if(msg.indexOf(iabot.falaxau[i].toLowerCase()) > -1){
