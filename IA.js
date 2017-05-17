@@ -33,221 +33,93 @@ for(var i = 0; i < iabot.falaoi.length; i++){
 // API.sendChat(iabot.autowootlink[autowootlinkRandom] +" @"+ obj.un +" ");
 
 
+ iabot = {
+      falaoi: ["Oi bot","ola bot","eae bot","olá bot"],
+      falaxau: ["xau bot","xau loli","vou sair","xau galera","xau pessoal","xau gente","flw galera","flw pessoal","flw gente"],
+      regras: ["quais são as regras","quais sao as regras","kd as regras","cadê as regras","cade as regras"],
+      temas: ["quais são os temas","quais sao os temas","temas da sala?","pode tocar pop?","pode tocar funk?","pode tocar rap?"],
+      bdia: ["bom dia loli","bom dia bot","bom dia galera","bom dia pessoal","bom dia a todos","bom dia gente","bom dia povo"],
+      btarde: ["boa tarde loli","boa tarde bot","boa tarde galera","boa tarde pessoal","boa tarde a todos","boa tarde gente","boa tarde povo"],
+      bnoite: ["boa noite loli","boa noite bot","boa noite galera","boa noite pessoal","boa noite a todos","boa noite gente","boa noite povo"],
+      carente: ["alguem aí?","alguém on?","alguem on?","ninguém on?","ninguem on?"]
+}
+
 API.on('chat', function(obj) {
+     msg = obj.message.italics();
 
-                //REGRAS
+for(var i = 0; i < iabot.falaoi.length; i++){
+          if(msg.indexOf(iabot.falaoi[i].italics()) > -1){
+               API.sendChat("Oi, @" + obj.un + " :3");
+          }
+     }
+});
 
-    
-    if(obj.message.indexOf("quais são as regras loli") != -1){
-            API.sendChat("Nossas regras? aqui estão elas :D https://goo.gl/O5nQJ0");
-        }
-    if(obj.message.indexOf("quais sao as regras loli") != -1){
-            API.sendChat("Nossas regras? aqui estão elas :D https://goo.gl/O5nQJ0");
-        }
-    if(obj.message.indexOf("quais sao as regras da sala") != -1){
-            API.sendChat("Nossas regras? aqui estão elas :D https://goo.gl/O5nQJ0");
-        }
-    if(obj.message.indexOf("quais são as regras da sala") != -1){
-            API.sendChat("Nossas regras? aqui estão elas :D https://goo.gl/O5nQJ0");
-        }
-    if(obj.message.indexOf("kd as regras") != -1){
-            API.sendChat("Nossas regras? aqui estão elas :D https://goo.gl/O5nQJ0");
-        }
-    if(obj.message.indexOf("cadê as regras") != -1){
-            API.sendChat("Nossas regras? aqui estão elas :D https://goo.gl/O5nQJ0");
-        }
-    if(obj.message.indexOf("cade as regras") != -1){
-            API.sendChat("Nossas regras? aqui estão elas :D https://goo.gl/O5nQJ0");
-        }
+API.on('chat', function(obj) {
+     msg = obj.message.toLowerCase();
 
-                //TEMAS
+for(var i = 0; i < iabot.falaxau.length; i++){
+          if(msg.indexOf(iabot.falaxau[i].toLowerCase()) > -1){
+               API.sendChat("Tchauzinho, @" + obj.un + ", volte sempre :3");
+          }
+     }
+}); 
 
+API.on('chat', function(obj) {
+     msg = obj.message.toLowerCase();
 
-    if(obj.message.indexOf("quais são os temas loli") != -1){
-            API.sendChat("Aqui estão os temas permitidos ^^ http://i.imgur.com/jqCjGXN.png");
-        }
-    if(obj.message.indexOf("quais sao os temas loli") != -1){
-            API.sendChat("Aqui estão os temas permitidos ^^ http://i.imgur.com/jqCjGXN.png");
-        }
-    if(obj.message.indexOf("temas da sala?") != -1){
-            API.sendChat("Aqui estão os temas permitidos ^^ http://i.imgur.com/jqCjGXN.png");
-        }
-    if(obj.message.indexOf("pode tocar pop?") != -1){
-            API.sendChat("Aqui estão os temas permitidos ^^ http://i.imgur.com/jqCjGXN.png");
-        }
-    if(obj.message.indexOf("pode tocar funk?") != -1){
-            API.sendChat("Aqui estão os temas permitidos ^^ http://i.imgur.com/jqCjGXN.png");
-        }
-    if(obj.message.indexOf("pode tocar rap?") != -1){
-            API.sendChat("Aqui estão os temas permitidos ^^ http://i.imgur.com/jqCjGXN.png");
-        }
-    if(obj.message.indexOf("pode tocar indie?") != -1){
-            API.sendChat("Aqui estão os temas permitidos ^^ http://i.imgur.com/jqCjGXN.png");
-        }
+for(var i = 0; i < iabot.regras.length; i++){
+          if(msg.indexOf(iabot.regras[i].toLowerCase()) > -1){
+               API.sendChat("Nossas regras? aqui estão elas, @" + obj.un + " :D https://goo.gl/O5nQJ0");
+          }
+     }
+});
 
+API.on('chat', function(obj) {
+     msg = obj.message.toLowerCase();
 
-     //  >>>>> INTERAÇÃO <<<<<
-    
-    
-                //Oi :3
-    
-    
-    if(obj.message.indexOf("Oi Bot") != -1){
-            API.sendChat("Oi :3");
-        }
-    if(obj.message.indexOf("Oi bot") != -1){
-            API.sendChat("Oi :3");
-        }
-    if(obj.message.indexOf("Oi Loli") != -1){
-            API.sendChat("Oi :3");
-        }
-    if(obj.message.indexOf("Oi loli") != -1){
-            API.sendChat("Oi :3");
-        }
-    
-                //Bom dia :3
-    
-    
-    if(obj.message.indexOf("bom dia Loli") != -1){
-            API.sendChat("Bom dia :3");
-        }
-    if(obj.message.indexOf("bom dia loli") != -1){
-            API.sendChat("Bom dia :3");
-        }
-    if(obj.message.indexOf("bom dia Bot") != -1){
-            API.sendChat("Bom dia :3");
-        }
-    if(obj.message.indexOf("bom dia bot") != -1){
-            API.sendChat("Bom dia :3");
-        }
-    if(obj.message.indexOf("bom dia galera") != -1){
-            API.sendChat("Bom dia :3");
-        }
-    if(obj.message.indexOf("bom dia pessoal") != -1){
-            API.sendChat("Bom dia :3");
-        }
-    if(obj.message.indexOf("bom dia a todos") != -1){
-            API.sendChat("Bom dia :3");
-        }
-    if(obj.message.indexOf("bom dia gente") != -1){
-            API.sendChat("Bom dia :3");
-        }
-    if(obj.message.indexOf("bom dia povo") != -1){
-            API.sendChat("Bom dia :3");
-        }
-    
-                //Boa tarde :3
-    
-    
-    if(obj.message.indexOf("boa tarde Loli") != -1){
-            API.sendChat("Boa tarde :3");
-        }
-    if(obj.message.indexOf("boa tarde loli") != -1){
-            API.sendChat("Boa tarde :3");
-        }
-    if(obj.message.indexOf("boa tarde Bot") != -1){
-            API.sendChat("Boa tarde :3");
-        }
-    if(obj.message.indexOf("boa tarde bot") != -1){
-            API.sendChat("Boa tarde :3");
-        }
-    if(obj.message.indexOf("boa tarde galera") != -1){
-            API.sendChat("Boa tarde :3");
-        }
-    if(obj.message.indexOf("boa tarde pessoal") != -1){
-            API.sendChat("Boa tarde :3");
-        }
-    if(obj.message.indexOf("boa tarde a todos") != -1){
-            API.sendChat("Boa tarde :3");
-        }
-    if(obj.message.indexOf("boa tarde gente") != -1){
-            API.sendChat("Boa tarde :3");
-        }
-    if(obj.message.indexOf("boa tarde povo") != -1){
-            API.sendChat("Boa tarde :3");
-        }
-    
-                //Boa noite :3
-    
-    
-    if(obj.message.indexOf("boa noite Loli") != -1){
-            API.sendChat("Boa tarde :3");
-        }
-    if(obj.message.indexOf("boa noite loli") != -1){
-            API.sendChat("Boa noite :3");
-        }
-    if(obj.message.indexOf("boa noite Bot") != -1){
-            API.sendChat("Boa noite :3");
-        }
-    if(obj.message.indexOf("boa noite bot") != -1){
-            API.sendChat("Boa noite :3");
-        }
-    if(obj.message.indexOf("boa noite galera") != -1){
-            API.sendChat("Boa noite :3");
-        }
-    if(obj.message.indexOf("boa noite pessoal") != -1){
-            API.sendChat("Boa noite :3");
-        }
-    if(obj.message.indexOf("boa noite a todos") != -1){
-            API.sendChat("Boa noite :3");
-        }
-    if(obj.message.indexOf("boa noite gente") != -1){
-            API.sendChat("Boa noite :3");
-        }
-    if(obj.message.indexOf("boa noite povo") != -1){
-            API.sendChat("Boa noite :3");
-        }
-    
-                //Carente Mode ON
-    
-    
-    if(obj.message.indexOf("alguem aí?") != -1){
-            API.sendChat("Tem eu, serve? :3");
-        }
-    if(obj.message.indexOf("alguem on?") != -1){
-            API.sendChat("Tem eu, serve? :3");
-        }
-    if(obj.message.indexOf("ninguem on?") != -1){
-            API.sendChat("Tem eu, serve? :3");
-        }
-    if(obj.message.indexOf("morreu todo mundo?") != -1){
-            API.sendChat("Eu to viva :3");
-        }
-    
-                //Despedida
-    
-    
-    if(obj.message.indexOf("xau bot") != -1){
-            API.sendChat("Tchauzinho, volte sempre :3");
-        }
-    if(obj.message.indexOf("xau Bot") != -1){
-            API.sendChat("Tchauzinho, volte sempre :3");
-        }
-    if(obj.message.indexOf("xau loli") != -1){
-            API.sendChat("Tchauzinho, volte sempre :3");
-        }
-    if(obj.message.indexOf("xau Loli") != -1){
-            API.sendChat("Tchauzinho, volte sempre :3");
-        }
-    if(obj.message.indexOf("vou sair") != -1){
-            API.sendChat("Tchauzinho, volte sempre :3");
-        }
-    if(obj.message.indexOf("xau galera") != -1){
-            API.sendChat("Tchauzinho, volte sempre :3");
-        }
-    if(obj.message.indexOf("flw galera") != -1){
-            API.sendChat("Tchauzinho, volte sempre :3");
-        }
-    if(obj.message.indexOf("xau pessoal") != -1){
-            API.sendChat("Tchauzinho, volte sempre :3");
-        }
-    if(obj.message.indexOf("flw pessoal") != -1){
-            API.sendChat("Tchauzinho, volte sempre :3");
-        }
-    if(obj.message.indexOf("xau gente") != -1){
-            API.sendChat("Tchauzinho, volte sempre :3");
-        }
-    if(obj.message.indexOf("flw gente") != -1){
-            API.sendChat("Tchauzinho, volte sempre :3");
-        }
+for(var i = 0; i < iabot.temas.length; i++){
+          if(msg.indexOf(iabot.temas[i].toLowerCase()) > -1){
+               API.sendChat("Aqui estão os temas permitidos, @" + obj.un + " ^^ http://i.imgur.com/jqCjGXN.png");
+          }
+     }
+});
+
+API.on('chat', function(obj) {
+     msg = obj.message.toLowerCase();
+
+for(var i = 0; i < iabot.bdia.length; i++){
+          if(msg.indexOf(iabot.bdia[i].toLowerCase()) > -1){
+               API.sendChat("Bom dia, @" + obj.un + " :3");
+          }
+     }
+});
+
+API.on('chat', function(obj) {
+     msg = obj.message.toLowerCase();
+
+for(var i = 0; i < iabot.btarde.length; i++){
+          if(msg.indexOf(iabot.btarde[i].toLowerCase()) > -1){
+               API.sendChat("Boa tarde, @" + obj.un + " :3");
+          }
+     }
+});
+
+API.on('chat', function(obj) {
+     msg = obj.message.toLowerCase();
+
+for(var i = 0; i < iabot.bnoite.length; i++){
+          if(msg.indexOf(iabot.bnoite[i].toLowerCase()) > -1){
+               API.sendChat("Boa noite, @" + obj.un + " :3");
+          }
+     }
+});
+
+API.on('chat', function(obj) {
+     msg = obj.message.toLowerCase();
+
+for(var i = 0; i < iabot.carente.length; i++){
+          if(msg.indexOf(iabot.carente[i].toLowerCase()) > -1){
+               API.sendChat("Tem eu, @" + obj.un + ", serve? :3");
+          }
+     }
 });
