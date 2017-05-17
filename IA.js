@@ -33,15 +33,17 @@ for(var i = 0; i < iabot.falaoi.length; i++){
 // API.sendChat(iabot.autowootlink[autowootlinkRandom] +" @"+ obj.un +" ");
 
 
- iabot = {
-      falaoi: ["Oi bot","ola bot","eae bot","olá bot","Oi loli","ola loli","eae loli","olá loli"],
+iabot = {
+      falaoi: ["Oi bot","ola bot","eae bot","olá bot"],
       falaxau: ["xau bot","xau loli","vou sair","xau galera","xau pessoal","xau gente","flw galera","flw pessoal","flw gente"],
       regras: ["quais são as regras","quais sao as regras","kd as regras","cadê as regras","cade as regras"],
       temas: ["quais são os temas","quais sao os temas","temas da sala?","pode tocar pop?","pode tocar funk?","pode tocar rap?"],
       bdia: ["bom dia loli","bom dia bot","bom dia galera","bom dia pessoal","bom dia a todos","bom dia gente","bom dia povo"],
       btarde: ["boa tarde loli","boa tarde bot","boa tarde galera","boa tarde pessoal","boa tarde a todos","boa tarde gente","boa tarde povo"],
       bnoite: ["boa noite loli","boa noite bot","boa noite galera","boa noite pessoal","boa noite a todos","boa noite gente","boa noite povo"],
-      carente: ["alguém aí?","alguem aí?","alguém on?","alguem on?","ninguém on?","ninguem on?"]
+      carente: ["alguem aí?","alguém on?","alguem on?","ninguém on?","ninguem on?"],
+      carenterandom: ["@Loli Bot não"],
+      carenterandomresp: ["ata","então continua falando sozinho(a)","ok :("],
 }
 
 API.on('chat', function(obj) {
@@ -68,7 +70,7 @@ for(var i = 0; i < iabot.regras.length; i++){
                API.sendChat("Nossas regras? aqui estão elas, @" + obj.un + " :D https://goo.gl/O5nQJ0");
           }
      }
-  
+
 for(var i = 0; i < iabot.temas.length; i++){
           if(msg.indexOf(iabot.temas[i].toLowerCase()) > -1){
                API.sendChat("Aqui estão os temas permitidos, @" + obj.un + " ^^ http://i.imgur.com/jqCjGXN.png");
@@ -98,4 +100,12 @@ for(var i = 0; i < iabot.carente.length; i++){
                API.sendChat("Tem eu, @" + obj.un + ", serve? :3");
           }
      }
+
+for(var i = 0; i < iabot.carenterandom.length; i++){
+          if(msg.indexOf(iabot.carenterandom[i].toLowerCase()) > -1){
+               var carenteRandom = Math.floor(Math.random() * iabot.carenterandomresp.length);
+               API.sendChat(iabot.carenterandomresp[carenteRandom] +" @"+ obj.un +" ");
+          }
+     }
+
 });
