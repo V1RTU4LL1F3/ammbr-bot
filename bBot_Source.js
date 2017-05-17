@@ -253,7 +253,7 @@
             slotTime: 10,
             slotPos: 1,
             slotStats: true,
-            ss: true,
+            ss: false,
             duelTime: 5,
             roletapos: 1,
             autowoot: true,
