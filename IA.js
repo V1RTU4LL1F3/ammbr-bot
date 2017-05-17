@@ -34,8 +34,8 @@ for(var i = 0; i < iabot.falaoi.length; i++){
 
 
 iabot = {
-      falaoi: ["Oi bot","Oi loli","Oi Loli","Oi Bot"],
-      falaoi2: ["ola bot","eae bot","olá bot","ola loli","eae loli","olá loli","eae galera","oi gente","eae pessoal","oi pessoal"],
+      falaoi: ["Oi bot","Oi loli","Oi Loli","Oi Bot","Oi pessoal","Oi gente"],
+      falaoi2: ["ola bot","eae bot","olá bot","ola loli","eae loli","olá loli","eae galera","eae pessoal"],
       falaxau: ["xau bot","xau loli","vou sair","xau galera","xau pessoal","xau gente","flw galera","flw pessoal","flw gente"],
       regras: ["quais são as regras","quais sao as regras","kd as regras","cadê as regras","cade as regras", "regras da sala"],
       temas: ["quais são os temas","quais sao os temas","temas da sala?","pode tocar pop?","pode tocar funk?","pode tocar rap?"],
