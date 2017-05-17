@@ -139,7 +139,10 @@ API.on('chat', function(obj) {
     if(obj.message.indexOf("Um momento amigo") != -1){
             API.sendChat("Fala oque você quer de uma vez, caralho");
         }
-    if(obj.message.indexOf("oque levas nesse caixão") != -1){
+    if(obj.message.indexOf("Oque levas nesse caixão") != -1){
+            API.sendChat("Um monte de bosta!");
+        }
+    if(obj.message.indexOf("Que levas nesse caixão") != -1){
             API.sendChat("Um monte de bosta!");
         }
     if(obj.message.indexOf("E quem foi o cagão") != -1){
