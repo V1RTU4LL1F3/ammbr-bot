@@ -116,3 +116,22 @@ for(var i = 0; i < iabot.carenterandom.length; i++){
      }
 
 });
+
+            // MEMES
+
+API.on('chat', function(obj) {
+     msg = obj.message.toLowerCase();
+  
+                //PAPACO
+  
+  
+    if(obj.message.indexOf("ei seu bunda mole") != -1){
+            API.sendChat("Falou comigo?");
+        }
+    if(obj.message.indexOf("não gracinha, falei com a puta que te pariu") != -1){
+            API.sendChat("Ainda bem, até um outro dia");
+        }
+    if(obj.message.indexOf("um momento, amigo") != -1){
+            API.sendChat("Fala oque você quer de uma vez, caralho");
+        }
+});
