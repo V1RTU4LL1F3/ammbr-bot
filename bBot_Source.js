@@ -432,7 +432,7 @@
             waiting: null,
             randomMensagem: function() {
                 var msgs = [
-                    'ganhou a luta! eu sou gay!'
+                    'ganhou a luta!'
                 ];
                 var count = 0;
                 var m = msgs[Math.floor(Math.random() * msgs.length)];
