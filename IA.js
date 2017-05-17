@@ -120,18 +120,35 @@ for(var i = 0; i < iabot.carenterandom.length; i++){
             // MEMES
 
 API.on('chat', function(obj) {
-     msg = obj.message.toLowerCase();
   
                 //PAPACO
   
   
-    if(obj.message.indexOf("ei seu bunda mole") != -1){
+    if(obj.message.indexOf("Ei seu bunda mole") != -1){
             API.sendChat("Falou comigo?");
         }
-    if(obj.message.indexOf("não gracinha, falei com a puta que te pariu") != -1){
+    if(obj.message.indexOf("Não gracinha, falei com a puta que te pariu") != -1){
             API.sendChat("Ainda bem, até um outro dia");
         }
-    if(obj.message.indexOf("um momento, amigo") != -1){
+    if(obj.message.indexOf("Não gracinha falei com a puta que te pariu") != -1){
+            API.sendChat("Ainda bem, até um outro dia");
+        }
+    if(obj.message.indexOf("Um momento, amigo") != -1){
             API.sendChat("Fala oque você quer de uma vez, caralho");
+        }
+    if(obj.message.indexOf("Um momento amigo") != -1){
+            API.sendChat("Fala oque você quer de uma vez, caralho");
+        }
+    if(obj.message.indexOf("oque levas nesse caixão") != -1){
+            API.sendChat("Um monte de bosta!");
+        }
+    if(obj.message.indexOf("E quem foi o cagão") != -1){
+            API.sendChat("Aposto que não foi o cu de sua mãe");
+        }
+    if(obj.message.indexOf("Você fala demais, amigo") != -1){
+            API.sendChat("Pow pow pow pei pei");
+        }
+    if(obj.message.indexOf("Você fala demais amigo") != -1){
+            API.sendChat("Pow pow pow pei pei");
         }
 });
