@@ -154,4 +154,7 @@ API.on('chat', function(obj) {
     if(obj.message.indexOf("Você fala demais amigo") != -1){
             API.sendChat("Pow pow pow pei pei");
         }
+    if(obj.message.indexOf("Lailson") != -1){
+            API.sendChat("Nem é gente... é Otaku fedido");
+        }
 });
