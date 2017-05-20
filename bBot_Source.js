@@ -2099,30 +2099,13 @@
                         localStorage.removeItem("basicBotStorageInfo");
                         reset();
                         basicBot.disconnectAPI();
-                        API.sendChat("/me @"+chat.un+" Dados locais apagados e restaurados ao padrão :)");
+                        API.sendChat("/me @"+chat.un+" Dados locais apagados e redefinidos");
                         setTimeout(function(){
                             $.getScript(basicBot.scriptLink);
                         }, 2000);
                     }
                 }
             },
-         
-         clearduelCommand: {
-                command: 'clearduel',
-                rank: 'manager',
-                type: 'startsWith',
-                functionality: function(chat, cmd){
-                    if (this.type === 'exact' && chat.message.length !== cmd.length) return void (0);
-                    if (!basicBot.commands.executable(this.rank, chat)) return void (0);
-                    else {
-                        API.sendChat("/me @"+chat.un+" todos os perdedores mutados foram agora desmutados.");
-                        for(var i in basicBot.room.users){
-                            clearTimeout(basicBot.room.users[i].mute.time);
-                            basicBot.room.users[i].mute.time = null
-                            basicBot.room.users[i].mute.is = false;
-                        }
-                    }
-                },
 
             autoskipCommand: {
                 command: 'autoskip',
