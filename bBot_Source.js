@@ -2122,7 +2122,7 @@
                             basicBot.room.users[i].mute.is = false;
                         }
                     }
-                }
+                },
 
             autoskipCommand: {
                 command: 'autoskip',
