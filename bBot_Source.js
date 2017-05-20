@@ -230,7 +230,7 @@
     var botCreatorIDs = ["3851534", "4105209", "3926149"];
 
     var basicBot = {
-        version: "3.2.5 (19/05/17)",
+        version: "3.2.6 (19/05/17)",
         status: false,
         name: "basicBot",
         loggedInID: null,
@@ -1893,7 +1893,7 @@
                                             var slotCheck = timeInMinutes > 0 ? true : false;
                                             if (slotCheck === false) {
                                                 basicBot.room.users[i].slots.limite = false;
-                                                basicBot.room.users[i].slots.count = 2;
+                                                basicBot.room.users[i].slots.count = 1;
                                                 basicBot.room.users[i].slots.time = Date.now();
                                             } else {
                                                 API.sendChat("/me @" + name + " você atingiu o limite e só poderá usar esta função novamente em " + timeInMinutes + " minutos.");
