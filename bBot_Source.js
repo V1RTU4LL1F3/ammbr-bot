@@ -230,7 +230,7 @@
     var botCreatorIDs = ["3851534", "4105209", "3926149"];
 
     var basicBot = {
-        version: "3.1.3 (17/05/17)",
+        version: "3.2.3 (19/05/17)",
         status: false,
         name: "basicBot",
         loggedInID: null,
@@ -2085,6 +2085,44 @@
                     }
                 }
             },
+         
+         cleardbCommand: {
+                command: 'cleardb',
+                rank: 'cohost',
+                type: 'exact',
+                functionality: function (chat, cmd) {
+                    if (this.type === 'exact' && chat.message.length !== cmd.length) return void (0);
+                    if (!basicBot.commands.executable(this.rank, chat)) return void (0);
+                    else {
+                        localStorage.removeItem("basicBotsettings");
+                        localStorage.removeItem("basicBotRoom");
+                        localStorage.removeItem("basicBotStorageInfo");
+                        reset();
+                        basicBot.disconnectAPI();
+                        API.sendChat("/me @"+chat.un+" luiz kibador deletou a porra toda.");
+                        setTimeout(function(){
+                            $.getScript(basicBot.scriptLink);
+                        }, 2000);
+                    }
+                }
+            },
+         
+         clearduelCommand: {
+                command: 'clearduel',
+                rank: 'manager',
+                type: 'startsWith',
+                functionality: function(chat, cmd){
+                    if (this.type === 'exact' && chat.message.length !== cmd.length) return void (0);
+                    if (!basicBot.commands.executable(this.rank, chat)) return void (0);
+                    else {
+                        API.sendChat("/me @"+chat.un+" todos os perdedores mutados foram agora desmutados.");
+                        for(var i in basicBot.room.users){
+                            clearTimeout(basicBot.room.users[i].mute.time);
+                            basicBot.room.users[i].mute.time = null
+                            basicBot.room.users[i].mute.is = false;
+                        }
+                    }
+                }
 
             autoskipCommand: {
                 command: 'autoskip',
