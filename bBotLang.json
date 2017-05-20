@@ -213,6 +213,8 @@
     "chattersFailed": "\/me @%%NAME%% não foi possível enviar sua mensagem para o bot. Tente novamente.",
     "ssResponse": "[SimSimi > @%%NAME%%] %%MESSAGE%%",
     "ssTitle": "SimSimi",
+    "edResponse": "[Robô ED > @%%NAME%%] %%MESSAGE%%",
+    "edTitle": "Robô ED",
     "duelTime": "\/me [@%%NAME%%] MUTE do Duel alterado para: %%TIME%% minutos.",
     "sendpunir": "\/me @%%NAMETO%%, %%NAMEFROM%% %%PUNIR%%",
     "roletaleave": "\/me @%%NAME%% deixou a roleta!",
