@@ -2099,7 +2099,7 @@
                         localStorage.removeItem("basicBotStorageInfo");
                         reset();
                         basicBot.disconnectAPI();
-                        API.sendChat("/me @"+chat.un+" luiz kibador deletou a porra toda.");
+                        API.sendChat("/me @"+chat.un+" Dados locais apagados e restaurados ao padrão :)");
                         setTimeout(function(){
                             $.getScript(basicBot.scriptLink);
                         }, 2000);
