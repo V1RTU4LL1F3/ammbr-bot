@@ -296,6 +296,9 @@
             motdEnabled: false,
             motdInterval: 5,
             motd: "Temporary Message of the Day",
+            autoroletaEnabled: true,
+            autoroletaInterval: 5,
+            autoRoleta: "!roletatroll",
             filterChat: true,
             etaRestriction: false,
             welcome: true,
@@ -306,9 +309,10 @@
             youtubeLink: null,
             website: null,
             intervalMessages: [],
+            roletaintervalMessages: [],
             messageInterval: 5,
             songstats: true,
-            commandLiteral: "!",
+            commandLiteral: ["!", "/"],
             slotFruits: [":apple:", ":pear:", ":lemon:", ":cherries:"],
             blacklists: {
                 NSFW: "https://rawgit.com/basicBot/custom/master/blacklists/NSFWlist.json",
@@ -885,6 +889,22 @@
                     API.sendChat('/me ' + msg);
                 }
             },
+            roletaintervalMessage: function() {
+                var interval;
+                if (basicBot.settings.autoroletaEnabled) interval = basicBot.settings.autoroletaInterval;
+                else interval = basicBot.settings.messageInterval;
+                if ((basicBot.room.roomstats.songCount % interval) === 0 && basicBot.status) {
+                    var msg;
+                    if (basicBot.settings.autoroletaEnabled) {
+                        msg = basicBot.settings.autoRoleta;
+                    } else {
+                        if (basicBot.settings.intervalMessages.length === 0) return void(0);
+                        var messageNumber = basicBot.room.roomstats.songCount % basicBot.settings.intervalMessages.length;
+                        msg = basicBot.settings.intervalMessages[messageNumber];
+                    }
+                    API.chatLog('/me ' + msg);
+                }
+            },
             updateBlacklists: function() {
                 for (var bl in basicBot.settings.blacklists) {
                     basicBot.room.blacklists[bl] = [];
@@ -1000,7 +1020,7 @@
                             name: user.username
                         }));
                         setTimeout(function() {
-                            API.sendChat(subChat(basicBot.chat.welcomebackdc, {
+                            API.chatLog(subChat(basicBot.chat.welcomebackdc, {
                                 name: user.username
                             }));
                         }, 2000);
@@ -1102,6 +1122,7 @@
             basicBot.room.roomstats.totalCurates += lastplay.score.grabs;
             basicBot.room.roomstats.songCount++;
             basicBot.roomUtilities.intervalMessage();
+            basicBot.roomUtilities.roletaintervalMessage();
             basicBot.room.currentDJID = obj.dj.id;
 
             var blacklistSkip = setTimeout(function() {
@@ -4350,6 +4371,31 @@
                             API.sendChat(subChat(basicBot.chat.toggleon, {
                                 name: chat.un,
                                 'function': basicBot.chat.motd
+                            }));
+                        }
+                    }
+                }
+            },
+
+            autoroletaCommand: {
+                command: ['autoroleta'],
+                rank: 'bouncer',
+                type: 'exact',
+                functionality: function(chat, cmd) {
+                    if (this.type === 'exact' && chat.message.length !== cmd.length) return void(0);
+                    if (!basicBot.commands.executable(this.rank, chat)) return void(0);
+                    else {
+                        if (basicBot.settings.autoroletaEnabled) {
+                            basicBot.settings.autoroletaEnabled = !basicBot.settings.autoroletaEnabled;
+                            API.sendChat(subChat(basicBot.chat.toggleoff, {
+                                name: chat.un,
+                                'function': basicBot.chat.autoroleta
+                            }));
+                        } else {
+                            basicBot.settings.autoroletaEnabled = !basicBot.settings.autoroletaEnabled;
+                            API.sendChat(subChat(basicBot.chat.toggleon, {
+                                name: chat.un,
+                                'function': basicBot.chat.autoroleta
                             }));
                         }
                     }
