@@ -234,7 +234,7 @@
         status: false,
         name: "basicBot",
         loggedInID: null,
-        scriptLink: "https://rawgit.com/V1RTU4LL1F3/fatgasda/master/bBot_Source.js",
+        scriptLink: "https://rawgit.com/V1RTU4LL1F3/fatgasda/master/bBot.js",
         cmdLink: "https://goo.gl/WQ6iwo",
         chatLink: "https://rawgit.com/V1RTU4LL1F3/fatgasda/master/bBotLang.json",
         chat: null,
