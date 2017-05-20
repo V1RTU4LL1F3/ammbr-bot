@@ -1359,6 +1359,12 @@
                 if (msg.indexOf('@undefined') > -1) {
                 	   API.moderateDeleteChat(chat.cid);
                 }
+                if ((msg.indexOf("Use !entrar para participar!") > -1 || msg.indexOf("Thor lança um raio e te joga pro fim da fila!") > -1 || msg.indexOf("você venceu e será movido para a posição") > -1 || msg.indexOf("você é digno do martelo") > -1 || msg.indexOf("você pode tentar levantar o martelo em") > -1 || msg.indexOf("Entre na fila e tente novamente!") > -1 || msg.indexOf("você perdeu e tem ainda") > -1 || msg.indexOf("você atingiu o limite e só poderá usar esta função novamente em") > -1 || msg.indexOf("seu ultimo slot não deu match e suas chances esgotaram!") > -1 || msg.indexOf("você só pode usar este comando quando não for o DJ.") > -1 || msg.indexOf("se você não fala nada, muito menos o bot") > -1 || msg.indexOf("MUTE do Duel alterado para:") > -1 || msg.indexOf("te chamou pro fight, caso queira aceitar digite") > -1 || msg.indexOf("demorou para responder, provavelmente está com medo.") > -1 || msg.indexOf("aceitou o duelo! O resultado do confronto sai em instantes") > -1 || msg.indexOf("arregou e não aceitou o duelo!") > -1 || msg.indexOf("ganhou a luta!") > -1 || msg.indexOf("todos os perdedores mutados foram agora desmutados.") > -1) && chat.uid === basicBot.loggedInID) {
+                    setTimeout(function(id) {
+                        API.moderateDeleteChat(id);
+                    }, 2 * 27500, chat.cid);
+                    return true;
+                }
 
                 var rlJoinChat = basicBot.chat.roulettejoin;
                 var rlLeaveChat = basicBot.chat.rouletteleave;
