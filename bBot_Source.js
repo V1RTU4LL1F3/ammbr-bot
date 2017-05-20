@@ -254,6 +254,7 @@
             slotPos: 1,
             slotStats: true,
             ss: false,
+            ed: false,
             duelTime: 5,
             roletapos: 1,
             autowoot: true,
@@ -1965,6 +1966,67 @@
                         });
                 }
             },
+            
+            edCommand: {
+                command: 'ed',
+                rank: 'user',
+                type: 'startsWith',
+                canDelete: false,
+                functionality: function(chat, cmd) {
+                    var msg = chat.message.split(' ');
+                    msg.shift();
+
+                    if (!msg.length)
+                        return API.sendChat(subChat(basicBot.chat.chattersEmpty, {
+                            name: chat.un
+                        }));
+
+                    if (basicBot.commands.executable('mod', chat)) {
+                        var mode = msg[0].toLowerCase();
+
+                        if (mode == 'on') {
+                            basicBot.settings.ed = true;
+                            return API.sendChat(subChat(basicBot.chat.toggleon, {
+                                name: chat.un,
+                                'function': basicBot.chat.edTitle
+                            }));
+                        }
+                        if (mode == 'off') {
+                            basicBot.settings.ed = false;
+                            return API.sendChat(subChat(basicBot.chat.toggleoff, {
+                                name: chat.un,
+                                'function': basicBot.chat.edTitle
+                            }));
+                        }
+                    }
+
+                    if (!basicBot.settings.ed) return;
+
+                    $.ajax({
+                            url: 'https://jsutils-caipira.rhcloud.com/bots',
+                            method: 'POST',
+                            data: {
+                                bot: 'ed',
+                                msg: msg.join(' '),
+                                origin: document.location.origin
+                            }
+                        })
+                        .done(function(data) {
+                            var resp = (typeof data == 'object' ? (data.resp || data.error) : data);
+
+                            API.sendChat(subChat(basicBot.chat.edResponse, {
+                                name: chat.un,
+                                message: resp.replace(/<\/?[^>]+(>|$)/g, "")
+                            }));
+                        })
+                        .error(function() {
+                            API.sendChat(subChat(basicBot.chat.chattersFailed, {
+                                name: chat.un
+                            }));
+                        });
+                }
+            },
+            
             autodisableCommand: {
                 command: 'autodisable',
                 rank: 'bouncer',
