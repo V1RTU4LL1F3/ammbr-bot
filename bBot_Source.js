@@ -1356,6 +1356,9 @@
                     API.moderateDeleteChat(chat.cid);
                     return true;
                 }
+                if (msg.indexOf('@undefined') > -1) {
+                	   API.moderateDeleteChat(chat.cid);
+                }
 
                 var rlJoinChat = basicBot.chat.roulettejoin;
                 var rlLeaveChat = basicBot.chat.rouletteleave;
