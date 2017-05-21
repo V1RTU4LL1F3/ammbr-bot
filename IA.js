@@ -157,4 +157,7 @@ API.on('chat', function(obj) {
     if(obj.message.indexOf("Lailson") != -1){
             API.sendChat("Nem é gente... é Otaku fedido");
         }
+  if(obj.message.indexOf("Vc é de quem loli?") != -1){
+            API.sendChat("Do -DATABASE-senpai >•<");
+        }
 });
