@@ -158,6 +158,6 @@ API.on('chat', function(obj) {
             API.sendChat("Nem é gente... é Otaku fedido");
         }
   if(obj.message.indexOf("Vc é de quem loli?") != -1){
-            API.sendChat("Do -DATABASE-senpai >•<");
+            API.sendChat("Do V1RTU4L-senpai >•<");
         }
 });
