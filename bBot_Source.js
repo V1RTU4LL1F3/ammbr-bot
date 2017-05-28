@@ -3600,7 +3600,7 @@
                                 return API.sendChat(subChat(basicBot.chat.selfcantada, {name: name}));
                             }
                             else {
-                                return API.sendChat(subChat(basicBot.chat.cantada, {nameto: user.username, namefrom: chat.un, cantada: this.getCantada()}));
+                                return API.sendChat(subChat(basicBot.chat.cantada, {nameto: user.username, namefrom: chat.un, cantada: this.getCookie()}));
                             }
                         }
                     }
