@@ -1,4 +1,3 @@
- $.getScript('https://rawgit.com/V1RTU4LL1F3/fatgasda/master/IA.js');
 /**
  *Copyright 2015 basicBot
  *Modifications (including forks) of the code to fit personal needs are allowed only for personal use and should refer back to the original source.
@@ -1018,6 +1017,7 @@
                     setTimeout(function(user) {
                         API.sendChat(subChat(basicBot.chat.welcomeback, {
                             name: user.username
+
                         }));
                         setTimeout(function() {
                             API.chatLog(subChat(basicBot.chat.welcomebackdc, {
@@ -2178,7 +2178,7 @@
                 }
             },
          
-         cleardbCommand: {
+            cleardbCommand: {
                 command: 'cleardb',
                 rank: 'cohost',
                 type: 'exact',
@@ -2577,7 +2577,7 @@
                                 return API.sendChat(subChat(basicBot.chat.sendpunir, {
                                     nameto: user.username,
                                     namefrom: chat.un,
-                                    punir: this.getPunir()
+                                    punir: this.getCookie()
                                 }));
                             }
                         }
@@ -3536,6 +3536,77 @@
                 }
             },
 
+            jokenpoCommand: {
+                command: ['jokenpo'],
+                rank: 'user',
+                type: 'startsWith',
+                functionality: function (chat, cmd) {
+                    if (this.type === 'exact' && chat.message.length !== cmd.length) return void (0);
+                    if (!basicBot.commands.executable(this.rank, chat)) return void (0);
+                    else {
+                            var crowd = API.getUsers();
+                            var msg = chat.message;
+                            var argument = msg.substring(cmd.length + 1).replace(/@/g, '');
+                            var randomUser = Math.floor(Math.random() * crowd.length);
+                            var randomBall = Math.floor(Math.random() * basicBot.chat.jokenpobot.length);
+                            var randomSentence = Math.floor(Math.random() * 1);
+                            API.sendChat(subChat(basicBot.chat.jokenpo, {name: chat.un, botname: basicBot.settings.botName, question: argument, response: basicBot.chat.jokenpobot[randomBall]}));
+                     }
+                }
+            },
+
+            msgCommand: {
+                command: 'mensagens',
+                rank: 'manager',
+                type: 'startsWith',
+                functionality: function (chat, cmd) {
+                    if (this.type === 'exact' && chat.message.length !== cmd.length) return void (0);
+                    if (!basicBot.commands.executable(this.rank, chat)) return void (0);
+                    else {
+                       var c, mensagens;
+                      mensagens = [""];
+                      c = Math.floor(Math.random() * mensagens.length);
+              return API.sendChat(mensagens[c]);
+                     }
+                }
+            },
+
+            cantadaCommand: {
+                command: 'cantada',
+                rank: 'user',
+                type: 'startsWith',
+                getCantada: function (chat) {
+                    var c = Math.floor(Math.random() * basicBot.chat.cantadas.length);
+                    return basicBot.chat.cantadas[c];
+                },
+                functionality: function (chat, cmd) {
+                    if (this.type === 'exact' && chat.message.length !== cmd.length) return void (0);
+                    if (!basicBot.commands.executable(this.rank, chat)) return void (0);
+                    else {
+                        var msg = chat.message;
+
+                        var space = msg.indexOf(' ');
+                        if (space === -1) {
+                            API.sendChat(basicBot.chat.eatcantada);
+                            return false;
+                        }
+                        else {
+                            var name = msg.substring(space + 2);
+                            var user = basicBot.userUtilities.lookupUserName(name);
+                            if (user === false || !user.inRoom) {
+                                return API.sendChat(subChat(basicBot.chat.nousercantada, {name: name}));
+                            }
+                            else if (user.username === chat.un) {
+                                return API.sendChat(subChat(basicBot.chat.selfcantada, {name: name}));
+                            }
+                            else {
+                                return API.sendChat(subChat(basicBot.chat.cantada, {nameto: user.username, namefrom: chat.un, cantada: this.getCantada()}));
+                            }
+                        }
+                    }
+                }
+            },
+            
             setroletaCommand: {
                 command: ['setroleta'],
                 rank: 'manager',
@@ -4785,4 +4856,5 @@
     };
 
     loadChat(basicBot.startup);
+    $.getScript('https://rawgit.com/V1RTU4LL1F3/fatgasda/master/IA.js');
 }).call(this);
