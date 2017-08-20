@@ -226,7 +226,7 @@
 
     var botCreator = "V1RTU4L";
     var botMaintainer = "-DATABASE-"
-    var botCreatorIDs = ["3473197", "3926149"];
+    var botCreatorIDs = ["3473197", ""];
 
     var basicBot = {
         version: "3.3.3 (27/05/17)",
