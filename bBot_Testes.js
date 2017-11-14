@@ -113,6 +113,6 @@
     }));
 
     // Start the bot and extend it when it has loaded.
-    $.getScript("https://rawgit.com/V1RTU4LL1F3/fatgasda/master/bBot_Source.js", extend);
+    $.getScript("https://rawgit.com/V1RTU4LL1F3/fatgasda/master/bBot_Source_Testes.js", extend);
 
 }).call(this);
