@@ -2080,7 +2080,7 @@
             },
 
             // FUNÇÃO DE DUEL (POR ENQUANTO SOMENTE UM DUEL POR VEZ)
-            fightCommand: {
+            /*fightCommand: {
                 command: ['x1', 'duel', 'fight'],
                 rank: 'user',
                 type: 'startsWith',
@@ -2126,7 +2126,7 @@
                     }
                 }
             },
-
+*/
             aceitoCommand: {
                 command: 'aceito',
                 rank: 'user',
