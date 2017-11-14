@@ -9,17 +9,6 @@
         if (!window.bot) {
           return setTimeout(extend, 1 * 1000);
         }
-(function () {
-
-    // Change this to your GitHub username so you don't have to modify so many things.
-    var fork = "V1RTU4LL1F3";
-
-    // Define our function responsible for extending the bot.
-    function extend() {
-        // If the bot hasn't been loaded properly, try again in 1 second(s).
-        if (!window.bot) {
-          return setTimeout(extend, 1 * 1000);
-        }
 
         // Precaution to make sure it is assigned properly.
         var bot = window.bot;
@@ -124,6 +113,6 @@
     }));
 
     // Start the bot and extend it when it has loaded.
-    $.getScript("https://rawgit.com/V1RTU4LL1F3/fatgasda/master/bBot_Source_Testes.js", extend);
+    $.getScript("https://rawgit.com/V1RTU4LL1F3/fatgasda/master/bBot_Source.js", extend);
 
 }).call(this);
