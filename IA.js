@@ -167,7 +167,7 @@ API.on('chat', function(obj) {
     if(obj.message.indexOf("Colher é?") != -1){
             API.sendChat("Lerda!");
         }
-    if(obj.message.indexOf(":blueheart:") != -1){
+    if(obj.message.indexOf(":blue_heart:") != -1){
             API.sendChat(":bluegreen:");
         }
 });
