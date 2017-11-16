@@ -121,6 +121,7 @@ for(var i = 0; i < iabot.carenterandom.length; i++){
 
 API.on('chat', function(obj) {
   
+  
                 //PAPACO
   
   
@@ -154,6 +155,17 @@ API.on('chat', function(obj) {
     if(obj.message.indexOf("Você fala demais amigo") != -1){
             API.sendChat("Pow pow pow pei pei");
         }
+  
+               //PELÉ
+  
+  
+    if(obj.message.indexOf("Você é o pelé?") != -1){
+            API.sendChat("Não, eu sou o Jô Soares, sua piranha!");
+        }
+    if(obj.message.indexOf("Você é o Pelé?") != -1){
+            API.sendChat("Não, eu sou o Jô Soares, sua piranha!");
+        }
+  
 });
 
 
@@ -169,5 +181,8 @@ API.on('chat', function(obj) {
         }
     if(obj.message.indexOf(":<3:") != -1){
             API.sendChat(":bluegreen:");
+        }
+    if(obj.message.indexOf("Mamão é?") != -1){
+            API.sendChat("Limão!");
         }
 });
