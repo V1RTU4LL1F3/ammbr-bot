@@ -160,10 +160,10 @@ API.on('chat', function(obj) {
   
   
     if(obj.message.indexOf("Você é o pelé?") != -1){
-            API.sendChat("Não, eu sou o Jô Soares, sua piranha!");
+            API.sendChat("Não. Eu sou o Jô Soares, sua piranha!");
         }
     if(obj.message.indexOf("Você é o Pelé?") != -1){
-            API.sendChat("Não, eu sou o Jô Soares, sua piranha!");
+            API.sendChat("Não. Eu sou o Jô Soares, sua piranha!");
         }
   
 });
