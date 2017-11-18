@@ -183,7 +183,7 @@ API.on('chat', function(obj) {
             API.sendChat("V1RTU4L-Senpai *-*");
         }
     if(obj.message.indexOf("@Loli Bot quem é rizkeyla?") != -1){
-            API.sendChat("Nunca nem vi");
+            API.sendChat("Minha colega de porão =3");
         }
     if(obj.message.indexOf("Mamão é?") != -1){
             API.sendChat("Limão!");
