@@ -179,8 +179,8 @@ API.on('chat', function(obj) {
     if(obj.message.indexOf("Colher é?") != -1){
             API.sendChat("Lerda!");
         }
-    if(obj.message.indexOf(":<3:") != -1){
-            API.sendChat(":bluegreen:");
+    if(obj.message.indexOf("@Loli Bot quem é seu mestre?") != -1){
+            API.sendChat("V1RTU4L-Senpai *-*");
         }
     if(obj.message.indexOf("Mamão é?") != -1){
             API.sendChat("Limão!");
