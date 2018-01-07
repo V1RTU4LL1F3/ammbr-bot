@@ -229,7 +229,7 @@
     var botCreatorIDs = ["3473197", "3926149"];
 
     var basicBot = {
-        version: "ersão de testes 3.4 (14/11/17)",
+        version: "ersão de testes 3.5 (07/01/18)",
         status: false,
         name: "basicBot",
         loggedInID: null,
@@ -1969,7 +1969,7 @@
                     if (!basicBot.settings.ss) return;
 
                     $.ajax({
-                            url: 'https://jsutils-caipira.rhcloud.com/bots',
+                            url: 'https://chatters.plugbots.tk/',
                             method: 'POST',
                             data: {
                                 bot: 'ss',
@@ -2029,7 +2029,7 @@
                     if (!basicBot.settings.ed) return;
 
                     $.ajax({
-                            url: 'https://jsutils-caipira.rhcloud.com/bots',
+                            url: 'https://chatters.plugbots.tk/',
                             method: 'POST',
                             data: {
                                 bot: 'ed',
