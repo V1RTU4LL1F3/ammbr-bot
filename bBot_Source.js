@@ -95,7 +95,7 @@
 
     var loadChat = function(cb) {
         if (!cb) cb = function() {};
-        $.get("https://rawgit.com/V1RTU4LL1F3/fatgasda/master/langIndex.json", function(json) {
+        $.get("https://cdn.jsdelivr.net/gh/V1RTU4LL1F3/fatgasda/langIndex.json", function(json) {
             var link = basicBot.chatLink;
             if (json !== null && typeof json !== "undefined") {
                 langIndex = json;
@@ -233,9 +233,9 @@
         status: false,
         name: "basicBot",
         loggedInID: null,
-        scriptLink: "https://rawgit.com/V1RTU4LL1F3/fatgasda/master/bBot.js",
+        scriptLink: "https://cdn.jsdelivr.net/gh/V1RTU4LL1F3/fatgasda/bBot.js",
         cmdLink: "https://goo.gl/WQ6iwo",
-        chatLink: "https://rawgit.com/V1RTU4LL1F3/fatgasda/master/bBotLang.json",
+        chatLink: "https://cdn.jsdelivr.net/gh/V1RTU4LL1F3/fatgasda/bBotLang.json",
         chat: null,
         loadChat: loadChat,
         retrieveSettings: retrieveSettings,
@@ -243,8 +243,8 @@
         settings: {
             botName: "AMMBR Bot",
             language: "portuguese",
-            chatLink: "https://rawgit.com/V1RTU4LL1F3/fatgasda/master/bBotLang.json",
-            scriptLink: "https://rawgit.com/V1RTU4LL1F3/fatgasda/master/bBot_Source.js",
+            chatLink: "https://cdn.jsdelivr.net/gh/V1RTU4LL1F3/fatgasda/bBotLang.json",
+            scriptLink: "https://cdn.jsdelivr.net/gh/V1RTU4LL1F3/fatgasda/bBot_Source.js",
             roomLock: false, // Requires an extension to re-load the script
             startupCap: 1, // 1-200
             startupVolume: 0, // 0-100
@@ -314,9 +314,9 @@
             commandLiteral: ["!", "/"],
             slotFruits: [":apple:", ":pear:", ":lemon:", ":cherries:"],
             blacklists: {
-                NSFW: "https://rawgit.com/basicBot/custom/master/blacklists/NSFWlist.json",
-                OP: "https://rawgit.com/basicBot/custom/master/blacklists/OPlist.json",
-                BANNED: "https://rawgit.com/basicBot/custom/master/blacklists/BANNEDlist.json"
+                NSFW: "https://cdn.jsdelivr.net/gh/basicBot/custom/blacklists/NSFWlist.json",
+                OP: "https://cdn.jsdelivr.net/gh/basicBot/custom/blacklists/OPlist.json",
+                BANNED: "https://cdn.jsdelivr.net/gh/basicBot/custom/blacklists/BANNEDlist.json"
             }
         },
         room: {
@@ -3203,7 +3203,7 @@
                         }));
                         var argument = msg.substring(cmd.length + 1);
 
-                        $.get("https://rawgit.com/V1RTU4LL1F3/fatgasda/master/langIndex.json", function(json) {
+                        $.get("https://cdn.jsdelivr.net/gh/V1RTU4LL1F3/fatgasda/langIndex.json", function(json) {
                             var langIndex = json;
                             var link = langIndex[argument.toLowerCase()];
                             if (typeof link === "undefined") {

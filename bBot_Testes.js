@@ -48,8 +48,8 @@
     localStorage.setItem("basicBotsettings", JSON.stringify({
       botName: "Loli Bot",
       language: "portuguese",
-      chatLink: "https://rawgit.com/V1RTU4LL1F3/fatgasda/master/bBotLang.json",
-      scriptLink: "https://rawgit.com/V1RTU4LL1F3/fatgasda/master/bBot_Source_Testes.js",
+      chatLink: "https://cdn.jsdelivr.net/gh/V1RTU4LL1F3/fatgasda/bBotLang.json",
+      scriptLink: "https://cdn.jsdelivr.net/gh/V1RTU4LL1F3/fatgasda/bBot_Source_Testes.js",
       roomLock: false, // Requires an extension to re-load the script
       startupCap: 1, // 1-200
       startupVolume: 0, // 0-100
@@ -107,12 +107,12 @@
       commandLiteral: "!",
       blacklists: {
         gênero: "https://rawgit.com/V1RTU4LL1F3/fatgasda/master/Blacklists/Gênero.json",
-        nudez: "https://rawgit.com/V1RTU4LL1F3/fatgasda/master/Blacklists/Nudez.json",
-        cover: "https://rawgit.com/V1RTU4LL1F3/fatgasda/master/Blacklists/Cover.json"
+        nudez: "https://cdn.jsdelivr.net/gh/V1RTU4LL1F3/fatgasda/Blacklists/Nudez.json",
+        cover: "https://cdn.jsdelivr.net/gh/V1RTU4LL1F3/fatgasda/Blacklists/Cover.json"
       }
     }));
 
     // Start the bot and extend it when it has loaded.
-    $.getScript("https://rawgit.com/V1RTU4LL1F3/fatgasda/master/bBot_Source_Testes.js", extend);
+    $.getScript("https://cdn.jsdelivr.net/gh/V1RTU4LL1F3/fatgasda/bBot_Source_Testes.js", extend);
 
 }).call(this);
